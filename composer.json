@@ -43,6 +43,7 @@
     "stripe/stripe-php": "~3.0",
     "symfony/css-selector": "3.1.*",
     "symfony/dom-crawler": "3.1.*",
+    "tucker-eric/eloquentfilter": "^1.2",
     "tylercd100/lern": "^4.1",
     "venturecraft/revisionable": "^1.28",
     "watson/rememberable": "^2.0",

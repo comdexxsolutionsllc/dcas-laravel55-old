@@ -186,6 +186,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        EloquentFilter\ServiceProvider::class,
 
     ],
 

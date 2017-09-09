@@ -11,6 +11,7 @@ php artisan vendor:publish --provider="Laracasts\Flash\FlashServiceProvider"
 php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"
 php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config
 php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
+php artisan vendor:publish --provider="EloquentFilter\ServiceProvider"
 php artisan vendor:publish --tag=passport-components
 php artisan vendor:publish --tag=passport-views
 php artisan entrust:migration

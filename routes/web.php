@@ -25,3 +25,7 @@ Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.w
 
 Route::view('/', 'welcome')->name('welcome');
 Route::view('/admin/dashboard', 'admin.dashboard.dashboard')->name('admin.dashboard');
+
+Route::get('/test', function () {
+    return App\User::filter(request()->all())->get();
+});

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,11 +12,10 @@ use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Authorizable, Billable, HasApiTokens, Notifiable, RevisionableTrait, Searchable;
+    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, RevisionableTrait, Searchable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
