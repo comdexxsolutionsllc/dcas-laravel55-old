@@ -1,0 +1,22 @@
+{
+  "name": "fiberhopllc_dcas",
+  "description": "FiberHop LLC - DCAS - Datacenter Automation Suite",
+  "dependencies": {
+    "chart.js": "^2.3.0",
+    "datatables": "^1.10.12",
+    "datatables-plugins": "^1.10.12",
+    "font-awesome": "~4.2.0",
+    "modernizr": "^3.3.1"
+  },
+  "resolutions": {
+    "modernizr": "^3.3.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:comdexxsolutionsllc/dcas.git",
+    "type": "git"
+  },
+  "author": "Sarah Abbott <joshuastevenabbott@gmail.com>",
+  "license": "CLOSED"
+}
