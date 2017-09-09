@@ -2,6 +2,8 @@
 
 namespace DCAS\UtilityClass;
 
+use Flashy;
+
 class FlashMessage
 {
     public static function info($message, $url = null)
