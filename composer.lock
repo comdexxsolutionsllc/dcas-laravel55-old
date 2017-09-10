@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a579dbfec4f493c38b5d391bf7b74890",
+    "content-hash": "9bea631312e37e7adec19265d9abc7a4",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -6117,6 +6117,51 @@
                 "dump"
             ],
             "time": "2017-08-27T14:52:21+00:00"
+        },
+        {
+            "name": "tasioleiva/laravel-usercommands",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tasioleiva/laravel-usercommands.git",
+                "reference": "0828af0614faaceb56d4dafc238524e944a879a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tasioleiva/laravel-usercommands/zipball/0828af0614faaceb56d4dafc238524e944a879a8",
+                "reference": "0828af0614faaceb56d4dafc238524e944a879a8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TasioLeiva\\LaravelUserCommands\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tasio Leiva",
+                    "email": "leiva.tasio@gmail.com"
+                }
+            ],
+            "description": "Create users and reset user passwords from the command line",
+            "keywords": [
+                "artisan",
+                "commands",
+                "create",
+                "laravel",
+                "php",
+                "reset",
+                "user"
+            ],
+            "time": "2017-04-26T16:03:36+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
