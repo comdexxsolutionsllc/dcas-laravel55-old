@@ -160,7 +160,8 @@ return [
         Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
+        // Illuminate\Translation\TranslationServiceProvider::class,
+        Spatie\TranslationLoader\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
@@ -173,7 +174,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -183,10 +184,17 @@ return [
         Laravel\Cashier\CashierServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         EloquentFilter\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
+        Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
+        Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
 
     ],
 
@@ -242,7 +250,10 @@ return [
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
+        'Menu' => Lavary\Menu\Facade::class,
+        'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
 
     ],
 
