@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.3 on 2017-09-09.
+ * Generated for Laravel 5.5.3 on 2017-09-10.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1468,6 +1468,17 @@ namespace Illuminate\Support\Facades {
         {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
             \App\Console\Kernel::setArtisan($artisan);
+        }
+        
+        /**
+         * Monitor each of the scheduled events.
+         *
+         * @param \App\Console\Schedule $schedule
+         * @static 
+         */ 
+        public static function monitor($schedule)
+        {
+            return \App\Console\Kernel::monitor($schedule);
         }
          
     }
@@ -13991,6 +14002,110 @@ namespace Collective\Html {
  
 }
 
+namespace Laracasts\Flash { 
+
+    class Flash {
+        
+        /**
+         * Flash an information message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function info($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::info($message);
+        }
+        
+        /**
+         * Flash a success message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function success($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::success($message);
+        }
+        
+        /**
+         * Flash an error message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function error($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::error($message);
+        }
+        
+        /**
+         * Flash a warning message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function warning($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::warning($message);
+        }
+        
+        /**
+         * Flash a general message.
+         *
+         * @param string|null $message
+         * @param string|null $level
+         * @return $this 
+         * @static 
+         */ 
+        public static function message($message = null, $level = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::message($message, $level);
+        }
+        
+        /**
+         * Flash an overlay modal.
+         *
+         * @param string|null $message
+         * @param string $title
+         * @return $this 
+         * @static 
+         */ 
+        public static function overlay($message = null, $title = 'Notice')
+        {
+            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
+        }
+        
+        /**
+         * Add an "important" flash to the session.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function important()
+        {
+            return \Laracasts\Flash\FlashNotifier::important();
+        }
+        
+        /**
+         * Clear all registered messages.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \Laracasts\Flash\FlashNotifier::clear();
+        }
+         
+    }
+ 
+}
+
 namespace MercurySeries\Flashy { 
 
     class Flashy {
@@ -14110,6 +14225,107 @@ namespace MercurySeries\Flashy {
         public static function message($message, $link = '#', $type = 'success')
         {
             return \MercurySeries\Flashy\FlashyNotifier::message($message, $link, $type);
+        }
+         
+    }
+ 
+}
+
+namespace Lavary\Menu { 
+
+    class Facade {
+        
+        /**
+         * Create a new menu instance
+         *
+         * @param string $name
+         * @param callable $callback
+         * @return \Lavary\Menu\Menu 
+         * @static 
+         */ 
+        public static function make($name, $callback)
+        {
+            return \Lavary\Menu\Menu::make($name, $callback);
+        }
+        
+        /**
+         * Loads and merges configuration data
+         *
+         * @param string $name
+         * @return array 
+         * @static 
+         */ 
+        public static function loadConf($name)
+        {
+            return \Lavary\Menu\Menu::loadConf($name);
+        }
+        
+        /**
+         * Return Menu instance from the collection by key
+         *
+         * @param string $key
+         * @return \Lavary\Menu\Item 
+         * @static 
+         */ 
+        public static function get($key)
+        {
+            return \Lavary\Menu\Menu::get($key);
+        }
+        
+        /**
+         * Return Menu collection
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getCollection()
+        {
+            return \Lavary\Menu\Menu::getCollection();
+        }
+        
+        /**
+         * Alias for getCollection
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function all()
+        {
+            return \Lavary\Menu\Menu::all();
+        }
+         
+    }
+ 
+}
+
+namespace Spatie\UrlSigner\Laravel { 
+
+    class UrlSignerFacade {
+        
+        /**
+         * Get a secure URL to a controller action.
+         *
+         * @param string $url
+         * @param \DateTime|int|null $expiration Defaults to the config value
+         * @return string 
+         * @static 
+         */ 
+        public static function sign($url, $expiration = null)
+        {
+            return \Spatie\UrlSigner\Laravel\UrlSigner::sign($url, $expiration);
+        }
+        
+        /**
+         * Validate a signed url.
+         *
+         * @param string $url
+         * @return bool 
+         * @static 
+         */ 
+        public static function validate($url)
+        {
+            //Method inherited from \Spatie\UrlSigner\BaseUrlSigner            
+            return \Spatie\UrlSigner\Laravel\UrlSigner::validate($url);
         }
          
     }
@@ -14614,110 +14830,6 @@ namespace Spatie\Fractal {
         {
             //Method inherited from \Spatie\Fractalistic\Fractal            
             return \Spatie\Fractal\Fractal::jsonSerialize();
-        }
-         
-    }
- 
-}
-
-namespace Laracasts\Flash { 
-
-    class Flash {
-        
-        /**
-         * Flash an information message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function info($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::info($message);
-        }
-        
-        /**
-         * Flash a success message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function success($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::success($message);
-        }
-        
-        /**
-         * Flash an error message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function error($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::error($message);
-        }
-        
-        /**
-         * Flash a warning message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function warning($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::warning($message);
-        }
-        
-        /**
-         * Flash a general message.
-         *
-         * @param string|null $message
-         * @param string|null $level
-         * @return $this 
-         * @static 
-         */ 
-        public static function message($message = null, $level = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::message($message, $level);
-        }
-        
-        /**
-         * Flash an overlay modal.
-         *
-         * @param string|null $message
-         * @param string $title
-         * @return $this 
-         * @static 
-         */ 
-        public static function overlay($message = null, $title = 'Notice')
-        {
-            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
-        }
-        
-        /**
-         * Add an "important" flash to the session.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function important()
-        {
-            return \Laracasts\Flash\FlashNotifier::important();
-        }
-        
-        /**
-         * Clear all registered messages.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function clear()
-        {
-            return \Laracasts\Flash\FlashNotifier::clear();
         }
          
     }
@@ -16849,15 +16961,19 @@ namespace  {
 
     class Html extends \Collective\Html\HtmlFacade {}
 
+    class Flash extends \Laracasts\Flash\Flash {}
+
     class Flashy extends \MercurySeries\Flashy\Flashy {}
+
+    class Menu extends \Lavary\Menu\Facade {}
+
+    class UrlSigner extends \Spatie\UrlSigner\Laravel\UrlSignerFacade {}
 
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
 
     class DataTables extends \Yajra\DataTables\Facades\DataTables {}
 
     class Fractal extends \Spatie\Fractal\FractalFacade {}
-
-    class Flash extends \Laracasts\Flash\Flash {}
  
 }
 
