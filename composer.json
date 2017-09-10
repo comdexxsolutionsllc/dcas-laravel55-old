@@ -29,6 +29,7 @@
     "kalnoy/nestedset": "^4.2",
     "laracademy/interactive-make": "^1.1",
     "laracasts/presenter": "^0.2.1",
+    "laracasts/utilities": "^3.0",
     "laravel/cashier": "~7.0",
     "laravel/envoy": "~1.0",
     "laravel/framework": "5.5.*",

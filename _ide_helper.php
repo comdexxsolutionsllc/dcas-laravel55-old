@@ -14836,6 +14836,36 @@ namespace Spatie\Fractal {
  
 }
 
+namespace Laracasts\Utilities\JavaScript { 
+
+    class JavaScriptFacade {
+        
+        /**
+         * Bind the given array of variables to the view.
+         *
+         * @static 
+         */ 
+        public static function put()
+        {
+            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::put();
+        }
+        
+        /**
+         * Translate the array of PHP variables to a JavaScript syntax.
+         *
+         * @param array $variables
+         * @return array 
+         * @static 
+         */ 
+        public static function constructJavaScript($variables)
+        {
+            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::constructJavaScript($variables);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -16974,6 +17004,8 @@ namespace  {
     class DataTables extends \Yajra\DataTables\Facades\DataTables {}
 
     class Fractal extends \Spatie\Fractal\FractalFacade {}
+
+    class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
  
 }
 
