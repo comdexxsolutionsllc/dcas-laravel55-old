@@ -15,9 +15,6 @@ use Illuminate\Http\Request;
 
 // middleware:  'auth:api'
 Route::namespace('Api')->group(function () {
-    // TODO:  add API Routes here...
-    Route::prefix('v1')->group(function () {
-        Route::get('/', 'ApiDefaultController@index');
-    });
+
 });
 

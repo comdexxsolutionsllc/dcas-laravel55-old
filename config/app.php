@@ -183,10 +183,14 @@ return [
         Laravel\Cashier\CashierServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         EloquentFilter\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
 
     ],
 
@@ -240,8 +244,9 @@ return [
         'Setting' => anlutro\LaravelSettings\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
 
     ],

@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('home');
-Route::get('/search', function (Request $request) {
-    return abort(501, 'Not implemented.');
+Route::get('/search', function () {
+    return App\User::filter(request()->only(['name']))->get();
     // return App\User::search($request->input('q'))->get();
 })->name('search');
 
@@ -25,7 +25,3 @@ Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.w
 
 Route::view('/', 'welcome')->name('welcome');
 Route::view('/admin/dashboard', 'admin.dashboard.dashboard')->name('admin.dashboard');
-
-Route::get('/test', function () {
-    return App\User::filter(request()->all())->get();
-});

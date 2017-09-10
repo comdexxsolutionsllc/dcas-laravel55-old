@@ -2,9 +2,6 @@
   PENDING
   -------------------
  "cybercog/laravel-ban": "^2.1",
- "evercode1/view-maker": "^3.5",
- "gadyb/laravel-model-view-generator": "^1.0",
- "infyomlabs/laravel-generator": "5.3.x-dev",
  "laracademy/interactive-make": "^1.1",
  "lavary/laravel-menu": "^1.6",
  "mirzabusatlic/laravel-schedule-monitor": "^1.01",

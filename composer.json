@@ -49,7 +49,11 @@
     "watson/rememberable": "^2.0",
     "yab/laravel-scout-mysql-driver": "dev-master",
     "yajra/laravel-datatables-oracle": "~8.0",
-    "zizaco/entrust": "5.2.x-dev"
+    "zizaco/entrust": "5.2.x-dev",
+    "infyomlabs/laravel-generator": "5.5.x-dev",
+    "infyomlabs/adminlte-templates": "5.5.x-dev",
+    "infyomlabs/swagger-generator": "dev-master",
+    "jlapp/swaggervel": "dev-master"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.0",
