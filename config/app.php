@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\HelperServiceProvider::class,
+
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
