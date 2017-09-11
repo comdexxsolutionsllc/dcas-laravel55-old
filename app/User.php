@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Prettus\Repository\Contracts\Presentable;
+use Prettus\Repository\Traits\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
@@ -58,9 +60,9 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  */
-class User extends Authenticatable
+class User extends Authenticatable implements Presentable
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, RevisionableTrait, Searchable;
+    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, Searchable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;

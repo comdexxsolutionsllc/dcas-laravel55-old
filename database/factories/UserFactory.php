@@ -18,8 +18,32 @@ $factory->define(App\User::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
+        'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'is_admin' => 0,
+        'is_disabled' => 0
+    ];
+});
+
+$factory->state(\App\User::class, 'hasRememberToken', function () {
+    return [
+        'remember_token' => str_random(25)
+    ];
+});
+
+
+$factory->state(\App\User::class, 'isAdmin', function () {
+    static $password;
+
+    return [
+        'password' => $password ?: $password = bcrypt('admin'),
+        'is_admin' => 1
+    ];
+});
+
+$factory->state(\App\User::class, 'isDisabled', function () {
+    return [
+        'is_disabled' => 1
     ];
 });
