@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Updating bower components..."
-bower update
+node_modules/.bin/bower update
 echo "Updated bower components..."
 echo ""
 echo "Updating npm components..."

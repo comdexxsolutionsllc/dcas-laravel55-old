@@ -1,5 +1,5 @@
 <?php
-return array(
+return [
 	// which type of store to use.
 	// valid options: 'json', 'database'
 	'store' => 'database',
@@ -19,4 +19,4 @@ return array(
 	// set them in this configuration
 	'keyColumn' => 'key',
 	'valueColumn' => 'value'
-);
+];
