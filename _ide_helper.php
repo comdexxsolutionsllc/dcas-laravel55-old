@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.4 on 2017-09-13.
+ * Generated for Laravel 5.5.4 on 2017-09-15.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14471,6 +14471,142 @@ namespace Laravel\Socialite\Facades {
  
 }
 
+namespace Laracasts\Utilities\JavaScript { 
+
+    class JavaScriptFacade {
+        
+        /**
+         * Bind the given array of variables to the view.
+         *
+         * @static 
+         */ 
+        public static function put()
+        {
+            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::put();
+        }
+        
+        /**
+         * Translate the array of PHP variables to a JavaScript syntax.
+         *
+         * @param array $variables
+         * @return array 
+         * @static 
+         */ 
+        public static function constructJavaScript($variables)
+        {
+            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::constructJavaScript($variables);
+        }
+         
+    }
+ 
+}
+
+namespace Yajra\DataTables\Facades { 
+
+    class DataTables {
+        
+        /**
+         * Make a DataTable instance from source.
+         * 
+         * Alias of make for backward compatibility.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function of($source)
+        {
+            return \Yajra\DataTables\DataTables::of($source);
+        }
+        
+        /**
+         * Make a DataTable instance from source.
+         *
+         * @param mixed $source
+         * @return mixed 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function make($source)
+        {
+            return \Yajra\DataTables\DataTables::make($source);
+        }
+        
+        /**
+         * Get request object.
+         *
+         * @return \Yajra\DataTables\Utilities\Request 
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+            return \Yajra\DataTables\DataTables::getRequest();
+        }
+        
+        /**
+         * Get config instance.
+         *
+         * @return \Yajra\DataTables\Utilities\Config 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+            return \Yajra\DataTables\DataTables::getConfig();
+        }
+        
+        /**
+         * DataTables using Query Builder.
+         *
+         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @return \Yajra\DataTables\QueryDataTable 
+         * @static 
+         */ 
+        public static function queryBuilder($builder)
+        {
+            return \Yajra\DataTables\DataTables::queryBuilder($builder);
+        }
+        
+        /**
+         * DataTables using Eloquent Builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
+         * @return \Yajra\DataTables\EloquentDataTable 
+         * @static 
+         */ 
+        public static function eloquent($builder)
+        {
+            return \Yajra\DataTables\DataTables::eloquent($builder);
+        }
+        
+        /**
+         * DataTables using Collection.
+         *
+         * @param \Illuminate\Support\Collection|array $collection
+         * @return \Yajra\DataTables\CollectionDataTable 
+         * @static 
+         */ 
+        public static function collection($collection)
+        {
+            return \Yajra\DataTables\DataTables::collection($collection);
+        }
+        
+        /**
+         * Get html builder instance.
+         *
+         * @return \Yajra\DataTables\Html\Builder 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function getHtmlBuilder()
+        {
+            return \Yajra\DataTables\DataTables::getHtmlBuilder();
+        }
+         
+    }
+ 
+}
+
 namespace Spatie\Fractal { 
 
     class FractalFacade {
@@ -14767,142 +14903,6 @@ namespace Spatie\Fractal {
         {
             //Method inherited from \Spatie\Fractalistic\Fractal            
             return \Spatie\Fractal\Fractal::jsonSerialize();
-        }
-         
-    }
- 
-}
-
-namespace Laracasts\Utilities\JavaScript { 
-
-    class JavaScriptFacade {
-        
-        /**
-         * Bind the given array of variables to the view.
-         *
-         * @static 
-         */ 
-        public static function put()
-        {
-            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::put();
-        }
-        
-        /**
-         * Translate the array of PHP variables to a JavaScript syntax.
-         *
-         * @param array $variables
-         * @return array 
-         * @static 
-         */ 
-        public static function constructJavaScript($variables)
-        {
-            return \Laracasts\Utilities\JavaScript\Transformers\Transformer::constructJavaScript($variables);
-        }
-         
-    }
- 
-}
-
-namespace Yajra\DataTables\Facades { 
-
-    class DataTables {
-        
-        /**
-         * Make a DataTable instance from source.
-         * 
-         * Alias of make for backward compatibility.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function of($source)
-        {
-            return \Yajra\DataTables\DataTables::of($source);
-        }
-        
-        /**
-         * Make a DataTable instance from source.
-         *
-         * @param mixed $source
-         * @return mixed 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function make($source)
-        {
-            return \Yajra\DataTables\DataTables::make($source);
-        }
-        
-        /**
-         * Get request object.
-         *
-         * @return \Yajra\DataTables\Utilities\Request 
-         * @static 
-         */ 
-        public static function getRequest()
-        {
-            return \Yajra\DataTables\DataTables::getRequest();
-        }
-        
-        /**
-         * Get config instance.
-         *
-         * @return \Yajra\DataTables\Utilities\Config 
-         * @static 
-         */ 
-        public static function getConfig()
-        {
-            return \Yajra\DataTables\DataTables::getConfig();
-        }
-        
-        /**
-         * DataTables using Query Builder.
-         *
-         * @param \Illuminate\Database\Query\Builder|mixed $builder
-         * @return \Yajra\DataTables\QueryDataTable 
-         * @static 
-         */ 
-        public static function queryBuilder($builder)
-        {
-            return \Yajra\DataTables\DataTables::queryBuilder($builder);
-        }
-        
-        /**
-         * DataTables using Eloquent Builder.
-         *
-         * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
-         * @return \Yajra\DataTables\EloquentDataTable 
-         * @static 
-         */ 
-        public static function eloquent($builder)
-        {
-            return \Yajra\DataTables\DataTables::eloquent($builder);
-        }
-        
-        /**
-         * DataTables using Collection.
-         *
-         * @param \Illuminate\Support\Collection|array $collection
-         * @return \Yajra\DataTables\CollectionDataTable 
-         * @static 
-         */ 
-        public static function collection($collection)
-        {
-            return \Yajra\DataTables\DataTables::collection($collection);
-        }
-        
-        /**
-         * Get html builder instance.
-         *
-         * @return \Yajra\DataTables\Html\Builder 
-         * @throws \Exception
-         * @static 
-         */ 
-        public static function getHtmlBuilder()
-        {
-            return \Yajra\DataTables\DataTables::getHtmlBuilder();
         }
          
     }
@@ -17044,11 +17044,11 @@ namespace  {
 
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
 
-    class Fractal extends \Spatie\Fractal\FractalFacade {}
-
     class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
 
     class DataTables extends \Yajra\DataTables\Facades\DataTables {}
+
+    class Fractal extends \Spatie\Fractal\FractalFacade {}
  
 }
 

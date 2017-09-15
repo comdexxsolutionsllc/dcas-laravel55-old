@@ -2304,16 +2304,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v3.0.9",
+            "version": "v3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "84762c8ed51cb57f09b5f465e09993e48baf9d55"
+                "reference": "681c15a26bbc973528af2e77e0bb61981dc07206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/84762c8ed51cb57f09b5f465e09993e48baf9d55",
-                "reference": "84762c8ed51cb57f09b5f465e09993e48baf9d55",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/681c15a26bbc973528af2e77e0bb61981dc07206",
+                "reference": "681c15a26bbc973528af2e77e0bb61981dc07206",
                 "shasum": ""
             },
             "require": {
@@ -2365,7 +2365,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2017-09-13T18:24:31+00:00"
+            "time": "2017-09-14T12:32:30+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -4767,16 +4767,16 @@
         },
         {
             "name": "spatie/laravel-fractal",
-            "version": "5.1.0",
+            "version": "5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "0c9c61ef7f3affdfb609e77d1060493655106676"
+                "reference": "4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/0c9c61ef7f3affdfb609e77d1060493655106676",
-                "reference": "0c9c61ef7f3affdfb609e77d1060493655106676",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e",
+                "reference": "4aa3d4a5e5b2956eea437ee1f82201bd8b91a65e",
                 "shasum": ""
             },
             "require": {
@@ -4831,7 +4831,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-09-08T08:32:16+00:00"
+            "time": "2017-09-15T18:57:48+00:00"
         },
         {
             "name": "spatie/laravel-tags",
@@ -9653,16 +9653,16 @@
         },
         {
             "name": "sven/artisan-view",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/svenluijten/artisan-view.git",
-                "reference": "549cd9ec0f5baad92a9f6d9ba1bc484151fccdd2"
+                "reference": "d0c1a89f0ee9a55fab3126ff38347a4c44c3b1c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/svenluijten/artisan-view/zipball/549cd9ec0f5baad92a9f6d9ba1bc484151fccdd2",
-                "reference": "549cd9ec0f5baad92a9f6d9ba1bc484151fccdd2",
+                "url": "https://api.github.com/repos/svenluijten/artisan-view/zipball/d0c1a89f0ee9a55fab3126ff38347a4c44c3b1c1",
+                "reference": "d0c1a89f0ee9a55fab3126ff38347a4c44c3b1c1",
                 "shasum": ""
             },
             "require": {
@@ -9706,7 +9706,7 @@
                 "templates",
                 "views"
             ],
-            "time": "2017-09-09T11:45:18+00:00"
+            "time": "2017-09-15T06:58:37+00:00"
         },
         {
             "name": "symfony/browser-kit",
