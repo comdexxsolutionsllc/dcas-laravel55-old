@@ -8,13 +8,28 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
+     * This namespace is applied to your default and User controller routes.
      *
      * In addition, it is set as the URL generator's root namespace.
      *
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+
+    /**
+     * This namespace is applied to your API controller routes.
+     *
+     * @var string
+     */
+    protected $apiNamespace = 'App\Http\Controllers\Api';
+
+    /**
+     * This namespace is applied to your Admin controller routes.
+     *
+     * @var string
+     */
+    protected $adminNamespace = 'App\Http\Controllers\Admin';
+
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -39,6 +54,10 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapWebAdminRoutes();
+
+        $this->mapWebUserRoutes();
+
         //
     }
 
@@ -57,6 +76,38 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
+     * Define the admin "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebAdminRoutes()
+    {
+        Route::prefix('admin')
+            ->middleware('web')
+            ->as('admin.')
+            ->namespace($this->adminNamespace)
+            ->group(base_path('routes/web-admin.php'));
+    }
+
+    /**
+     * Define the user "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebUserRoutes()
+    {
+        Route::prefix('user')
+            ->middleware('web')
+            ->as('user.')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web-user.php'));
+    }
+
+    /**
      * Define the "api" routes for the application.
      *
      * These routes are typically stateless.
@@ -68,7 +119,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('api')
             ->middleware('api')
             ->as('api.')
-            ->namespace($this->namespace . "\\API")
+            ->namespace($this->apiNamespace)
             ->group(base_path('routes/api.php'));
     }
 }

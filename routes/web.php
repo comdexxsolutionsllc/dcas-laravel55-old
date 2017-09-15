@@ -11,11 +11,7 @@ Route::get('/search', function () {
 Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.webhook');
 
 Route::view('/', 'welcome')->name('welcome');
-Route::view('/admin/dashboard', 'admin.dashboard.dashboard')->name('admin.dashboard');
 
-Route::get('/test', function (\App\Repositories\UserRepositoryEloquent $repository) {
-//    $repository->pushCriteria(\App\Criteria\UserCriteria::class);
-//    $users = $repository->all();
-//
-//    return $users;
+Route::group(['prefix' => 'testing'], function() {
+    Route::get('/criteria', 'TestingController@criteria');
 });
