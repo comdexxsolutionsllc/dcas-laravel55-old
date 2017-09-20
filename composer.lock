@@ -1359,12 +1359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
-                "reference": "963dfdc141673bac21a573920ba65c017f8ea4e0"
+                "reference": "61164131a009d1e42f06142340f8efab1e6948a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/963dfdc141673bac21a573920ba65c017f8ea4e0",
-                "reference": "963dfdc141673bac21a573920ba65c017f8ea4e0",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/61164131a009d1e42f06142340f8efab1e6948a5",
+                "reference": "61164131a009d1e42f06142340f8efab1e6948a5",
                 "shasum": ""
             },
             "require": {
@@ -1372,6 +1372,13 @@
                 "php": ">=5.5.9"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "InfyOm\\AdminLTETemplates\\": "src/"
@@ -1396,7 +1403,7 @@
                 "laravel",
                 "templates"
             ],
-            "time": "2017-09-07T18:07:51+00:00"
+            "time": "2017-09-16T05:07:29+00:00"
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -1404,12 +1411,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/laravel-generator.git",
-                "reference": "d1687088ea52d0a729f26abcb9e1a5e8b12a64ec"
+                "reference": "b0cd27100bc89fd155623a9a1994450259992878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/d1687088ea52d0a729f26abcb9e1a5e8b12a64ec",
-                "reference": "d1687088ea52d0a729f26abcb9e1a5e8b12a64ec",
+                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/b0cd27100bc89fd155623a9a1994450259992878",
+                "reference": "b0cd27100bc89fd155623a9a1994450259992878",
                 "shasum": ""
             },
             "require": {
@@ -1423,6 +1430,13 @@
                 "phpunit/phpunit": "~5.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\InfyOm\\Generator\\InfyOmGeneratorServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "InfyOm\\Generator\\": "src/"
@@ -1455,7 +1469,7 @@
                 "test",
                 "view"
             ],
-            "time": "2017-09-09T11:23:18+00:00"
+            "time": "2017-09-16T05:10:47+00:00"
         },
         {
             "name": "infyomlabs/swagger-generator",
@@ -2103,16 +2117,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.4",
+            "version": "v5.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d3e0493bead126cf7fb9a005c64e6b58a9190e51"
+                "reference": "a0fdfd2c90318c107b6a8d69189ec9a6607379e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d3e0493bead126cf7fb9a005c64e6b58a9190e51",
-                "reference": "d3e0493bead126cf7fb9a005c64e6b58a9190e51",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a0fdfd2c90318c107b6a8d69189ec9a6607379e3",
+                "reference": "a0fdfd2c90318c107b6a8d69189ec9a6607379e3",
                 "shasum": ""
             },
             "require": {
@@ -2231,7 +2245,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-13T13:36:29+00:00"
+            "time": "2017-09-20T13:45:36+00:00"
         },
         {
             "name": "laravel/passport",
@@ -6747,12 +6761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/YABhq/laravel-scout-mysql-driver.git",
-                "reference": "c102fc3523d83cd03ba2fdad714ea9666846fdb6"
+                "reference": "506cff642765c314f00339c02c5dc31931f849bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/YABhq/laravel-scout-mysql-driver/zipball/c102fc3523d83cd03ba2fdad714ea9666846fdb6",
-                "reference": "c102fc3523d83cd03ba2fdad714ea9666846fdb6",
+                "url": "https://api.github.com/repos/YABhq/laravel-scout-mysql-driver/zipball/506cff642765c314f00339c02c5dc31931f849bb",
+                "reference": "506cff642765c314f00339c02c5dc31931f849bb",
                 "shasum": ""
             },
             "require": {
@@ -6791,7 +6805,7 @@
                 }
             ],
             "description": "MySQL driver for Laravel Scout.",
-            "time": "2017-08-30T10:36:09+00:00"
+            "time": "2017-09-20T10:09:31+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
@@ -7049,16 +7063,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.0.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "bce341e3194bbeffa60ac782d645067557f5075e"
+                "reference": "01a859752094e00aa8548832312366753272f8af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/bce341e3194bbeffa60ac782d645067557f5075e",
-                "reference": "bce341e3194bbeffa60ac782d645067557f5075e",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/01a859752094e00aa8548832312366753272f8af",
+                "reference": "01a859752094e00aa8548832312366753272f8af",
                 "shasum": ""
             },
             "require": {
@@ -7113,7 +7127,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2017-08-29T08:54:25+00:00"
+            "time": "2017-09-18T13:32:46+00:00"
         },
         {
             "name": "behat/behat",
