@@ -11,7 +11,3 @@ Route::get('/search', function () {
 Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.webhook');
 
 Route::view('/', 'welcome')->name('welcome');
-
-Route::group(['prefix' => 'testing'], function() {
-    Route::get('/criteria', 'TestingController@criteria');
-});

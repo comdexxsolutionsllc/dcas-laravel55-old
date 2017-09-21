@@ -56,7 +56,8 @@
         "vue": "^2.4.4",
         "vue-loader": "^13.0.5",
         "vue-moment": "^2.0.2",
-        "vue-template-compiler": "^2.4.4"
+        "vue-template-compiler": "^2.4.4",
+        "vuex": "^2.4.0"
     },
     "ava": {
         "require": [

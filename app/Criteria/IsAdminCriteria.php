@@ -6,10 +6,10 @@ use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Class UserCriteria
+ * Class IsAdminCriteriaCriteria
  * @package namespace App\Criteria;
  */
-class UserCriteria implements CriteriaInterface
+class IsAdminCriteria implements CriteriaInterface
 {
     /**
      * Apply criteria in query repository
@@ -21,8 +21,7 @@ class UserCriteria implements CriteriaInterface
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        // TODO:  Fix this so it works.
-        $model = $model->where('username', '=', 'srenner4');
+        $model = $model->where('is_admin', '=', 1)->where('is_disabled', '=', 0);
 
         return $model;
     }

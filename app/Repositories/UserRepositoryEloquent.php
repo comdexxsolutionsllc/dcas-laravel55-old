@@ -2,21 +2,16 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\User;
-use App\Validators\UserValidator;
-use Prettus\Repository\Traits\CacheableRepository;
 
 /**
  * Class UserRepositoryEloquent
  * @package namespace App\Repositories;
  */
-class UserRepositoryEloquent extends BaseRepository implements CacheableInterface
+class UserRepositoryEloquent extends BaseRepository
 {
-    use CacheableRepository;
-
     protected $fieldSearchable = [
         'username'
     ];
