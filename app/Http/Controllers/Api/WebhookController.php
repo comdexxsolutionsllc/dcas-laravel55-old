@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Laravel\Cashier\Http\Controllers\WebhookController as CashierController;
 

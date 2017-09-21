@@ -8,6 +8,6 @@ Route::get('/search', function () {
     // return App\User::search($request->input('q'))->get();
 })->name('search');
 
-Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.webhook');
+Route::post('stripe/webhook', 'Api\WebhookController@handleWebhook')->name('stripe.webhook');
 
 Route::view('/', 'welcome')->name('welcome');

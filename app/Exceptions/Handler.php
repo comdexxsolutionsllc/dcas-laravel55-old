@@ -3,9 +3,12 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Session\TokenMismatchException;
 use Tylercd100\LERN\Facades\LERN as LERN;
+use Symfony\Component\HttpFoundation\Response as SymphonyResponse;
+
 
 class Handler extends ExceptionHandler
 {
@@ -39,7 +42,6 @@ class Handler extends ExceptionHandler
     public function report(Exception $exception)
     {
         if ($this->shouldReport($exception)) {
-
             //Check to see if LERN is installed otherwise you will not get an exception.
             if (app()->bound("lern")) {
                 app()->make("lern")->handle($exception); //Record and Notify the Exception
@@ -73,6 +75,17 @@ class Handler extends ExceptionHandler
                 ->back()
                 ->withInput($request->except('password', '_token'))
                 ->withError('Validation Token has expired. Please try again');
+        }
+
+        if ($exception instanceof ModelNotFoundException) {
+            if (request()->ajax() || request()->json()) {
+                return response()->json([
+                    'error' =>
+                        [
+                            'message' => 'Resource not found.'
+                        ],
+                ], SymphonyResponse::HTTP_NOT_FOUND);
+            }
         }
 
         return parent::render($request, $exception);
