@@ -63,7 +63,7 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  */
 class User extends Authenticatable implements Presentable
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, Searchable, Sluggable;
+    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, Sluggable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
