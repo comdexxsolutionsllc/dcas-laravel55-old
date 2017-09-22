@@ -63,5 +63,8 @@ class Kernel extends HttpKernel
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
         'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
         'acceptJson' => \OpenCetacean\JsonHeader\Middleware\AcceptJson::class,
+        'link-header-pagination' => \Zono\LinkHeaderPagination\Middleware\LinkHeaderPagination::class,
+        'denyFrames' => \App\Http\Middleware\DenyFrames::class,
+        'jsonpResponse' => \App\Http\Middleware\JsonpResponse::class,
     ];
 }

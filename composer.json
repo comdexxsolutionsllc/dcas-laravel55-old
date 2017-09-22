@@ -17,6 +17,7 @@
     "artem-schander/l5-modular": "^1.4",
     "barryvdh/laravel-cors": "^0.9.3",
     "barryvdh/laravel-ide-helper": "^2.4",
+    "cviebrock/eloquent-sluggable": "^4.3",
     "doctrine/dbal": "^2.6",
     "dompdf/dompdf": "v0.7.0",
     "fideloper/proxy": "~3.3",
@@ -60,6 +61,7 @@
     "tylercd100/lern": "^4.1",
     "venturecraft/revisionable": "^1.28",
     "watson/rememberable": "^2.0",
+    "y-zono/laravel-link-header-pagination": "^0.0.1",
     "yab/laravel-scout-mysql-driver": "dev-master",
     "yajra/laravel-datatables-oracle": "~8.0",
     "zizaco/entrust": "5.2.x-dev"
