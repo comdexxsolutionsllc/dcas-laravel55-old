@@ -11,5 +11,3 @@ Route::get('/search', function () {
 Route::post('stripe/webhook', 'Api\WebhookController@handleWebhook')->name('stripe.webhook');
 
 Route::view('/', 'welcome')->name('welcome');
-
-Route::get('/api/v1/testing', 'Api\TestingController@index')->middleware('link-header-pagination');

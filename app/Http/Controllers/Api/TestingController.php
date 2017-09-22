@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Services\ItemService;
-use App\Http\Controllers\Controller;
 use App\User;
 
-class TestingController extends Controller
+class TestingController extends ApiDefaultController
 {
     protected $itemService;
 

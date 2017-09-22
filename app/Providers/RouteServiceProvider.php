@@ -116,12 +116,21 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        foreach (glob("routes/api-*.php") as $filename) {
-            Route::prefix('api')
-                ->middleware('api')
-                ->as('api.' . substr($filename, 11, 2) . '.')
-                ->namespace($this->apiNamespace)
-                ->group(base_path($filename));
-        }
+        // TODO:  Work on this
+        /**
+         * foreach (glob("routes/api-*.php") as $filename) {
+         * Route::prefix('api')
+         * ->middleware('api')
+         * ->as('api.' . substr($filename, 11, 2) . '.')
+         * ->namespace($this->apiNamespace)
+         * ->group(base_path($filename));
+         * }
+         **/
+
+        Route::prefix('api')
+            ->middleware('api')
+            ->as('api.')
+            ->namespace($this->namespace . "\Api")
+            ->group(base_path('routes/api-v1.php'));
     }
 }
