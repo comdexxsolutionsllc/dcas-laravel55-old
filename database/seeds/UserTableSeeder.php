@@ -22,6 +22,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('secret'),
                 'is_admin' => $faker->boolean(20),
                 'is_disabled' => $faker->boolean(8.72),
+                'domain' => $faker->domainName,
                 'created_at' => Carbon::now()->subDay(1),
                 'updated_at' => Carbon::now()
             ]);

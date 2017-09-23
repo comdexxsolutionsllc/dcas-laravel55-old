@@ -22,6 +22,18 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'is_admin' => 0,
+        'is_disabled' => 0,
+        'domain' => $faker->domainName,
+    ];
+});
+
+$factory->state(\App\User::class, 'testingAdminAccount', function () {
+    return [
+        'name' => 'Sarah Renner',
+        'username' => 'srenner',
+        'email' => 'sarah@sarahrenner.work',
+        'password' => bcrypt('secret'),
+        'is_admin' => 1,
         'is_disabled' => 0
     ];
 });
