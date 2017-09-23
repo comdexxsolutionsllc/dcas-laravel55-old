@@ -108,6 +108,22 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
+     * Define the debug/testing "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapTestingRoutes()
+    {
+        Route::prefix('testing')
+            ->middleware('web')
+            ->as('testing.')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/testing.php'));
+    }
+
+    /**
      * Define the "api" routes for the application.
      *
      * These routes are typically stateless.
