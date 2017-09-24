@@ -197,6 +197,7 @@ return [
         Lavary\Menu\ServiceProvider::class,
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
+        Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
 
     ],
 

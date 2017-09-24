@@ -42,6 +42,7 @@
     "lavary/laravel-menu": "^1.6",
     "league/pipeline": "^0.3.0",
     "league/uri": "^5.0",
+    "markhilton/monolog-mysql": "^0.1.6",
     "mercuryseries/flashy": "^1.0",
     "mirzabusatlic/laravel-schedule-monitor": "^1.02",
     "open-cetacean/laravel-json-header": "^1.0",

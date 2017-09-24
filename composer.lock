@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "144acd44df670f8bdce70072af5fe183",
+    "content-hash": "8863690de4591989a228a73e15b8ed52",
     "packages": [
         {
             "name": "anlutro/l4-settings",
@@ -290,19 +290,20 @@
         },
         {
             "name": "cocur/slugify",
-            "version": "v3.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cocur/slugify.git",
-                "reference": "122998753e980d0223eea0bb957102a457a13bc1"
+                "reference": "1fdf2b1219a199301db3d7c60c16d895bba6ccde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cocur/slugify/zipball/122998753e980d0223eea0bb957102a457a13bc1",
-                "reference": "122998753e980d0223eea0bb957102a457a13bc1",
+                "url": "https://api.github.com/repos/cocur/slugify/zipball/1fdf2b1219a199301db3d7c60c16d895bba6ccde",
+                "reference": "1fdf2b1219a199301db3d7c60c16d895bba6ccde",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -350,7 +351,7 @@
                 "slug",
                 "slugify"
             ],
-            "time": "2017-08-11T20:28:15+00:00"
+            "time": "2017-09-24T10:29:04+00:00"
         },
         {
             "name": "cviebrock/eloquent-sluggable",
@@ -3601,6 +3602,50 @@
             ],
             "abandoned": "league/uri",
             "time": "2015-07-15T08:24:12+00:00"
+        },
+        {
+            "name": "markhilton/monolog-mysql",
+            "version": "0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/markhilton/monolog-mysql.git",
+                "reference": "e1edb9146bbeae65ba42c533bc6efe9e10521051"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/markhilton/monolog-mysql/zipball/e1edb9146bbeae65ba42c533bc6efe9e10521051",
+                "reference": "e1edb9146bbeae65ba42c533bc6efe9e10521051",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Logger": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Hilton",
+                    "email": "nerd305@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 MySQL driver for Monolog",
+            "homepage": "https://github.com/markhilton/monolog-mysql",
+            "keywords": [
+                "laravel",
+                "laravel5",
+                "log",
+                "monolog",
+                "mysql"
+            ],
+            "time": "2017-05-02T15:05:51+00:00"
         },
         {
             "name": "mercuryseries/flashy",
