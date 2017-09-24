@@ -62,8 +62,18 @@
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
                 @endif
-
             </div>
+
+            <div class="form-group has-feedback{{ $errors->has('domain') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" placeholder="Domain" name="domain">
+                <span class="glyphicon glyphicon-globe form-control-feedback"></span>
+                @if ($errors->has('domain'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('domain') }}</strong>
+                </span>
+                @endif
+            </div>
+
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">

@@ -14,7 +14,7 @@ class AddDomainToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('domain')->after('remember_token');
+            $table->string('domain')->nullable()->after('remember_token');
         });
     }
 
