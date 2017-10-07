@@ -6,3 +6,5 @@ Route::prefix('v1')->group(function () {
         abort(Symfony\Component\HttpFoundation\Response::HTTP_NOT_IMPLEMENTED, 'API version not implemented.');
     })->name('root');
 });
+
+Route::post('stripe/webhook', 'WebhookController@handleWebhook')->name('stripe.webhook');

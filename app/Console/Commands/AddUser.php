@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\User;
+use Illuminate\Console\Command;
 
 class AddUser extends Command
 {
@@ -12,7 +12,14 @@ class AddUser extends Command
 
     public function handle()
     {
+        $name = $this->ask('What is the user\'s name?');
+
+        $username = $this->ask('What is the user\'s username?');
+
         $email = $this->argument('email');
+
+        $slug = $email . '-' . $username;
+
         if ($this->confirm('Let system generate password for you?')) {
             $password = str_random(16);
             $this->info("Your password: $password");
@@ -20,6 +27,17 @@ class AddUser extends Command
             $password = $this->secret('Please enter your new password');
         }
         $password = bcrypt($password);
-        User::create(compact('email', 'password'));
+
+        $is_admin = $this->ask('Is the user an admin? [yes=1 or no=0]');
+
+        $is_disabled = 0;
+
+        if ($this->confirm('Does the user have a main domain?')) {
+            $domain = $this->ask('What is the user\'s main domain?');
+        } else {
+            $domain = null;
+        }
+
+        User::create(compact(['name', 'username', 'email', 'password', 'is_admin', 'is_disabled', 'slug', 'domain']));
     }
 }

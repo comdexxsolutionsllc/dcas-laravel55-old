@@ -84,9 +84,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebAdminRoutes()
     {
-        Route::prefix('admin')
+        Route::prefix('/dashboard/admin')
             ->middleware('web')
-            ->as('admin.')
+            ->as('dashboard.admin.')
             ->namespace($this->adminNamespace)
             ->group(base_path('routes/web-admin.php'));
     }
@@ -100,9 +100,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebUserRoutes()
     {
-        Route::prefix('user')
+        Route::get('/dashboard', 'HomeController@index')->name('home');
+
+        Route::prefix('/dashboard')
             ->middleware('web')
-            ->as('user.')
+            ->as('dashboard.user.')
             ->namespace($this->namespace)
             ->group(base_path('routes/web-user.php'));
     }

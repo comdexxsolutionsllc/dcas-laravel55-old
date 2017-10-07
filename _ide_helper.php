@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.12 on 2017-09-24.
+ * Generated for Laravel 5.5.14 on 2017-10-07.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -6897,7 +6897,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the current encoded path info for the request.
+         * Get the current decoded path info for the request.
          *
          * @return string 
          * @static 
@@ -14303,6 +14303,31 @@ namespace Lavary\Menu {
     class Facade {
         
         /**
+         * Check if a menu exists.
+         *
+         * @param string $name
+         * @return boolean 
+         * @static 
+         */ 
+        public static function exists($name)
+        {
+            return \Lavary\Menu\Menu::exists($name);
+        }
+        
+        /**
+         * Create a new menu instance
+         *
+         * @param string $name
+         * @param callable $callback
+         * @return \Lavary\Menu\Menu 
+         * @static 
+         */ 
+        public static function makeOnce($name, $callback)
+        {
+            return \Lavary\Menu\Menu::makeOnce($name, $callback);
+        }
+        
+        /**
          * Create a new menu instance
          *
          * @param string $name
@@ -17362,10 +17387,10 @@ if (! function_exists('array_sort')) {
      * Sort the array by the given callback or attribute name.
      *
      * @param  array  $array
-     * @param  callable|string  $callback
+     * @param  callable|string|null  $callback
      * @return array
      */
-    function array_sort($array, $callback)
+    function array_sort($array, $callback = null)
     {
         return Arr::sort($array, $callback);
     }
@@ -18234,14 +18259,15 @@ if (! function_exists('windows_os')) {
 
 if (! function_exists('with')) {
     /**
-     * Return the given object. Useful for chaining.
+     * Return the given value, optionally passed through the given callback.
      *
-     * @param  mixed  $object
+     * @param  mixed  $value
+     * @param  callable|null  $callback
      * @return mixed
      */
-    function with($object)
+    function with($value, callable $callback = null)
     {
-        return $object;
+        return is_null($callback) ? $value : $callback($value);
     }
 }
  

@@ -93,7 +93,7 @@ class User extends Authenticatable implements Presentable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'email', 'password', 'is_admin', 'is_disabled', 'slug', 'domain',
     ];
 
     /**
@@ -123,7 +123,7 @@ class User extends Authenticatable implements Presentable
     public function sluggable(): array
     {
         return [
-            'slug' => [ 'source' => 'name' ]
+            'slug' => ['source' => 'name']
         ];
     }
 }
