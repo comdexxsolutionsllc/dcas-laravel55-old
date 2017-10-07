@@ -89,6 +89,16 @@ class RouteServiceProvider extends ServiceProvider
             ->as('dashboard.admin.')
             ->namespace($this->adminNamespace)
             ->group(base_path('routes/web-admin.php'));
+
+        Route::get('/dashboard/admin/{view}', function ($view) {
+            try {
+                $view = 'dashboard.admin.' . $view;
+
+                return view($view);
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        })->where('view', '.*');
     }
 
     /**
@@ -107,6 +117,16 @@ class RouteServiceProvider extends ServiceProvider
             ->as('dashboard.user.')
             ->namespace($this->namespace)
             ->group(base_path('routes/web-user.php'));
+
+        Route::get('/dashboard/{view}', function ($view) {
+            try {
+                $view = 'dashboard.user.' . $view;
+
+                return view($view);
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        })->where('view', '.*');
     }
 
     /**
