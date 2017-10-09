@@ -6,10 +6,10 @@ use Session;
 
 class HomeController extends Controller
 {
+    protected $domain;
+
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -23,12 +23,40 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (!Session::has('domain')) {
-            Session::put('domain', auth()->user()->domain);
-        }
-
-        $domain = Session::get('domain');
+        $domain = $this->injectDomain();
 
         return view('home', compact(['domain']));
+    }
+
+    /**
+     * Inject primary domain name into session.
+     *
+     * @return string
+     */
+    protected function injectDomain()
+    {
+        !Session::has('domain') ? Session::put('domain', auth()->user()->domain) : true;
+
+        $this->setDomain(Session::get('domain'));
+
+        is_null($this->getDomain()) ? $this->setDomain('null') : false;
+
+        return $this->getDomain();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * @param string $domain
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
     }
 }

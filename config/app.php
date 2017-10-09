@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\HelperServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
 
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
@@ -198,6 +199,9 @@ return [
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
         Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
+        Spatie\Glide\GlideServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        \App\Providers\CollectionMacroServiceProvider::class,
 
     ],
 
@@ -257,6 +261,9 @@ return [
         'Flashy' => MercurySeries\Flashy\Flashy::class,
         'Menu' => Lavary\Menu\Facade::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 

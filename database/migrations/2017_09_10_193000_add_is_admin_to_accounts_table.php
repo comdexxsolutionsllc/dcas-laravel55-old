@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsDisabledToUsersTable extends Migration
+class AddIsAdminToAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddIsDisabledToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_disabled')->default(0)->after('is_admin');
+        Schema::table('accounts', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(0)->after('password');
         });
     }
 
@@ -25,8 +25,8 @@ class AddIsDisabledToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_disabled');
+        Schema::table('accounts', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
         });
     }
 }

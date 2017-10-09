@@ -11,3 +11,5 @@ Route::get('/search', function () {
 
 // Catch-all Routes for Dashboards.
 // None.
+
+Route::get('/home', 'HomeController@index');

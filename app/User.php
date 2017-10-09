@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DCAS\Traits\Excludable;
 use Cviebrock\EloquentSluggable\Sluggable;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -63,7 +64,7 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  */
 class User extends Authenticatable implements Presentable
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, Sluggable;
+    use Authorizable, Billable, Excludable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, Sluggable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
@@ -75,6 +76,16 @@ class User extends Authenticatable implements Presentable
     use SoftDeletes {
         SoftDeletes::restore as private restoreB;
     }
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'is_admin' => 'boolean',
+        'is_disabled' => 'boolean',
+    ];
 
     public function restore()
     {
@@ -93,7 +104,7 @@ class User extends Authenticatable implements Presentable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'is_admin', 'is_disabled', 'slug', 'domain',
+        'name', 'username', 'email', 'password', 'domain',
     ];
 
     /**
@@ -104,6 +115,8 @@ class User extends Authenticatable implements Presentable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $table = 'accounts';
 
     /**
      * Get the index name for the model.
@@ -125,5 +138,21 @@ class User extends Authenticatable implements Presentable
         return [
             'slug' => ['source' => 'name']
         ];
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isDisabled()
+    {
+        return $this->is_disabled;
     }
 }

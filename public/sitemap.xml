@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>http://dcas-laravel55.dev/</loc>
+    
+    
+        <lastmod>2017-10-09T10:58:16-05:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://dcas-laravel55.dev/dashboard</loc>
+    
+    
+        <lastmod>2017-10-09T10:58:17-05:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://dcas-laravel55.dev/login</loc>
+    
+    
+        <lastmod>2017-10-09T10:58:17-05:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://dcas-laravel55.dev/password/reset</loc>
+    
+    
+        <lastmod>2017-10-09T10:58:17-05:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://dcas-laravel55.dev/register</loc>
+    
+    
+        <lastmod>2017-10-09T10:58:17-05:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+</urlset>

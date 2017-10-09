@@ -32,12 +32,13 @@ class Kernel extends HttpKernel
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-           \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Session\Middleware\StartSession::class,
 
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+//            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
         ],
 
         'api' => [
@@ -67,5 +68,10 @@ class Kernel extends HttpKernel
         'link-header-pagination' => \Zono\LinkHeaderPagination\Middleware\LinkHeaderPagination::class,
         'denyFrames' => \App\Http\Middleware\DenyFrames::class,
         'jsonpResponse' => \App\Http\Middleware\JsonpResponse::class,
+        'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        'demoMode' => \Spatie\DemoMode\DemoMode::class,
+//        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+//        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+
     ];
 }

@@ -6,8 +6,9 @@ use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Session\TokenMismatchException;
-use Tylercd100\LERN\Facades\LERN as LERN;
 use Symfony\Component\HttpFoundation\Response as SymphonyResponse;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 
 class Handler extends ExceptionHandler
@@ -86,6 +87,12 @@ class Handler extends ExceptionHandler
                         ],
                 ], SymphonyResponse::HTTP_NOT_FOUND);
             }
+        }
+
+        if ($exception instanceof TokenExpiredException) {
+            return response()->json(['token_expired'], $exception->getStatusCode());
+        } else if ($exception instanceof TokenInvalidException) {
+            return response()->json(['token_invalid'], $exception->getStatusCode());
         }
 
         return parent::render($request, $exception);

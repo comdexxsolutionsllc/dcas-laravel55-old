@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToUsersTable extends Migration
+class AddIsDisabledToAccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddSlugToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text('slug')->after('remember_token');
+        Schema::table('accounts', function (Blueprint $table) {
+            $table->boolean('is_disabled')->default(0)->after('is_admin');
         });
     }
 
@@ -25,8 +25,8 @@ class AddSlugToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('slug');
+        Schema::table('accounts', function (Blueprint $table) {
+            $table->dropColumn('is_disabled');
         });
     }
 }
