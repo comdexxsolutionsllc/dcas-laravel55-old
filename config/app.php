@@ -188,7 +188,6 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
-        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         EloquentFilter\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -202,6 +201,7 @@ return [
         Spatie\Glide\GlideServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         \App\Providers\CollectionMacroServiceProvider::class,
+        \App\Providers\MacroServiceProvider::class,
 
     ],
 

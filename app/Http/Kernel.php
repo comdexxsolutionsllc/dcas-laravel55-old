@@ -69,7 +69,8 @@ class Kernel extends HttpKernel
         'denyFrames' => \App\Http\Middleware\DenyFrames::class,
         'jsonpResponse' => \App\Http\Middleware\JsonpResponse::class,
         'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
-        'demoMode' => \Spatie\DemoMode\DemoMode::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+
 //        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
 //        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
 

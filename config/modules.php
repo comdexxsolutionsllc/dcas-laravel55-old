@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'enable' => [],
+    'enable' => [
+        'SupportDesk'
+    ],
 ];
