@@ -21,40 +21,28 @@ $factory->define(App\User::class, function (Faker $faker) {
         'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
-        'is_admin' => 0,
         'is_disabled' => 0,
         'domain' => $faker->domainName,
     ];
 });
 
-$factory->state(\App\User::class, 'testingAdminAccount', function () {
+$factory->state(App\User::class, 'testingAdminAccount', function () {
     return [
         'name' => 'Sarah Renner',
         'username' => 'srenner',
         'email' => 'sarah@sarahrenner.work',
         'password' => bcrypt('secret'),
-        'is_admin' => 1,
         'is_disabled' => 0
     ];
 });
 
-$factory->state(\App\User::class, 'hasRememberToken', function () {
+$factory->state(App\User::class, 'hasRememberToken', function () {
     return [
         'remember_token' => str_random(25)
     ];
 });
 
-
-$factory->state(\App\User::class, 'isAdmin', function () {
-    static $password;
-
-    return [
-        'password' => $password ?: $password = bcrypt('admin'),
-        'is_admin' => 1
-    ];
-});
-
-$factory->state(\App\User::class, 'isDisabled', function () {
+$factory->state(App\User::class, 'isDisabled', function () {
     return [
         'is_disabled' => 1
     ];

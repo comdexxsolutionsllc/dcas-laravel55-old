@@ -8,7 +8,8 @@ class DatabaseSeeder extends Seeder
      * @var array
      */
     private $tables = [
-        'users'
+        'users',
+        'profiles',
     ];
 
     /**
@@ -23,6 +24,8 @@ class DatabaseSeeder extends Seeder
         Eloquent::unguard();
 
         $this->call(UserTableSeeder::class);
+        $this->call(ProfileTableSeeder::class);
+
     }
 
     private function cleanDatabase()

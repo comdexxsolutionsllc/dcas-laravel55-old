@@ -188,7 +188,6 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
-        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         EloquentFilter\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -202,7 +201,7 @@ return [
         Spatie\Glide\GlideServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         \App\Providers\CollectionMacroServiceProvider::class,
-
+        \App\Providers\MacroServiceProvider::class,
     ],
 
     /*
@@ -255,16 +254,15 @@ return [
         'Setting' => anlutro\LaravelSettings\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
-        'Menu' => Lavary\Menu\Facade::class,
-        'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
         'GlideImage' => Spatie\Glide\GlideImageFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
-
+        'Menu' => Lavary\Menu\Facade::class,
+        'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
     ],
 
 ];
