@@ -15,12 +15,3 @@ Route::get('/search', function () {
 // None.
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('/under-construction', function () {
-    return response([
-        'error' => [
-            'message' => 'The current page is under construction.  Please check back later.',
-            'status_code' => 403
-        ]
-    ]);
-});

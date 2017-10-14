@@ -20,7 +20,6 @@ class UserTableSeeder extends Seeder
                 'username' => $faker->userName,
                 'email' => $faker->unique()->safeEmail,
                 'password' => bcrypt('secret'),
-                'is_admin' => $faker->boolean(20),
                 'is_disabled' => $faker->boolean(8.72),
                 'domain' => $faker->domainName,
                 'created_at' => Carbon::now()->subDay(1),

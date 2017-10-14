@@ -17,9 +17,13 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->unique();
             $table->string('username')->unique();
-            $table->longText('bio');
-            $table->char('country', 2);
+            $table->longText('biography')->nullable();
+            $table->string('address_1');
+            $table->string('address_2')->nullable();
             $table->string('city');
+            $table->char('state', 2);
+            $table->char('country', 2);
+            $table->bigInteger('postal_code')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

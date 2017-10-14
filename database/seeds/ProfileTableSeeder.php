@@ -19,9 +19,13 @@ class ProfileTableSeeder extends Seeder
             DB::table('profiles')->insert([
                 'user_id' => $index,
                 'username' => User::where('id', '=', $index)->first()->username,
-                'bio' => $faker->paragraph(),
-                'country' => $faker->countryCode,
+                'biography' => $faker->paragraph(),
+                'address_1' => $faker->streetAddress,
+                'address_2' => null,
                 'city' => $faker->city,
+                'state' => 'IL',
+                'country' => $faker->countryCode,
+                'postal_code' => $faker->postcode,
                 'created_at' => Carbon::now()->subDay(1),
                 'updated_at' => Carbon::now()
             ]);
