@@ -2112,16 +2112,16 @@
         },
         {
             "name": "laracademy/interactive-make",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracademy/interactive-make.git",
-                "reference": "bbc707262109ce1a6b76df5fc232124d65f261cd"
+                "reference": "69ebb219d3a78a2d4c9050b44e6b0f699c67aeb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracademy/interactive-make/zipball/bbc707262109ce1a6b76df5fc232124d65f261cd",
-                "reference": "bbc707262109ce1a6b76df5fc232124d65f261cd",
+                "url": "https://api.github.com/repos/laracademy/interactive-make/zipball/69ebb219d3a78a2d4c9050b44e6b0f699c67aeb1",
+                "reference": "69ebb219d3a78a2d4c9050b44e6b0f699c67aeb1",
                 "shasum": ""
             },
             "type": "library",
@@ -2148,7 +2148,7 @@
                 }
             ],
             "description": "Interactive make CLI replacement for Laravel",
-            "time": "2017-06-03T13:24:21+00:00"
+            "time": "2017-10-10T18:11:31+00:00"
         },
         {
             "name": "laracasts/flash",
@@ -3886,16 +3886,16 @@
         },
         {
             "name": "mercuryseries/flashy",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mercuryseries/flashy.git",
-                "reference": "d27b6be07ab20a78cd57ce315c332232b2f08ddb"
+                "reference": "58cfe7989d9a06dc0ebc5d83918833464caabfb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mercuryseries/flashy/zipball/d27b6be07ab20a78cd57ce315c332232b2f08ddb",
-                "reference": "d27b6be07ab20a78cd57ce315c332232b2f08ddb",
+                "url": "https://api.github.com/repos/mercuryseries/flashy/zipball/58cfe7989d9a06dc0ebc5d83918833464caabfb6",
+                "reference": "58cfe7989d9a06dc0ebc5d83918833464caabfb6",
                 "shasum": ""
             },
             "require": {
@@ -3906,6 +3906,16 @@
                 "mockery/mockery": "dev-master"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MercurySeries\\Flashy\\FlashyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flashy": "MercurySeries\\Flashy\\Flashy"
+                    }
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "MercurySeries\\Flashy": "src/"
@@ -3925,7 +3935,7 @@
                 }
             ],
             "description": "Easy flash notifications",
-            "time": "2016-01-11T23:44:20+00:00"
+            "time": "2017-10-10T17:58:57+00:00"
         },
         {
             "name": "mirzabusatlic/laravel-schedule-monitor",
@@ -6936,16 +6946,16 @@
         },
         {
             "name": "spatie/laravel-collection-macros",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-collection-macros.git",
-                "reference": "f6d4401f548524c8365c009672676728e033a716"
+                "reference": "6a7b590222ae1994b17d650de4b64a307927d978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/f6d4401f548524c8365c009672676728e033a716",
-                "reference": "f6d4401f548524c8365c009672676728e033a716",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/6a7b590222ae1994b17d650de4b64a307927d978",
+                "reference": "6a7b590222ae1994b17d650de4b64a307927d978",
                 "shasum": ""
             },
             "require": {
@@ -6998,7 +7008,7 @@
                 "laravel-collection-macros",
                 "spatie"
             ],
-            "time": "2017-09-28T14:46:22+00:00"
+            "time": "2017-10-11T06:43:37+00:00"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -7863,16 +7873,16 @@
         },
         {
             "name": "spatie/phpunit-snapshot-assertions",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/phpunit-snapshot-assertions.git",
-                "reference": "8ab4f470bfd424bfd667c8807f45180a51deab99"
+                "reference": "e551d16f0fe4eb4aa24ae1ea46b1d863fa259ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/8ab4f470bfd424bfd667c8807f45180a51deab99",
-                "reference": "8ab4f470bfd424bfd667c8807f45180a51deab99",
+                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/e551d16f0fe4eb4aa24ae1ea46b1d863fa259ac9",
+                "reference": "e551d16f0fe4eb4aa24ae1ea46b1d863fa259ac9",
                 "shasum": ""
             },
             "require": {
@@ -7907,7 +7917,7 @@
                 "spatie",
                 "testing"
             ],
-            "time": "2017-10-06T22:13:16+00:00"
+            "time": "2017-10-11T08:50:30+00:00"
         },
         {
             "name": "spatie/string",
@@ -10067,16 +10077,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "2faa791b66bac33ca40031d8bce03b7dc8143490"
+                "reference": "c8664b92a6d5bc229e48b0923486c097e45a7877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/2faa791b66bac33ca40031d8bce03b7dc8143490",
-                "reference": "2faa791b66bac33ca40031d8bce03b7dc8143490",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/c8664b92a6d5bc229e48b0923486c097e45a7877",
+                "reference": "c8664b92a6d5bc229e48b0923486c097e45a7877",
                 "shasum": ""
             },
             "require": {
@@ -10115,7 +10125,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-09-13T14:47:08+00:00"
+            "time": "2017-10-12T15:24:51+00:00"
         },
         {
             "name": "zircote/swagger-php",
