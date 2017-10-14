@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f17968dc9d1f75028778542a32e0e43a",
+    "content-hash": "451e2366a6587352f884786f7674904e",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1957,6 +1957,59 @@
                 "url parsing"
             ],
             "time": "2015-03-30T12:49:45+00:00"
+        },
+        {
+            "name": "jeroennoten/laravel-adminlte",
+            "version": "v1.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
+                "reference": "7211b894d2e1594d9919f1bde1948c7668410129"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/7211b894d2e1594d9919f1bde1948c7668410129",
+                "reference": "7211b894d2e1594d9919f1bde1948c7668410129",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0|~5.5.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeroenNoten\\LaravelAdminLte\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeroenNoten\\LaravelAdminLte\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Noten",
+                    "email": "jeroennoten@me.com"
+                }
+            ],
+            "description": "Easy AdminLTE integration with Laravel",
+            "keywords": [
+                "AdminLTE",
+                "admin",
+                "administrator",
+                "laravel"
+            ],
+            "time": "2017-10-02T14:52:05+00:00"
         },
         {
             "name": "jlapp/swaggervel",
@@ -4287,52 +4340,6 @@
             ],
             "description": "A basic but flexible php tree data structure and a fluent tree builder implementation.",
             "time": "2015-08-20T20:50:35+00:00"
-        },
-        {
-            "name": "nicolaslopezj/searchable",
-            "version": "1.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nicolaslopezj/searchable.git",
-                "reference": "c067f11a993c274c9da0d4a2e70ca07614bb92da"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/c067f11a993c274c9da0d4a2e70ca07614bb92da",
-                "reference": "c067f11a993c274c9da0d4a2e70ca07614bb92da",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "illuminate/database": "4.2.x|~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Nicolaslopezj\\Searchable\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Lopez",
-                    "email": "nicolaslopezj@me.com"
-                }
-            ],
-            "description": "Eloquent model search trait.",
-            "keywords": [
-                "database",
-                "eloquent",
-                "laravel",
-                "model",
-                "search",
-                "searchable"
-            ],
-            "time": "2017-08-09T04:37:57+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -7002,6 +7009,61 @@
                 "spatie"
             ],
             "time": "2017-10-11T06:43:37+00:00"
+        },
+        {
+            "name": "spatie/laravel-demo-mode",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-demo-mode.git",
+                "reference": "e74d5319a143b46c26fe1d2e4ef1d2d9faa7e16b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-demo-mode/zipball/e74d5319a143b46c26fe1d2e4ef1d2d9faa7e16b",
+                "reference": "e74d5319a143b46c26fe1d2e4ef1d2d9faa7e16b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.5.5",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0",
+                "phpunit/phpunit": "^6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\DemoMode\\DemoModeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DemoMode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A middleware to protect your work in progress from prying eyes",
+            "homepage": "https://github.com/spatie/laravel-demo-mode",
+            "keywords": [
+                "laravel-demo-mode",
+                "spatie"
+            ],
+            "time": "2017-10-06T22:56:13+00:00"
         },
         {
             "name": "spatie/laravel-failed-job-monitor",

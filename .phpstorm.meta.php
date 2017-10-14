@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-10-14.
+    * Generated on 2017-10-13.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -100,6 +100,7 @@ namespace PHPSTORM_META {
         'command.laracademy.make' => \Laracademy\Commands\Commands\MakeCommand::class,
         'MercurySeries\Flashy\SessionStore' => \MercurySeries\Flashy\LaravelSessionStore::class,
         'flashy' => \MercurySeries\Flashy\FlashyNotifier::class,
+        'JeroenNoten\LaravelAdminLte\AdminLte' => \JeroenNoten\LaravelAdminLte\AdminLte::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'entrust' => \Zizaco\Entrust\Entrust::class,
         'command.entrust.migration' => \Zizaco\Entrust\MigrationCommand::class,
@@ -123,6 +124,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -347,6 +350,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -571,6 +576,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -795,6 +802,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -1019,6 +1028,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -1243,6 +1254,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
@@ -1467,6 +1480,8 @@ namespace PHPSTORM_META {
         'Spatie\ResponseCache\CacheProfiles\CacheProfile' => \Spatie\ResponseCache\CacheProfiles\CacheAllSuccessfulGetRequests::class,
         'responsecache' => \Spatie\ResponseCache\ResponseCache::class,
         'command.responsecache:flush' => \Spatie\ResponseCache\Commands\Flush::class,
+        'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
+        'translator' => \Illuminate\Translation\Translator::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Contracts\Broadcasting\Broadcaster' => \Illuminate\Broadcasting\Broadcasters\NullBroadcaster::class,
         'translation.loader' => \Spatie\TranslationLoader\TranslationLoaderManager::class,
