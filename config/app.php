@@ -204,6 +204,7 @@ return [
         \App\Providers\MacroServiceProvider::class,
         \App\Providers\OnlineUsersProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
+        Srmklive\Authy\Providers\AuthyServiceProvider::class
 
     ],
 
@@ -266,6 +267,8 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Menu' => Lavary\Menu\Facade::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+        'Authy' => Srmklive\Authy\Facades\Authy::class,
+
     ],
 
 ];

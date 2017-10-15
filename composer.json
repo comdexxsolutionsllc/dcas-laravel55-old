@@ -65,6 +65,7 @@
     "spatie/laravel-translatable": "^2.0",
     "spatie/laravel-translation-loader": "^2.0",
     "spatie/laravel-url-signer": "^2.1",
+    "srmklive/authy": "^0.5.9",
     "stripe/stripe-php": "~3.0",
     "symfony/css-selector": "3.1.*",
     "symfony/dom-crawler": "3.1.*",

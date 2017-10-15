@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "57d6e481fc6f6d7ea27adbc5c73943db",
+    "content-hash": "13ef3d6c003efed38d9c1846c431805f",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -8040,6 +8040,62 @@
                 "url"
             ],
             "time": "2017-04-09T08:13:03+00:00"
+        },
+        {
+            "name": "srmklive/authy",
+            "version": "v0.5.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/srmklive/laravel-twofactor-authentication.git",
+                "reference": "f4674c38627bd0f3e5784b4cd4c12329ab56ab64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/srmklive/laravel-twofactor-authentication/zipball/f4674c38627bd0f3e5784b4cd4c12329ab56ab64",
+                "reference": "f4674c38627bd0f3e5784b4cd4c12329ab56ab64",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "illuminate/support": "~5.1|~5.2|~5.3|~5.4|~5.5",
+                "nesbot/carbon": "~1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Srmklive\\Authy\\Providers\\AuthyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Authy": "Srmklive\\Authy\\Facades\\Authy"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Srmklive\\Authy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raza Mehdi",
+                    "email": "srmk@outlook.com"
+                }
+            ],
+            "description": "Plugin for enabling two-factor authentication in Laravel applications",
+            "homepage": "https://github.com/srmklive/laravel-twofactor-authentication",
+            "keywords": [
+                "Authentication",
+                "api",
+                "authy",
+                "laravel two-factor authentication",
+                "two-factor"
+            ],
+            "time": "2017-09-01T20:32:58+00:00"
         },
         {
             "name": "stripe/stripe-php",

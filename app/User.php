@@ -19,6 +19,8 @@ use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
+use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
 
 //use Laravel\Scout\Searchable;
 
@@ -68,9 +70,9 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  */
-class User extends Authenticatable implements Presentable
+class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable;
+    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable, TwoFactorAuthenticatable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
@@ -108,7 +110,7 @@ class User extends Authenticatable implements Presentable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'two_factor_options',
     ];
 
     /**

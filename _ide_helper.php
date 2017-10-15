@@ -15439,6 +15439,37 @@ namespace Spatie\ResponseCache\Facades {
  
 }
 
+namespace Srmklive\Authy\Facades { 
+
+    class Authy {
+        
+        /**
+         * Get specific TwoFactor auth provider object to use.
+         *
+         * @return \Authy 
+         * @static 
+         */ 
+        public static function getProvider()
+        {
+            return \Srmklive\Authy\AuthyFacadeAccessor::getProvider();
+        }
+        
+        /**
+         * Set specific TwoFactor auth provider to use.
+         *
+         * @param string $option
+         * @return \Authy 
+         * @static 
+         */ 
+        public static function setProvider($option = '')
+        {
+            return \Srmklive\Authy\AuthyFacadeAccessor::setProvider($option);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -17589,6 +17620,8 @@ namespace  {
     class Image extends \Intervention\Image\Facades\Image {}
 
     class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
+
+    class Authy extends \Srmklive\Authy\Facades\Authy {}
  
 }
 
