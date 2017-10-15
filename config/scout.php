@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,6 +82,18 @@ return [
         'min_fulltext_search_length' => 4,
         'min_fulltext_search_fallback' => 'LIKE',
         'query_expansion' => false
-    ]
+    ],
+
+    'tntsearch' => [
+        'storage' => storage_path(), //place where the index files will be stored
+        'fuzziness' => env('TNTSEARCH_FUZZINESS', false),
+        'fuzzy' => [
+            'prefix_length' => 2,
+            'max_expansions' => 50,
+            'distance' => 2
+        ],
+        'asYouType' => false,
+        'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
+    ],
 
 ];

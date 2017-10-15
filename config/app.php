@@ -204,8 +204,8 @@ return [
         \App\Providers\MacroServiceProvider::class,
         \App\Providers\OnlineUsersProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
-        Srmklive\Authy\Providers\AuthyServiceProvider::class
-
+        Srmklive\Authy\Providers\AuthyServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
     ],
 
     /*

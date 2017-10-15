@@ -20,4 +20,26 @@ abstract class Model extends Eloquent
     protected $revisionCleanup = true; //Remove old revisions (works only when used with $historyLimit)
     protected $historyLimit = 500; //Maintain a maximum of 500 changes at any point of time, while cleaning up old revisions.
     protected $revisionCreationsEnabled = true;
+
+    /**
+     * Search as you type.
+     * TNT/Scout.
+     *
+     * @var bool
+     */
+    public $asYouType = true;
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // TODO:  Customize array.
+
+        return $array;
+    }
 }
