@@ -17,6 +17,7 @@
     "artem-schander/l5-modular": "^1.4",
     "barryvdh/laravel-cors": "^0.9.3",
     "barryvdh/laravel-ide-helper": "^2.4",
+    "bekusc/laravel-auto-validation": "^1.0",
     "cviebrock/eloquent-sluggable": "^4.3",
     "doctrine/dbal": "^2.6",
     "dompdf/dompdf": "v0.7.0",

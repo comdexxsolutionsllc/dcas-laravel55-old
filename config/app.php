@@ -203,6 +203,7 @@ return [
         \App\Providers\CollectionMacroServiceProvider::class,
         \App\Providers\MacroServiceProvider::class,
         \App\Providers\OnlineUsersProvider::class,
+        Bekusc\Validation\AutoValidationProvider::class,
 
     ],
 

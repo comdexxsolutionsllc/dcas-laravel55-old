@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f17968dc9d1f75028778542a32e0e43a",
+    "content-hash": "57d6e481fc6f6d7ea27adbc5c73943db",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -337,6 +337,35 @@
                 }
             ],
             "time": "2016-06-13T19:28:20+00:00"
+        },
+        {
+            "name": "bekusc/laravel-auto-validation",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reibengu/laravel-auto-validation.git",
+                "reference": "ebc1c9e3c0bcbd1ee26278ce27d4b46f46f3cd32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reibengu/laravel-auto-validation/zipball/ebc1c9e3c0bcbd1ee26278ce27d4b46f46f3cd32",
+                "reference": "ebc1c9e3c0bcbd1ee26278ce27d4b46f46f3cd32",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bekusc\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Rei Bengu",
+                    "email": "bengusc@gmail.com"
+                }
+            ],
+            "time": "2017-05-08T16:31:20+00:00"
         },
         {
             "name": "cocur/slugify",
