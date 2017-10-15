@@ -1,2 +1,2 @@
 <?php
-Route::view('/', 'dashboard.admin.index')->name('index');
+Route::view('/', 'dashboard.admin.index')->name('index')->middleware(['auth']);

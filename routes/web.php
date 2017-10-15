@@ -1,17 +1,18 @@
 <?php
-// Fixed routes.
 Auth::routes();
 
 Route::view('/', 'welcome')->name('welcome');
+Route::get('/home', 'HomeController@index')->name('user.home');
 
-// Public routes.
-Route::get('find', 'SearchController@find');
 
+// API route for search.
+Route::get('find', 'SearchController@find')->name('find')->middleware(['auth']);
+
+// View route for search.
 Route::get('/search', function () {
-    return App\User::filter(request()->only(['name']))->get();
+    abort(403);
 })->name('search');
 
-// Catch-all Routes for Dashboards.
-// None.
-
-Route::get('/home', 'HomeController@index');
+// Dashboard profile.
+Route::get('/dashboard/profile/{username}', 'ProfileController@get')
+    ->name('profile.{username}')->middleware(['auth']);

@@ -42,7 +42,7 @@
                         '<div class="list-group search-results-dropdown">'
                     ],
                     suggestion: function (data) {
-                        return '<a href="' + data.profile.username + '" class="list-group-item">' + data.name + ' - @' + data.profile.username + '</a>'
+                        return '<a href="/dashboard/profile/' + data.username + '" class="list-group-item">' + data.name + ' - @' + data.username + '</a>'
                     }
                 }
             });

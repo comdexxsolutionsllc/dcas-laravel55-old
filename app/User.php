@@ -144,8 +144,8 @@ class User extends Authenticatable implements Presentable
     protected $searchable = [
         'columns' => [
             'accounts.name' => 10,
-            'profiles.username' => 5,
-            'profiles.bio' => 3,
+            'accounts.username' => 5,
+            'profiles.biography' => 3,
             'profiles.country' => 2,
             'profiles.city' => 1,
         ],

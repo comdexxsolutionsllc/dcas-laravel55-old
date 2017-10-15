@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.14 on 2017-10-13.
+ * Generated for Laravel 5.5.14 on 2017-10-15.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -9732,16 +9732,6 @@ namespace Illuminate\Support\Facades {
         {
             return \Illuminate\Routing\Router::macroCall($method, $parameters);
         }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function demoAccess($url)
-        {
-            return \Illuminate\Routing\Router::demoAccess($url);
-        }
          
     }
 
@@ -13055,6 +13045,235 @@ namespace Zizaco\Entrust {
  
 }
 
+namespace Laracasts\Flash { 
+
+    class Flash {
+        
+        /**
+         * Flash an information message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function info($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::info($message);
+        }
+        
+        /**
+         * Flash a success message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function success($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::success($message);
+        }
+        
+        /**
+         * Flash an error message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function error($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::error($message);
+        }
+        
+        /**
+         * Flash a warning message.
+         *
+         * @param string|null $message
+         * @return $this 
+         * @static 
+         */ 
+        public static function warning($message = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::warning($message);
+        }
+        
+        /**
+         * Flash a general message.
+         *
+         * @param string|null $message
+         * @param string|null $level
+         * @return $this 
+         * @static 
+         */ 
+        public static function message($message = null, $level = null)
+        {
+            return \Laracasts\Flash\FlashNotifier::message($message, $level);
+        }
+        
+        /**
+         * Flash an overlay modal.
+         *
+         * @param string|null $message
+         * @param string $title
+         * @return $this 
+         * @static 
+         */ 
+        public static function overlay($message = null, $title = 'Notice')
+        {
+            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
+        }
+        
+        /**
+         * Add an "important" flash to the session.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function important()
+        {
+            return \Laracasts\Flash\FlashNotifier::important();
+        }
+        
+        /**
+         * Clear all registered messages.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \Laracasts\Flash\FlashNotifier::clear();
+        }
+         
+    }
+ 
+}
+
+namespace MercurySeries\Flashy { 
+
+    class Flashy {
+        
+        /**
+         * Flash an information message.
+         *
+         * @param string $message
+         * @param string $link
+         * @static 
+         */ 
+        public static function info($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::info($message, $link);
+        }
+        
+        /**
+         * Flash a success message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function success($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::success($message, $link);
+        }
+        
+        /**
+         * Flash an error message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function error($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::error($message, $link);
+        }
+        
+        /**
+         * Flash a warning message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function warning($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::warning($message, $link);
+        }
+        
+        /**
+         * Flash a primary message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function primary($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::primary($message, $link);
+        }
+        
+        /**
+         * Flash a primary dark message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function primaryDark($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::primaryDark($message, $link);
+        }
+        
+        /**
+         * Flash a muted message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function muted($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::muted($message, $link);
+        }
+        
+        /**
+         * Flash a muted dark message.
+         *
+         * @param string $message
+         * @param string $link
+         * @return $this 
+         * @static 
+         */ 
+        public static function mutedDark($message, $link = '#')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::mutedDark($message, $link);
+        }
+        
+        /**
+         * Flash a general message.
+         *
+         * @param string $message
+         * @param string $link
+         * @param string $type
+         * @return $this 
+         * @static 
+         */ 
+        public static function message($message, $link = '#', $type = 'success')
+        {
+            return \MercurySeries\Flashy\FlashyNotifier::message($message, $link, $type);
+        }
+         
+    }
+ 
+}
+
 namespace Collective\Html { 
 
     class FormFacade {
@@ -14079,361 +14298,6 @@ namespace Collective\Html {
  
 }
 
-namespace Laracasts\Flash { 
-
-    class Flash {
-        
-        /**
-         * Flash an information message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function info($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::info($message);
-        }
-        
-        /**
-         * Flash a success message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function success($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::success($message);
-        }
-        
-        /**
-         * Flash an error message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function error($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::error($message);
-        }
-        
-        /**
-         * Flash a warning message.
-         *
-         * @param string|null $message
-         * @return $this 
-         * @static 
-         */ 
-        public static function warning($message = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::warning($message);
-        }
-        
-        /**
-         * Flash a general message.
-         *
-         * @param string|null $message
-         * @param string|null $level
-         * @return $this 
-         * @static 
-         */ 
-        public static function message($message = null, $level = null)
-        {
-            return \Laracasts\Flash\FlashNotifier::message($message, $level);
-        }
-        
-        /**
-         * Flash an overlay modal.
-         *
-         * @param string|null $message
-         * @param string $title
-         * @return $this 
-         * @static 
-         */ 
-        public static function overlay($message = null, $title = 'Notice')
-        {
-            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
-        }
-        
-        /**
-         * Add an "important" flash to the session.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function important()
-        {
-            return \Laracasts\Flash\FlashNotifier::important();
-        }
-        
-        /**
-         * Clear all registered messages.
-         *
-         * @return $this 
-         * @static 
-         */ 
-        public static function clear()
-        {
-            return \Laracasts\Flash\FlashNotifier::clear();
-        }
-         
-    }
- 
-}
-
-namespace MercurySeries\Flashy { 
-
-    class Flashy {
-        
-        /**
-         * Flash an information message.
-         *
-         * @param string $message
-         * @param string $link
-         * @static 
-         */ 
-        public static function info($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::info($message, $link);
-        }
-        
-        /**
-         * Flash a success message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function success($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::success($message, $link);
-        }
-        
-        /**
-         * Flash an error message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function error($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::error($message, $link);
-        }
-        
-        /**
-         * Flash a warning message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function warning($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::warning($message, $link);
-        }
-        
-        /**
-         * Flash a primary message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function primary($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::primary($message, $link);
-        }
-        
-        /**
-         * Flash a primary dark message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function primaryDark($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::primaryDark($message, $link);
-        }
-        
-        /**
-         * Flash a muted message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function muted($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::muted($message, $link);
-        }
-        
-        /**
-         * Flash a muted dark message.
-         *
-         * @param string $message
-         * @param string $link
-         * @return $this 
-         * @static 
-         */ 
-        public static function mutedDark($message, $link = '#')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::mutedDark($message, $link);
-        }
-        
-        /**
-         * Flash a general message.
-         *
-         * @param string $message
-         * @param string $link
-         * @param string $type
-         * @return $this 
-         * @static 
-         */ 
-        public static function message($message, $link = '#', $type = 'success')
-        {
-            return \MercurySeries\Flashy\FlashyNotifier::message($message, $link, $type);
-        }
-         
-    }
- 
-}
-
-namespace Lavary\Menu { 
-
-    class Facade {
-        
-        /**
-         * Check if a menu exists.
-         *
-         * @param string $name
-         * @return boolean 
-         * @static 
-         */ 
-        public static function exists($name)
-        {
-            return \Lavary\Menu\Menu::exists($name);
-        }
-        
-        /**
-         * Create a new menu instance
-         *
-         * @param string $name
-         * @param callable $callback
-         * @return \Lavary\Menu\Menu 
-         * @static 
-         */ 
-        public static function makeOnce($name, $callback)
-        {
-            return \Lavary\Menu\Menu::makeOnce($name, $callback);
-        }
-        
-        /**
-         * Create a new menu instance
-         *
-         * @param string $name
-         * @param callable $callback
-         * @return \Lavary\Menu\Menu 
-         * @static 
-         */ 
-        public static function make($name, $callback)
-        {
-            return \Lavary\Menu\Menu::make($name, $callback);
-        }
-        
-        /**
-         * Loads and merges configuration data
-         *
-         * @param string $name
-         * @return array 
-         * @static 
-         */ 
-        public static function loadConf($name)
-        {
-            return \Lavary\Menu\Menu::loadConf($name);
-        }
-        
-        /**
-         * Return Menu instance from the collection by key
-         *
-         * @param string $key
-         * @return \Lavary\Menu\Item 
-         * @static 
-         */ 
-        public static function get($key)
-        {
-            return \Lavary\Menu\Menu::get($key);
-        }
-        
-        /**
-         * Return Menu collection
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function getCollection()
-        {
-            return \Lavary\Menu\Menu::getCollection();
-        }
-        
-        /**
-         * Alias for getCollection
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function all()
-        {
-            return \Lavary\Menu\Menu::all();
-        }
-         
-    }
- 
-}
-
-namespace Spatie\UrlSigner\Laravel { 
-
-    class UrlSignerFacade {
-        
-        /**
-         * Get a secure URL to a controller action.
-         *
-         * @param string $url
-         * @param \DateTime|int|null $expiration Defaults to the config value
-         * @return string 
-         * @static 
-         */ 
-        public static function sign($url, $expiration = null)
-        {
-            return \Spatie\UrlSigner\Laravel\UrlSigner::sign($url, $expiration);
-        }
-        
-        /**
-         * Validate a signed url.
-         *
-         * @param string $url
-         * @return bool 
-         * @static 
-         */ 
-        public static function validate($url)
-        {
-            //Method inherited from \Spatie\UrlSigner\BaseUrlSigner            
-            return \Spatie\UrlSigner\Laravel\UrlSigner::validate($url);
-        }
-         
-    }
- 
-}
-
 namespace Spatie\Glide { 
 
     class GlideImageFacade {
@@ -14781,6 +14645,132 @@ namespace Tymon\JWTAuth\Facades {
         public static function setRefreshFlow($refreshFlow = true)
         {
             return \Tymon\JWTAuth\PayloadFactory::setRefreshFlow($refreshFlow);
+        }
+         
+    }
+ 
+}
+
+namespace Lavary\Menu { 
+
+    class Facade {
+        
+        /**
+         * Check if a menu exists.
+         *
+         * @param string $name
+         * @return boolean 
+         * @static 
+         */ 
+        public static function exists($name)
+        {
+            return \Lavary\Menu\Menu::exists($name);
+        }
+        
+        /**
+         * Create a new menu instance
+         *
+         * @param string $name
+         * @param callable $callback
+         * @return \Lavary\Menu\Menu 
+         * @static 
+         */ 
+        public static function makeOnce($name, $callback)
+        {
+            return \Lavary\Menu\Menu::makeOnce($name, $callback);
+        }
+        
+        /**
+         * Create a new menu instance
+         *
+         * @param string $name
+         * @param callable $callback
+         * @return \Lavary\Menu\Menu 
+         * @static 
+         */ 
+        public static function make($name, $callback)
+        {
+            return \Lavary\Menu\Menu::make($name, $callback);
+        }
+        
+        /**
+         * Loads and merges configuration data
+         *
+         * @param string $name
+         * @return array 
+         * @static 
+         */ 
+        public static function loadConf($name)
+        {
+            return \Lavary\Menu\Menu::loadConf($name);
+        }
+        
+        /**
+         * Return Menu instance from the collection by key
+         *
+         * @param string $key
+         * @return \Lavary\Menu\Item 
+         * @static 
+         */ 
+        public static function get($key)
+        {
+            return \Lavary\Menu\Menu::get($key);
+        }
+        
+        /**
+         * Return Menu collection
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getCollection()
+        {
+            return \Lavary\Menu\Menu::getCollection();
+        }
+        
+        /**
+         * Alias for getCollection
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function all()
+        {
+            return \Lavary\Menu\Menu::all();
+        }
+         
+    }
+ 
+}
+
+namespace Spatie\UrlSigner\Laravel { 
+
+    class UrlSignerFacade {
+        
+        /**
+         * Get a secure URL to a controller action.
+         *
+         * @param string $url
+         * @param \DateTime|int|null $expiration Defaults to the config value
+         * @return string 
+         * @static 
+         */ 
+        public static function sign($url, $expiration = null)
+        {
+            return \Spatie\UrlSigner\Laravel\UrlSigner::sign($url, $expiration);
+        }
+        
+        /**
+         * Validate a signed url.
+         *
+         * @param string $url
+         * @return bool 
+         * @static 
+         */ 
+        public static function validate($url)
+        {
+            //Method inherited from \Spatie\UrlSigner\BaseUrlSigner            
+            return \Spatie\UrlSigner\Laravel\UrlSigner::validate($url);
         }
          
     }
@@ -17570,23 +17560,23 @@ namespace  {
 
     class Entrust extends \Zizaco\Entrust\EntrustFacade {}
 
-    class Form extends \Collective\Html\FormFacade {}
-
-    class Html extends \Collective\Html\HtmlFacade {}
-
     class Flash extends \Laracasts\Flash\Flash {}
 
     class Flashy extends \MercurySeries\Flashy\Flashy {}
 
-    class Menu extends \Lavary\Menu\Facade {}
-
-    class UrlSigner extends \Spatie\UrlSigner\Laravel\UrlSignerFacade {}
+    class Form extends \Collective\Html\FormFacade {}
 
     class GlideImage extends \Spatie\Glide\GlideImageFacade {}
+
+    class Html extends \Collective\Html\HtmlFacade {}
 
     class JWTAuth extends \Tymon\JWTAuth\Facades\JWTAuth {}
 
     class JWTFactory extends \Tymon\JWTAuth\Facades\JWTFactory {}
+
+    class Menu extends \Lavary\Menu\Facade {}
+
+    class UrlSigner extends \Spatie\UrlSigner\Laravel\UrlSignerFacade {}
 
     class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
 
