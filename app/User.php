@@ -19,6 +19,7 @@ use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+
 //use Laravel\Scout\Searchable;
 
 
@@ -162,16 +163,6 @@ class User extends Authenticatable implements Presentable
     protected $table = 'accounts';
 
     /**
-     * Is the user an administrator?
-     *
-     * @return boolean
-     */
-    public function isAdmin()
-    {
-        return $this->is_admin;
-    }
-
-    /**
      * Is the user disabled?
      *
      * @return boolean
@@ -179,6 +170,16 @@ class User extends Authenticatable implements Presentable
     public function isDisabled()
     {
         return $this->is_disabled;
+    }
+
+    /**
+     * Is the user online?
+     *
+     * @return mixed
+     */
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
     }
 
     /**
