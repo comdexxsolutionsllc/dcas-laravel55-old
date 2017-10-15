@@ -202,6 +202,8 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         \App\Providers\CollectionMacroServiceProvider::class,
         \App\Providers\MacroServiceProvider::class,
+        \App\Providers\OnlineUsersProvider::class,
+
     ],
 
     /*

@@ -12,6 +12,7 @@
     <p>Welcome to this beautiful admin panel.</p>
 
     @include('partials.search')
+    @include('partials.user-online')
 @stop
 
 @section('css')
