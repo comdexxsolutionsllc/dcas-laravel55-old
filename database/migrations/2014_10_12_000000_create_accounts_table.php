@@ -25,7 +25,7 @@ class CreateAccountsTable extends Migration
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();
             $table->timestamp('trial_ends_at')->nullable();
-            $table->boolean('is_active')->default(0);
+            $table->boolean('is_logged_in')->default(0);
             $table->boolean('is_disabled')->default(0);
             $table->rememberToken();
             $table->timestamps();

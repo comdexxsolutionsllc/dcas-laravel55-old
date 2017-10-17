@@ -25,7 +25,7 @@ class UserEventSubscriber
 
             $user = User::find($userId);
 
-            $user->is_active = 1;
+            $user->is_logged_in = 1;
 
             $user->save();
         }
@@ -45,7 +45,7 @@ class UserEventSubscriber
 
         $user = User::find($userId);
 
-        $user->is_active = 0;
+        $user->is_logged_in = 0;
 
         $user->save();
     }
