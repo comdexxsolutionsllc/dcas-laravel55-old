@@ -16,7 +16,7 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "tdd": "executor './vendor/bin/phpunit --color=always' --watch='**/*.php' --ignore='node_modules/' --ignore='vendor/'",
-        "test-vue": "mocha-webpack --webpack-config node_modules/laravel-mix/setup/webpack.config.js --require tests/setup.js test/*.spec.js"
+        "test-vue": "mocha-webpack --watch --webpack-config node_modules/laravel-mix/setup/webpack.config.js --require tests/setup.js test/*.spec.js"
     },
     "devDependencies": {
         "@lassehaslev/executor": "^0.1.2",

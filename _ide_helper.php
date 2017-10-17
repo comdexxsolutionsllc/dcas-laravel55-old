@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.14 on 2017-10-15.
+ * Generated for Laravel 5.5.16 on 2017-10-16.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5274,7 +5274,7 @@ namespace Illuminate\Support\Facades {
          * @param string $key
          * @param array $replace
          * @param string $locale
-         * @return string 
+         * @return string|array|null 
          * @static 
          */ 
         public static function getFromJson($key, $replace = array(), $locale = null)
@@ -17717,7 +17717,7 @@ if (! function_exists('array_dot')) {
 
 if (! function_exists('array_except')) {
     /**
-     * Get all of the given array except for a specified array of items.
+     * Get all of the given array except for a specified array of keys.
      *
      * @param  array  $array
      * @param  array|string  $keys
