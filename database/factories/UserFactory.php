@@ -18,21 +18,11 @@ $factory->define(App\User::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
-        'username' => $faker->userName,
+        'username' => $faker->unique()->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'is_disabled' => 0,
         'domain' => $faker->domainName,
-    ];
-});
-
-$factory->state(App\User::class, 'testingAdminAccount', function () {
-    return [
-        'name' => 'Sarah Renner',
-        'username' => 'srenner',
-        'email' => 'sarah@sarahrenner.work',
-        'password' => bcrypt('secret'),
-        'is_disabled' => 0
     ];
 });
 
