@@ -168,6 +168,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Cashier\CashierServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,34 +180,39 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\HelperServiceProvider::class,
+        /**
+         * DCAS Service Providers...
+         */
         App\Providers\BladeServiceProvider::class,
+        App\Providers\CollectionMacroServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
+        App\Providers\MacroServiceProvider::class,
+        App\Providers\ObserverServiceProvider::class,
+        App\Providers\OnlineUsersProvider::class,
 
+        /**
+         * 3rd Party Service Providers...
+         */
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
-        Fideloper\Proxy\TrustedProxyServiceProvider::class,
-        Laravel\Cashier\CashierServiceProvider::class,
-        Laravel\Scout\ScoutServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class,
-        MercurySeries\Flashy\FlashyServiceProvider::class,
-        EloquentFilter\ServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
-        Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
-        Lavary\Menu\ServiceProvider::class,
-        Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
-        Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
-        Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-        \App\Providers\CollectionMacroServiceProvider::class,
-        \App\Providers\MacroServiceProvider::class,
-        \App\Providers\OnlineUsersProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
+        Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        EloquentFilter\ServiceProvider::class,
+        Fideloper\Proxy\TrustedProxyServiceProvider::class,
+        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
+        Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
+        MercurySeries\Flashy\FlashyServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Spatie\Glide\GlideServiceProvider::class,
+        Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
         Srmklive\Authy\Providers\AuthyServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
     ],
 
     /*
@@ -255,7 +262,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Setting' => anlutro\LaravelSettings\Facade::class,
+        'Authy' => Srmklive\Authy\Facades\Authy::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
@@ -266,9 +273,8 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Menu' => Lavary\Menu\Facade::class,
+        'Setting' => anlutro\LaravelSettings\Facade::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
-        'Authy' => Srmklive\Authy\Facades\Authy::class,
-
     ],
 
 ];

@@ -26,6 +26,17 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
+$factory->state(App\User::class, 'testing', function () {
+    return [
+        'name' => 'Sarah Renner',
+        'email' => 'sarah@sarahrenner.work',
+        'username' => 'srenner',
+        'password' => bcrypt('secret'),
+        'slug' => 'sarah-renner',
+        'is_disabled' => 0,
+    ];
+});
+
 $factory->state(App\User::class, 'hasRememberToken', function () {
     return [
         'remember_token' => str_random(25)

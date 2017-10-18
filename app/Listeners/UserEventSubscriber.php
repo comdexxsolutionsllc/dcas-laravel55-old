@@ -5,11 +5,23 @@ namespace App\Listeners;
 use App\User;
 use Cache;
 use Carbon\Carbon;
+use Illuminate\Auth\Events\Lockout;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
+use Log;
 
 class UserEventSubscriber
 {
+    /**
+     * Handle user lockout events.
+     *
+     * @param Lockout $event
+     */
+    public function onUserLockout(Lockout $event)
+    {
+        $this->logLockout($event);
+    }
+
     /**
      * Handle user login events.
      *
@@ -48,5 +60,17 @@ class UserEventSubscriber
         $user->is_logged_in = 0;
 
         $user->save();
+    }
+
+    /**
+     * @param Lockout $event
+     */
+    protected function logLockout(Lockout $event)
+    {
+        $username = $event->request->username;
+        $time = Carbon::now();
+        $message = $username . ' has been locked out at ' . $time;
+
+        Log::notice($message);
     }
 }

@@ -2394,16 +2394,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.16",
+            "version": "v5.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "95efce1e16c82a72f9aab52e96562282e7c35bf0"
+                "reference": "3a16d196bd8d2b7761c9b0060a30a3687c3ea201"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/95efce1e16c82a72f9aab52e96562282e7c35bf0",
-                "reference": "95efce1e16c82a72f9aab52e96562282e7c35bf0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3a16d196bd8d2b7761c9b0060a30a3687c3ea201",
+                "reference": "3a16d196bd8d2b7761c9b0060a30a3687c3ea201",
                 "shasum": ""
             },
             "require": {
@@ -2522,7 +2522,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-10-16T14:18:46+00:00"
+            "time": "2017-10-17T12:19:22+00:00"
         },
         {
             "name": "laravel/passport",
@@ -6968,16 +6968,16 @@
         },
         {
             "name": "spatie/laravel-collection-macros",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-collection-macros.git",
-                "reference": "6a7b590222ae1994b17d650de4b64a307927d978"
+                "reference": "ced5810fd34b58a43605037b3810b67126191f2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/6a7b590222ae1994b17d650de4b64a307927d978",
-                "reference": "6a7b590222ae1994b17d650de4b64a307927d978",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/ced5810fd34b58a43605037b3810b67126191f2f",
+                "reference": "ced5810fd34b58a43605037b3810b67126191f2f",
                 "shasum": ""
             },
             "require": {
@@ -7030,7 +7030,7 @@
                 "laravel-collection-macros",
                 "spatie"
             ],
-            "time": "2017-10-11T06:43:37+00:00"
+            "time": "2017-10-17T16:22:49+00:00"
         },
         {
             "name": "spatie/laravel-failed-job-monitor",
@@ -10153,16 +10153,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v8.1.0",
+            "version": "v8.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "92125cc7e0b94375dad740022115182bc6d08f9f"
+                "reference": "70ea9184e00cc2e09a9c8772858c5fe04338b3fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/92125cc7e0b94375dad740022115182bc6d08f9f",
-                "reference": "92125cc7e0b94375dad740022115182bc6d08f9f",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/70ea9184e00cc2e09a9c8772858c5fe04338b3fc",
+                "reference": "70ea9184e00cc2e09a9c8772858c5fe04338b3fc",
                 "shasum": ""
             },
             "require": {
@@ -10219,7 +10219,7 @@
                 "jquery",
                 "laravel"
             ],
-            "time": "2017-10-08T01:16:25+00:00"
+            "time": "2017-10-17T03:09:05+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
