@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Profile;
 use App\User;
-use App\Vendor;
 use DCAS\Observers\ProfileObserver;
 use DCAS\Observers\UserObserver;
 use DCAS\Observers\VendorObserver;
@@ -21,7 +20,6 @@ class ObserverServiceProvider extends ServiceProvider
     {
         Profile::observe(ProfileObserver::class);
         User::observe(UserObserver::class);
-        Vendor::observe(VendorObserver::class);
     }
 
     /**
