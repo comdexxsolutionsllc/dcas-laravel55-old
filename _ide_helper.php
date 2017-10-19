@@ -12288,97 +12288,31 @@ namespace Illuminate\Support\Facades {
  
 }
 
-namespace anlutro\LaravelSettings { 
+namespace Srmklive\Authy\Facades { 
 
-    class Facade {
+    class Authy {
         
         /**
-         * 
+         * Get specific TwoFactor auth provider object to use.
          *
+         * @return \Authy 
          * @static 
          */ 
-        public static function getDefaultDriver()
+        public static function getProvider()
         {
-            return \anlutro\LaravelSettings\SettingsManager::getDefaultDriver();
+            return \Srmklive\Authy\AuthyFacadeAccessor::getProvider();
         }
         
         /**
-         * 
+         * Set specific TwoFactor auth provider to use.
          *
+         * @param string $option
+         * @return \Authy 
          * @static 
          */ 
-        public static function createJsonDriver()
+        public static function setProvider($option = '')
         {
-            return \anlutro\LaravelSettings\SettingsManager::createJsonDriver();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function createDatabaseDriver()
-        {
-            return \anlutro\LaravelSettings\SettingsManager::createDatabaseDriver();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function createMemoryDriver()
-        {
-            return \anlutro\LaravelSettings\SettingsManager::createMemoryDriver();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function createArrayDriver()
-        {
-            return \anlutro\LaravelSettings\SettingsManager::createArrayDriver();
-        }
-        
-        /**
-         * Get a driver instance.
-         *
-         * @param string $driver
-         * @return mixed 
-         * @static 
-         */ 
-        public static function driver($driver = null)
-        {
-            //Method inherited from \Illuminate\Support\Manager            
-            return \anlutro\LaravelSettings\SettingsManager::driver($driver);
-        }
-        
-        /**
-         * Register a custom driver creator Closure.
-         *
-         * @param string $driver
-         * @param \Closure $callback
-         * @return $this 
-         * @static 
-         */ 
-        public static function extend($driver, $callback)
-        {
-            //Method inherited from \Illuminate\Support\Manager            
-            return \anlutro\LaravelSettings\SettingsManager::extend($driver, $callback);
-        }
-        
-        /**
-         * Get all of the created "drivers".
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function getDrivers()
-        {
-            //Method inherited from \Illuminate\Support\Manager            
-            return \anlutro\LaravelSettings\SettingsManager::getDrivers();
+            return \Srmklive\Authy\AuthyFacadeAccessor::setProvider($option);
         }
          
     }
@@ -14743,6 +14677,103 @@ namespace Lavary\Menu {
  
 }
 
+namespace anlutro\LaravelSettings { 
+
+    class Facade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getDefaultDriver()
+        {
+            return \anlutro\LaravelSettings\SettingsManager::getDefaultDriver();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createJsonDriver()
+        {
+            return \anlutro\LaravelSettings\SettingsManager::createJsonDriver();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createDatabaseDriver()
+        {
+            return \anlutro\LaravelSettings\SettingsManager::createDatabaseDriver();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createMemoryDriver()
+        {
+            return \anlutro\LaravelSettings\SettingsManager::createMemoryDriver();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createArrayDriver()
+        {
+            return \anlutro\LaravelSettings\SettingsManager::createArrayDriver();
+        }
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */ 
+        public static function driver($driver = null)
+        {
+            //Method inherited from \Illuminate\Support\Manager            
+            return \anlutro\LaravelSettings\SettingsManager::driver($driver);
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return $this 
+         * @static 
+         */ 
+        public static function extend($driver, $callback)
+        {
+            //Method inherited from \Illuminate\Support\Manager            
+            return \anlutro\LaravelSettings\SettingsManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getDrivers()
+        {
+            //Method inherited from \Illuminate\Support\Manager            
+            return \anlutro\LaravelSettings\SettingsManager::getDrivers();
+        }
+         
+    }
+ 
+}
+
 namespace Spatie\UrlSigner\Laravel { 
 
     class UrlSignerFacade {
@@ -14771,37 +14802,6 @@ namespace Spatie\UrlSigner\Laravel {
         {
             //Method inherited from \Spatie\UrlSigner\BaseUrlSigner            
             return \Spatie\UrlSigner\Laravel\UrlSigner::validate($url);
-        }
-         
-    }
- 
-}
-
-namespace Srmklive\Authy\Facades { 
-
-    class Authy {
-        
-        /**
-         * Get specific TwoFactor auth provider object to use.
-         *
-         * @return \Authy 
-         * @static 
-         */ 
-        public static function getProvider()
-        {
-            return \Srmklive\Authy\AuthyFacadeAccessor::getProvider();
-        }
-        
-        /**
-         * Set specific TwoFactor auth provider to use.
-         *
-         * @param string $option
-         * @return \Authy 
-         * @static 
-         */ 
-        public static function setProvider($option = '')
-        {
-            return \Srmklive\Authy\AuthyFacadeAccessor::setProvider($option);
         }
          
     }
@@ -17585,7 +17585,7 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
-    class Setting extends \anlutro\LaravelSettings\Facade {}
+    class Authy extends \Srmklive\Authy\Facades\Authy {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
@@ -17607,9 +17607,9 @@ namespace  {
 
     class Menu extends \Lavary\Menu\Facade {}
 
-    class UrlSigner extends \Spatie\UrlSigner\Laravel\UrlSignerFacade {}
+    class Setting extends \anlutro\LaravelSettings\Facade {}
 
-    class Authy extends \Srmklive\Authy\Facades\Authy {}
+    class UrlSigner extends \Spatie\UrlSigner\Laravel\UrlSignerFacade {}
 
     class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
 

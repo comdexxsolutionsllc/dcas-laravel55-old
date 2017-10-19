@@ -35,6 +35,7 @@ $factory->state(App\User::class, 'testing', function () {
         'password' => bcrypt('secret'),
         'slug' => 'sarah-renner',
         'is_disabled' => 0,
+        'domain' => null,
     ];
 });
 
