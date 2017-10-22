@@ -3,8 +3,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 Auth::routes();
 
-Route::get('auth/token','Auth\AuthController@getToken');
-Route::post('auth/token','Auth\AuthController@postToken');
+Route::get('auth/token','Auth\TwoFactorAuthController@getToken');
+Route::post('auth/token','Auth\TwoFactorAuthController@postToken');
 
 Route::view('/', 'welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('user.home');
