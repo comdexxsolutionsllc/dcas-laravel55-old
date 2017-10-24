@@ -34,7 +34,7 @@
                                         @endforeach
                                     </td>
                                     <td>
-                                        <a href="{{ url('tickets/'. $ticket->ticket_id) }}">
+                                        <a href="{{ url('SupportDesk/tickets/'. $ticket->ticket_id) }}">
                                             #{{ $ticket->ticket_id }} - {{ $ticket->title }}
                                         </a>
                                     </td>

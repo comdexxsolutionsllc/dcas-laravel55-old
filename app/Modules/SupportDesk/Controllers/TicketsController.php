@@ -3,11 +3,14 @@
 namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use Modules\SupportDesk\Mailers\AppMailer;
 use Modules\SupportDesk\Models\Category;
 use Modules\SupportDesk\Models\Ticket;
+use Zttp\Zttp;
 
 class TicketsController extends Controller
 {
@@ -20,9 +23,9 @@ class TicketsController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function index()
+    public function index(): View
     {
         $tickets = Ticket::paginate(10);
         $categories = Category::all();
@@ -31,9 +34,9 @@ class TicketsController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function create()
+    public function create(): View
     {
         $categories = Category::all();
 
@@ -42,9 +45,9 @@ class TicketsController extends Controller
 
     /**
      * @param $ticket_id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function show($ticket_id)
+    public function show($ticket_id): View
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
@@ -56,11 +59,22 @@ class TicketsController extends Controller
     }
 
     /**
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    public function showClosed(): View
+    {
+        $tickets = Ticket::where('status', 'Closed')->paginate(10);
+        $categories = Category::all();
+
+        return view('SupportDesk::tickets.closed', compact('tickets', 'categories'));
+    }
+
+    /**
      * @param Request $request
      * @param AppMailer $mailer
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function store(Request $request, AppMailer $mailer)
+    public function store(Request $request, AppMailer $mailer): RedirectResponse
     {
         $this->validate($request, [
             'title' => 'required',
@@ -68,6 +82,16 @@ class TicketsController extends Controller
             'priority' => 'required',
             'message' => 'required'
         ]);
+
+        $response = Zttp::asFormParams()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret'),
+            'response' => request()->input('g-recaptcha-response'),
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        ]);
+
+        if (!$response->json()['success']) {
+            throw new \Exception('Recaptcha failed');
+        }
 
         $ticket = new Ticket([
             'title' => $request->input('title'),
@@ -89,9 +113,9 @@ class TicketsController extends Controller
     /**
      * @param $ticket_id
      * @param AppMailer $mailer
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function close($ticket_id, AppMailer $mailer)
+    public function close($ticket_id, AppMailer $mailer): RedirectResponse
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
@@ -107,9 +131,29 @@ class TicketsController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $ticket_id
+     * @param AppMailer $mailer
+     * @return RedirectResponse
      */
-    public function userTickets()
+    public function open($ticket_id, AppMailer $mailer): RedirectResponse
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $ticket->status = 'Open';
+
+        $ticket->save();
+
+        $ticketOwner = $ticket->user;
+
+        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
+
+        return redirect()->back()->with("status", "The ticket has been re-opened.");
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    public function userTickets(): View
     {
         $tickets = Ticket::where('user_id', Auth::user()->id)->paginate(10);
         $categories = Category::all();

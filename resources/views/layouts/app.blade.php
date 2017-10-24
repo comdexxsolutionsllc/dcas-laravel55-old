@@ -22,7 +22,11 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+
     @yield('css')
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="skin-blue sidebar-mini">
