@@ -165,6 +165,17 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     protected $table = 'accounts';
 
     /**
+     * Is the user an administrator?
+     * TODO
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->username === 'srenner';
+    }
+
+    /**
      * Is the user disabled?
      *
      * @return boolean

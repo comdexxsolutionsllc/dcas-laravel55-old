@@ -4,37 +4,50 @@ namespace DCAS\Classes;
 
 class TicketId
 {
-    protected $ticketId;
-
     /**
      * Generate a variable length ticket ID.
      *
      * @param int $length ticket Length
      * @return string ticket ID
      */
-    public function generate($length = 10)
+    public static function generate($length = 10): string
     {
-        $rnd = srand((double)microtime(TRUE) * 1000000);
-        $chars = array_flatten(array_merge(range('A', 'Z'), range(1, 9)));
-
-        for ($rand = 0; $rand < $length; $rand++)
-            $rnd .= $chars[rand(0, count($chars) - 1)];
-
-        $rnd = strtoupper(substr($rnd . uniqid(), 0, $length));
-
-        return ($this->ticketId = $rnd);
+        return self::compileTicketString(
+            $length,
+            $chars = self::getChars(),
+            $result = srand((double)microtime(TRUE) * 1000000)
+        );
     }
 
-    public static function generateStatic($length = 10)
+    /**
+     * Compile the ticket ID.
+     *
+     * @param $length
+     * @param $chars
+     * @param $result
+     * @return string
+     */
+    protected static function compileTicketString($length, $chars, $result): string
     {
-        $result = srand((double)microtime(TRUE) * 1000000);
-        $chars = array_flatten(array_merge(range('A', 'Z'), range(1, 9)));
-
         for ($rand = 0; $rand < $length; $rand++)
             $result .= $chars[rand(0, count($chars) - 1)];
 
-        $result = strtoupper(substr($result . uniqid(), 0, $length));
+        return strtoupper(
+            substr($result . uniqid(), 0, $length)
+        );
+    }
 
-        return $result;
+    /**
+     * Get input characters.
+     *
+     * @return array
+     */
+    private static function getChars(): array
+    {
+        return array_flatten(
+            array_merge(
+                range('A', 'Z'), range(1, 9)
+            )
+        );
     }
 }

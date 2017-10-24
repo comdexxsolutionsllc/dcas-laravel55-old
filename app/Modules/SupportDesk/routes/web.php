@@ -7,8 +7,10 @@ Route::group(['module' => 'SupportDesk', 'prefix' => 'SupportDesk', 'middleware'
     Route::post('new_ticket', 'TicketsController@store');
     Route::get('tickets/{ticket_id}', 'TicketsController@show');
 
-    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('tickets', 'TicketsController@index');
+        Route::get('closed_tickets', 'TicketsController@showClosed');
         Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
+        Route::post('open_ticket/{ticket_id}', 'TicketsController@open');
     });
 });

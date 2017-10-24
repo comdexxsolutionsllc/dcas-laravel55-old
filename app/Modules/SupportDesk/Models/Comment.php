@@ -3,6 +3,7 @@
 namespace Modules\SupportDesk\Models;
 
 use App\Model;
+use App\User;
 
 class Comment extends Model
 {

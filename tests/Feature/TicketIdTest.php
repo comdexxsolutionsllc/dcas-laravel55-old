@@ -10,10 +10,8 @@ class TicketIdTest extends TestCase
     /** @test */
     public function it_should_create_alphanumeric_ticket_ids()
     {
-        $ticketId = TicketId::generateStatic();
+        $ticketId = TicketId::generate();
         $this->assertRegExp("/[a-zA-Z0-9]/", $ticketId);
 
-        $ticketId = (new TicketId)->generate();
-        $this->assertRegExp("/[a-zA-Z0-9]/", $ticketId);
     }
 }

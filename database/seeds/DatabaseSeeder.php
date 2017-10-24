@@ -8,6 +8,7 @@ class DatabaseSeeder extends Seeder
      * @var array
      */
     private $tables = [
+        'categories',
         'permissions',
         'profiles',
         'roles',
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
 
         Eloquent::unguard();
 
+        $this->call(CategoryTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(PermissionRoleSeeder::class);
         $this->call(ProfileTableSeeder::class);

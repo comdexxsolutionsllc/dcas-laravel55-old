@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'All Open Tickets')
+@section('title', 'All Closed Tickets')
 
 @section('content')
     <div class="row">
@@ -26,7 +26,7 @@
                             </thead>
                             <tbody>
                             @foreach ($tickets as $ticket)
-                                @if($ticket->isOpen())
+                                @if($ticket->isClosed())
                                     <tr>
                                         <td>
                                             @foreach ($categories as $category)
@@ -46,13 +46,13 @@
                                         <td>{{ $ticket->updated_at }}</td>
                                         <td>
                                             <a href="{{ url('SupportDesk/tickets/' . $ticket->ticket_id) }}"
-                                               class="btn btn-primary">Comment</a>
+                                               class="btn btn-primary" disabled>Comment</a>
                                         </td>
                                         <td>
-                                            <form action="{{ url('SupportDesk/admin/close_ticket/' . $ticket->ticket_id) }}"
+                                            <form action="{{ url('SupportDesk/admin/open_ticket/' . $ticket->ticket_id) }}"
                                                   method="POST">
                                                 {!! csrf_field() !!}
-                                                <button type="submit" class="btn btn-danger">Close</button>
+                                                <button type="submit" class="btn btn-success">Open</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -15,7 +15,7 @@ class ProfileTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1, 99) as $index) {
+        foreach (range(1, 100) as $index) {
             DB::table('profiles')->insert([
                 'user_id' => $index,
                 'username' => User::where('id', '=', $index)->first()->username,
@@ -25,7 +25,7 @@ class ProfileTableSeeder extends Seeder
                 'city' => $faker->city,
                 'state' => 'IL',
                 'country' => $faker->countryCode,
-                'postal_code' => $faker->postcode,
+                'postal_code' => '99999',
                 'created_at' => Carbon::now()->subDay(1),
                 'updated_at' => Carbon::now()
             ]);
