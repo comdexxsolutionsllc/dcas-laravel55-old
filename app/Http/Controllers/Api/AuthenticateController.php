@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
@@ -11,9 +12,9 @@ use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 class AuthenticateController extends Controller
 {
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function authenticate()
+    public function authenticate(): JsonResponse
     {
         // grab credentials from the request
         $credentials = request()->only('email', 'password');
@@ -33,9 +34,9 @@ class AuthenticateController extends Controller
     }
 
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function getAuthenticatedUser()
+    public function getAuthenticatedUser(): JsonResponse
     {
         try {
 

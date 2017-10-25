@@ -7,12 +7,36 @@ use Modules\SupportDesk\Models\Ticket;
 
 class AppMailer
 {
+    /**
+     * @var Mailer
+     */
     protected $mailer;
+
+    /**
+     * @var string
+     */
     protected $fromAddress = 'support@supportticket.dev';
+
+    /**
+     * @var string
+     */
     protected $fromName = 'Support Ticket';
+
+    /**
+     * @var string
+     */
     protected $to;
+
+    /**
+     * @var string
+     */
     protected $subject;
+
     protected $view;
+
+    /**
+     * @var array
+     */
     protected $data = [];
 
     /**

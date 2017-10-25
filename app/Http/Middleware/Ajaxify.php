@@ -49,7 +49,7 @@ class Ajaxify
      * @param $response
      * @return bool
      */
-    protected function shouldAjaxify($request, $response)
+    protected function shouldAjaxify($request, $response): bool
     {
         // If we already have a JSON response we don't need to do anything
         if ($response instanceof JsonResponse) {

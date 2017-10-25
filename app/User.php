@@ -6,6 +6,8 @@ use App\Profile;
 use Cviebrock\EloquentSluggable\Sluggable;
 //use DCAS\Traits\Excludable;
 use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -91,7 +93,6 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      * @var array
      */
     protected $casts = [
-        'is_admin' => 'boolean',
         'is_disabled' => 'boolean',
     ];
 
@@ -166,11 +167,10 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
 
     /**
      * Is the user an administrator?
-     * TODO
      *
      * @return bool
      */
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return $this->username === 'srenner';
     }
@@ -180,7 +180,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      *
      * @return boolean
      */
-    public function isDisabled()
+    public function isDisabled(): bool
     {
         return $this->is_disabled;
     }
@@ -209,7 +209,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      *
      * @return string
      */
-    public function searchableAs()
+    public function searchableAs(): string
     {
         return 'users_index';
     }
@@ -229,7 +229,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
@@ -237,7 +237,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function profile()
+    public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);
     }
@@ -245,7 +245,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tickets()
+    public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
     }

@@ -12,7 +12,7 @@ class CollectionMacroServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         Collection::macro('addIfNotNull', function ($element) {
             $collection = collect($this->items);
@@ -28,7 +28,7 @@ class CollectionMacroServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }

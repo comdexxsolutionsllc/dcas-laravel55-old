@@ -34,7 +34,7 @@ abstract class Model extends Eloquent
      *
      * @return array
      */
-    public function toSearchableArray()
+    public function toSearchableArray(): array
     {
         $array = $this->toArray();
 

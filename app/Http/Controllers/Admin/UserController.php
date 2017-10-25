@@ -4,25 +4,35 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Auth;
-use Session;
-
+use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
-    public function user_switch_start($new_user)
+    /**
+     * @param $new_user
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function user_switch_start($new_user): RedirectResponse
     {
         $new_user = User::find($new_user);
-        Session::put('orig_user', Auth::id());
-        Auth::login($new_user);
+
+        session()->put('orig_user', Auth::id());
+
+        auth()->login($new_user);
+
         return redirect()->back();
     }
 
-    public function user_switch_stop()
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function user_switch_stop(): RedirectResponse
     {
-        $id = Session::pull('orig_user');
+        $id = session()->pull('orig_user');
         $orig_user = User::find($id);
-        Auth::login($orig_user);
+
+        auth()->login($orig_user);
+
         return redirect()->back();
     }
 }

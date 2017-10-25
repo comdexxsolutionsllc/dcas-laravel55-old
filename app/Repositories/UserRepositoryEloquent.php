@@ -21,7 +21,7 @@ class UserRepositoryEloquent extends BaseRepository
      *
      * @return string
      */
-    public function model()
+    public function model(): string
     {
         return User::class;
     }
@@ -39,7 +39,7 @@ class UserRepositoryEloquent extends BaseRepository
      *
      * @return string
      */
-    public function presenter()
+    public function presenter(): string
     {
         return "App\\Presenters\\UserPresenter";
     }

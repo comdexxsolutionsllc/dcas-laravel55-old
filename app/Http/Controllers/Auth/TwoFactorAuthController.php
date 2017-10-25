@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Authy;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class TwoFactorAuthController extends Controller
 {
@@ -16,7 +17,7 @@ class TwoFactorAuthController extends Controller
      * @param  \Illuminate\Contracts\Auth\Authenticatable $user
      * @return \Illuminate\Http\Response
      */
-    protected function authenticated(Request $request, Authenticatable $user)
+    protected function authenticated(Request $request, Authenticatable $user): Response
     {
         if (Authy::getProvider()->isEnabled($user)) {
             return $this->logoutAndRedirectToTokenScreen($request, $user);
@@ -32,7 +33,7 @@ class TwoFactorAuthController extends Controller
      * @param  \Illuminate\Contracts\Auth\Authenticatable $user
      * @return \Illuminate\Http\Response
      */
-    protected function logoutAndRedirectToTokenScreen(Request $request, Authenticatable $user)
+    protected function logoutAndRedirectToTokenScreen(Request $request, Authenticatable $user): Response
     {
         auth($this->getGuard())->logout();
 
@@ -57,7 +58,7 @@ class TwoFactorAuthController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function postToken(Request $request)
+    public function postToken(Request $request): Response
     {
         $this->validate($request, ['token' => 'required']);
         if (!session('authy:auth:id')) {

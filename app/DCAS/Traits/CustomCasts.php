@@ -55,6 +55,10 @@ trait CustomCasts
         }
     }
 
+    /**
+     * @param $value
+     * @return Carbon|static
+     */
     protected function asTime($value)
     {
         // If this value is already a Carbon instance, we shall just return it as is.
@@ -100,7 +104,7 @@ trait CustomCasts
      *
      * @return string
      */
-    protected function getTimeFormat()
+    protected function getTimeFormat(): string
     {
         //return $this->timeFormat ?: $this->getConnection()->getQueryGrammar()->getTimeFormat();
         return $this->timeFormat ?: 'h:i:s';
@@ -148,7 +152,7 @@ trait CustomCasts
      * @param  \Carbon\Carbon|int $value
      * @return string
      */
-    public function fromTime($value)
+    public function fromTime($value): string
     {
         $format = $this->getTimeFormat();
 
@@ -163,7 +167,7 @@ trait CustomCasts
      * @param  string $key
      * @return bool
      */
-    protected function isTimeCastable($key)
+    protected function isTimeCastable($key): bool
     {
         return $this->hasCast($key, ['time']);
     }

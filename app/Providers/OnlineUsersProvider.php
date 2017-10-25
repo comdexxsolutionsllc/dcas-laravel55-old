@@ -28,6 +28,9 @@ class OnlineUsersProvider extends ServiceProvider
         //
     }
 
+    /**
+     * Get online user count.
+     */
     private function getOnlineUsersCount()
     {
         view()->composer('partials.user-online', function ($view) {

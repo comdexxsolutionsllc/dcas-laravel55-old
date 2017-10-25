@@ -7,7 +7,14 @@ use Illuminate\Console\Command;
 
 class AddUser extends Command
 {
+    /**
+     * @var string
+     */
     protected $signature = 'user:add {email}';
+
+    /**
+     * @var string
+     */
     protected $description = 'Creates a new user';
 
     public function handle()

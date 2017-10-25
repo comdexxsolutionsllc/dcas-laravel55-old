@@ -20,13 +20,13 @@ class ItemService
      * @param $pagination
      * @return array
      */
-    public function getItems($data, $pagination)
+    public function getItems($data, $pagination): array
     {
         return [
             'data' => $data,
             'pagination' =>
                 ($pagination) ? $pagination :
-                                ['per_page' => 20, 'prev' => 2, 'next' => 4, 'first' => 1, 'last' => 5]
+                    ['per_page' => 20, 'prev' => 2, 'next' => 4, 'first' => 1, 'last' => 5]
         ];
     }
 }

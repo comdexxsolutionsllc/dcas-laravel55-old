@@ -3,6 +3,7 @@
 namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Modules\SupportDesk\Mailers\AppMailer;
 use Modules\SupportDesk\Models\Comment;
@@ -14,7 +15,7 @@ class CommentsController extends Controller
      * @param AppMailer $mailer
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function postComment(Request $request, AppMailer $mailer)
+    public function postComment(Request $request, AppMailer $mailer): RedirectResponse
     {
         $this->validate($request, [
             'comment' => 'required'

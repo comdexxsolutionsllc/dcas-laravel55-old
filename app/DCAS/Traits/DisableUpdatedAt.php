@@ -26,12 +26,18 @@ trait DisableUpdatedAt
         });
     }
 
+    /**
+     * @param $value
+     */
     public function setUpdatedAt($value)
     {
         //
     }
 
-    public function getUpdatedAtColumn()
+    /**
+     * @return string
+     */
+    public function getUpdatedAtColumn(): string
     {
         return '';
     }

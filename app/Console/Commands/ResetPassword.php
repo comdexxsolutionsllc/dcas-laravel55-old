@@ -8,7 +8,14 @@ use Illuminate\Contracts\Auth\UserProvider;
 
 class ResetPassword extends Command
 {
+    /**
+     * @var string
+     */
     protected $signature = 'user:reset {email}';
+
+    /**
+     * @var string
+     */
     protected $description = "Reset a user's password";
 
     public function handle()

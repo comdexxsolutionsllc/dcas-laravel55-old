@@ -9,8 +9,14 @@ use Illuminate\Support\ServiceProvider;
 
 class MacroServiceProvider extends ServiceProvider
 {
+    /**
+     * @var string
+     */
     public $foreignKey = 'user_id';
 
+    /**
+     * @var string
+     */
     public $localKey = 'id';
 
     /**
@@ -18,7 +24,7 @@ class MacroServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         HasMany::macro('toHasOne', function () {
             return new HasOne(
@@ -36,7 +42,7 @@ class MacroServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
