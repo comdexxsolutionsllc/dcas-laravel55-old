@@ -5,7 +5,6 @@ namespace Modules\SupportDesk\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Modules\SupportDesk\Mailers\AppMailer;
 use Modules\SupportDesk\Models\Category;
@@ -27,7 +26,10 @@ class TicketsController extends Controller
      */
     public function index(): View
     {
-        $tickets = Ticket::paginate(10);
+        $tickets = Ticket::paginate(
+            $pagination = config('modules.tickets.ticket.pagination')
+        );
+
         $categories = Category::all();
 
         return view('SupportDesk::tickets.index', compact('tickets', 'categories'));
@@ -63,7 +65,11 @@ class TicketsController extends Controller
      */
     public function showClosed(): View
     {
-        $tickets = Ticket::where('status', 'Closed')->paginate(10);
+        $tickets = Ticket::where('status', 'Closed')
+            ->paginate(
+                $pagination = config('modules.tickets.ticket.pagination')
+            );
+
         $categories = Category::all();
 
         return view('SupportDesk::tickets.closed', compact('tickets', 'categories'));
@@ -73,6 +79,7 @@ class TicketsController extends Controller
      * @param Request $request
      * @param AppMailer $mailer
      * @return RedirectResponse
+     * @throws \Exception
      */
     public function store(Request $request, AppMailer $mailer): RedirectResponse
     {
@@ -94,20 +101,22 @@ class TicketsController extends Controller
         }
 
         $ticket = new Ticket([
-            'title' => $request->input('title'),
-            'user_id' => Auth::user()->id,
+            'title' => request()->input('title'),
+            'user_id' => auth()->user()->id,
             'ticket_id' => strtoupper(str_random(10)),
-            'category_id' => $request->input('category'),
-            'priority' => $request->input('priority'),
-            'message' => $request->input('message'),
+            'category_id' => request()->input('category'),
+            'priority' => request()->input('priority'),
+            'message' => request()->input('message'),
             'status' => "Open",
         ]);
 
         $ticket->save();
 
-        $mailer->sendTicketInformation(Auth::user(), $ticket);
+        $mailer->sendTicketInformation(auth()->user(), $ticket);
 
-        return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+        return redirect()
+            ->route('supportdesk.my_tickets')
+            ->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
     }
 
     /**
@@ -155,7 +164,11 @@ class TicketsController extends Controller
      */
     public function userTickets(): View
     {
-        $tickets = Ticket::where('user_id', Auth::user()->id)->paginate(10);
+        $tickets = Ticket::where('user_id', auth()->user()->id)
+            ->paginate(
+                $pagination = config('modules.tickets.ticket.pagination')
+            );
+
         $categories = Category::all();
 
         return view('SupportDesk::tickets.user_tickets', compact('tickets', 'categories'));

@@ -12,6 +12,10 @@ class UserFilter extends ModelFilter
      */
     public $relations = [];
 
+    /**
+     * @param $name
+     * @return $this
+     */
     public function name($name)
     {
         return $this->where(function ($q) use ($name) {

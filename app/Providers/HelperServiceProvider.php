@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 
 class HelperServiceProvider extends ServiceProvider
 {
+    /**
+     * @var array
+     */
     protected $helpers = [
         // Add your helpers in here
     ];

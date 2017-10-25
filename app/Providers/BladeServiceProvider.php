@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Blade;
-use HTML;
 use Illuminate\Support\ServiceProvider;
 
 class BladeServiceProvider extends ServiceProvider
@@ -13,7 +12,7 @@ class BladeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         Blade::if ('admin', function ($user = null) {
             if (!$user && auth()->check()) {
@@ -179,7 +178,7 @@ class BladeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
@@ -191,7 +190,7 @@ class BladeServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    private function getArguments($argumentString)
+    private function getArguments($argumentString): array
     {
         return explode(', ', str_replace(['(', ')'], '', $argumentString));
     }

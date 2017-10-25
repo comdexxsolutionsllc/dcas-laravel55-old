@@ -6,6 +6,11 @@ use Closure;
 
 class JsonpResponse
 {
+    /**
+     * @param $request
+     * @param Closure $next
+     * @return mixed
+     */
     public function handle($request, Closure $next)
     {
         $response = $next($request);

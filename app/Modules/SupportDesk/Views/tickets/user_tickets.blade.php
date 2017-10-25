@@ -11,6 +11,8 @@
                 </div>
 
                 <div class="panel-body">
+                    @include('SupportDesk::includes.flash')
+
                     @if ($tickets->isEmpty())
                         <p>You have not created any tickets.</p>
                     @else

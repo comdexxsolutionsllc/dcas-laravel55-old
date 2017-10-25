@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Session;
 
 class HomeController extends Controller
 {
+    /**
+     * @var string
+     */
     protected $domain;
 
     /**
@@ -19,9 +23,9 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         $domain = $this->injectDomain();
 
@@ -33,7 +37,7 @@ class HomeController extends Controller
      *
      * @return string
      */
-    protected function injectDomain()
+    protected function injectDomain(): string
     {
         !Session::has('domain') ? Session::put('domain', auth()->user()->domain) : true;
 
@@ -47,7 +51,7 @@ class HomeController extends Controller
     /**
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->domain;
     }

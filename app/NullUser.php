@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
@@ -27,7 +29,7 @@ class NullUser extends Authenticatable
      *
      * @return boolean
      */
-    public function isDisabled()
+    public function isDisabled(): bool
     {
         return $this->is_disabled;
     }
@@ -37,7 +39,7 @@ class NullUser extends Authenticatable
      *
      * @return mixed | false
      */
-    public function isOnline()
+    public function isOnline(): bool
     {
         return false;
     }
@@ -45,7 +47,7 @@ class NullUser extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(NullComment::class);
     }
@@ -53,7 +55,7 @@ class NullUser extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function profile()
+    public function profile(): HasOne
     {
         return $this->hasOne(NullProfile::class);
     }
@@ -61,7 +63,7 @@ class NullUser extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tickets()
+    public function tickets(): HasMany
     {
         return $this->hasMany(NullTicket::class);
     }

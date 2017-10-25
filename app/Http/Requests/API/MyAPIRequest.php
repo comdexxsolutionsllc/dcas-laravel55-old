@@ -3,9 +3,9 @@
 namespace App\Http\Requests\API;
 
 use InfyOm\Generator\Request\APIRequest;
-use InfyOm\Generator\Utils\ResponseUtil;
-use Illuminate\Contracts\Validation\Validator;
 use Response;
+//use InfyOm\Generator\Utils\ResponseUtil;
+//use Illuminate\Contracts\Validation\Validator;
 
 class MyAPIRequest extends APIRequest
 {
@@ -16,18 +16,18 @@ class MyAPIRequest extends APIRequest
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function response(array $errors)
+    public function response(array $errors): Response
     {
         return Response::json(static::makeError($errors), 400);
     }
 
     /**
      * @param string $errors
-     * @param array  $data
+     * @param array $data
      *
      * @return array
      */
-    public static function makeError($errors, array $data = [])
+    public static function makeError($errors, array $data = []): array
     {
         $res = [
             'success' => false,
@@ -39,5 +39,5 @@ class MyAPIRequest extends APIRequest
         }
 
         return $res;
-    }  
+    }
 }

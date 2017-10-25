@@ -17,7 +17,7 @@
                         <p>{{ $ticket->message }}</p>
                         <p>Category: {{ $category->name }}</p>
                         <p>
-                            Status:  @include('SupportDesk::partials.ticket_grid')
+                            Status: @include('SupportDesk::partials.ticket_grid')
                         </p>
                         <p>Created on: {{ $ticket->created_at->diffForHumans() }}</p>
                     </div>
