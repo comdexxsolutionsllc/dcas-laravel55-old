@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.18 on 2017-10-25.
+ * Generated for Laravel 5.5.19 on 2017-10-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3276,7 +3276,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the cookies which have been queued for the next request.
          *
-         * @return array 
+         * @return \Symfony\Component\HttpFoundation\Cookie[] 
          * @static 
          */ 
         public static function getQueuedCookies()
@@ -4806,7 +4806,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $directory
          * @param bool $hidden
-         * @return array 
+         * @return \Symfony\Component\Finder\SplFileInfo[] 
          * @static 
          */ 
         public static function files($directory, $hidden = false)
@@ -4819,7 +4819,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $directory
          * @param bool $hidden
-         * @return array 
+         * @return \Symfony\Component\Finder\SplFileInfo[] 
          * @static 
          */ 
         public static function allFiles($directory, $hidden = false)
