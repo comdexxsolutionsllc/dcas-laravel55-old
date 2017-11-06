@@ -2,9 +2,7 @@
 
 namespace App;
 
-use App\Profile;
 use Cviebrock\EloquentSluggable\Sluggable;
-//use DCAS\Traits\Excludable;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -19,10 +17,12 @@ use Modules\SupportDesk\Models\Ticket;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
-use Venturecraft\Revisionable\RevisionableTrait;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
+use Venturecraft\Revisionable\RevisionableTrait;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
+//use DCAS\Traits\Excludable;
 
 //use Laravel\Scout\Searchable;
 
@@ -166,13 +166,27 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     protected $table = 'accounts';
 
     /**
+     * Roles that are administrators.
+     *
+     * @var array
+     */
+    protected $admins = [
+        'super_admin'
+    ];
+
+    /**
      * Is the user an administrator?
      *
      * @return bool
      */
     public function isAdmin(): bool
     {
-        return $this->username === 'srenner';
+        $roles = $this->roles->pluck('name')->toArray();
+
+        if (count($roles) === 0)
+            return false;
+
+        return !!array_intersect($this->admins, $roles);
     }
 
     /**

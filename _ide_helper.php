@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.19 on 2017-10-25.
+ * Generated for Laravel 5.5.19 on 2017-11-05.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14630,7 +14630,7 @@ namespace Lavary\Menu {
          * Check if a menu exists.
          *
          * @param string $name
-         * @return boolean 
+         * @return bool 
          * @static 
          */ 
         public static function exists($name)
@@ -14639,11 +14639,11 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Create a new menu instance
+         * Create a new menu instance.
          *
          * @param string $name
          * @param callable $callback
-         * @return \Lavary\Menu\Menu 
+         * @return \Menu 
          * @static 
          */ 
         public static function makeOnce($name, $callback)
@@ -14652,11 +14652,11 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Create a new menu instance
+         * Create a new menu instance.
          *
          * @param string $name
          * @param callable $callback
-         * @return \Lavary\Menu\Menu 
+         * @return \Menu 
          * @static 
          */ 
         public static function make($name, $callback)
@@ -14665,7 +14665,7 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Loads and merges configuration data
+         * Loads and merges configuration data.
          *
          * @param string $name
          * @return array 
@@ -14677,7 +14677,7 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Return Menu instance from the collection by key
+         * Return Menu instance from the collection by key.
          *
          * @param string $key
          * @return \Lavary\Menu\Item 
@@ -14689,7 +14689,7 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Return Menu collection
+         * Return Menu collection.
          *
          * @return \Illuminate\Support\Collection 
          * @static 
@@ -14700,7 +14700,7 @@ namespace Lavary\Menu {
         }
         
         /**
-         * Alias for getCollection
+         * Alias for getCollection.
          *
          * @return \Illuminate\Support\Collection 
          * @static 
@@ -15401,6 +15401,36 @@ namespace Spatie\ResponseCache\Facades {
  
 }
 
+namespace PragmaRX\Countries { 
+
+    class Facade {
+        
+        /**
+         * Get the countries repository.
+         *
+         * @return \PragmaRX\Countries\CountriesRepository 
+         * @static 
+         */ 
+        public static function getRepository()
+        {
+            return \PragmaRX\Countries\Service::getRepository();
+        }
+        
+        /**
+         * Get all currencies.
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function currencies()
+        {
+            return \PragmaRX\Countries\Service::currencies();
+        }
+         
+    }
+ 
+}
+
 namespace Yajra\DataTables\Facades { 
 
     class DataTables {
@@ -15456,9 +15486,10 @@ namespace Yajra\DataTables\Facades {
         }
         
         /**
-         * DataTables using Query Builder.
+         * 
          *
-         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @deprecated Please use query() instead, this method will be removed in a next version.
+         * @param $builder
          * @return \Yajra\DataTables\QueryDataTable 
          * @static 
          */ 
@@ -15468,10 +15499,22 @@ namespace Yajra\DataTables\Facades {
         }
         
         /**
+         * DataTables using Query.
+         *
+         * @param \Illuminate\Database\Query\Builder|mixed $builder
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\QueryDataTable 
+         * @static 
+         */ 
+        public static function query($builder)
+        {
+            return \Yajra\DataTables\DataTables::query($builder);
+        }
+        
+        /**
          * DataTables using Eloquent Builder.
          *
          * @param \Illuminate\Database\Eloquent\Builder|mixed $builder
-         * @return \Yajra\DataTables\EloquentDataTable 
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\EloquentDataTable 
          * @static 
          */ 
         public static function eloquent($builder)
@@ -15483,7 +15526,7 @@ namespace Yajra\DataTables\Facades {
          * DataTables using Collection.
          *
          * @param \Illuminate\Support\Collection|array $collection
-         * @return \Yajra\DataTables\CollectionDataTable 
+         * @return \Yajra\DataTables\DataTableAbstract|\Yajra\DataTables\CollectionDataTable 
          * @static 
          */ 
         public static function collection($collection)
@@ -15501,6 +15544,43 @@ namespace Yajra\DataTables\Facades {
         public static function getHtmlBuilder()
         {
             return \Yajra\DataTables\DataTables::getHtmlBuilder();
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+            \Yajra\DataTables\DataTables::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @return void 
+         * @static 
+         */ 
+        public static function mixin($mixin)
+        {
+            \Yajra\DataTables\DataTables::mixin($mixin);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+            return \Yajra\DataTables\DataTables::hasMacro($name);
         }
          
     }
@@ -17657,6 +17737,8 @@ namespace  {
     class Image extends \Intervention\Image\Facades\Image {}
 
     class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
+
+    class Countries extends \PragmaRX\Countries\Facade {}
 
     class DataTables extends \Yajra\DataTables\Facades\DataTables {}
  

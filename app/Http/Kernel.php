@@ -21,6 +21,13 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
         \Barryvdh\Cors\HandleCors::class,
         \anlutro\LaravelSettings\SaveMiddleware::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\InlineCss::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\ElideAttributes::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveComments::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
     ];
 
     /**
@@ -40,6 +47,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 //            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
             \App\Http\Middleware\Ajaxify::class,
+            \App\Http\Middleware\LogLastUserActivity::class,
         ],
 
         'api' => [
@@ -75,5 +83,7 @@ class Kernel extends HttpKernel
 //        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
 //        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
 
+        'timeout'               => \App\Http\Middleware\SessionTimeout::class,
+        'restrict.ip.main'      => \App\Http\Middleware\RestrictByIP::class,
     ];
 }

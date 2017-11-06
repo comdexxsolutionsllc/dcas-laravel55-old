@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
 use Session;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -23,9 +23,9 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return Response
+     * @return View
      */
-    public function index(): Response
+    public function index(): View
     {
         $domain = $this->injectDomain();
 
@@ -49,9 +49,9 @@ class HomeController extends Controller
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDomain(): string
+    public function getDomain()
     {
         return $this->domain;
     }

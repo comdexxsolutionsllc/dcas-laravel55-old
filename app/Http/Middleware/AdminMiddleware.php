@@ -16,10 +16,12 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->isAdmin() !== true) {
-            return redirect('home');
-        }
+        $user = auth()->user();
 
-        return $next($request);
+        if (is_null($user) === true) {
+            return redirect('home');
+        } else {
+            return $next($request);
+        }
     }
 }

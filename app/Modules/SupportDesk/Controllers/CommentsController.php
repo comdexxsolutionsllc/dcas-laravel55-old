@@ -10,6 +10,11 @@ use Modules\SupportDesk\Models\Comment;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     /**
      * @param Request $request
      * @param AppMailer $mailer

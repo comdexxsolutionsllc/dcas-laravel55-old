@@ -208,5 +208,11 @@ class PermissionRoleSeeder extends Seeder
         $employee->display_name = 'Employee'; 
         $employee->description = 'Default employee role'; 
         $employee->save();
+
+
+        $user = App\User::first();
+        $user->attachRole($super_admin);
+        // Permission->Roles
+        $user->attachPermission($manageSystem);
     }
 }
