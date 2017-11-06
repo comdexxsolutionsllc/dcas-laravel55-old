@@ -52,97 +52,21 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
-
         $this->mapWebAdminRoutes();
+
+        $this->mapAuthenticationRoutes();
+
+        $this->mapImpersonateRoutes();
+
+        $this->mapCashierRoutes();
+
+        $this->mapScoutRoutes();
+
+        $this->mapWebRoutes();
 
         $this->mapWebUserRoutes();
 
-        //
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/web.php'));
-    }
-
-    /**
-     * Define the admin "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebAdminRoutes()
-    {
-        Route::prefix('/dashboard/admin')
-            ->middleware('web')
-            ->as('dashboard.admin.')
-            ->namespace($this->adminNamespace)
-            ->group(base_path('routes/web-admin.php'));
-
-        Route::get('/dashboard/admin/{view}', function ($view) {
-            try {
-                $view = 'dashboard.admin.' . $view;
-
-                return view($view);
-            } catch (\Exception $e) {
-                abort(404);
-            }
-        })->where('view', '.*');
-    }
-
-    /**
-     * Define the user "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebUserRoutes()
-    {
-        Route::get('/dashboard', 'HomeController@index')->name('home');
-
-        Route::prefix('/dashboard')
-            ->middleware('web')
-            ->as('dashboard.user.')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/web-user.php'));
-
-        Route::get('/dashboard/{view}', function ($view) {
-            try {
-                $view = 'dashboard.user.' . $view;
-
-                return view($view);
-            } catch (\Exception $e) {
-                abort(404);
-            }
-        })->where('view', '.*');
-    }
-
-    /**
-     * Define the debug/testing "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapTestingRoutes()
-    {
-        Route::prefix('testing')
-            ->middleware('web')
-            ->as('testing.')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/testing.php'));
+        $this->mapTestingRoutes();
     }
 
     /**
@@ -169,6 +93,149 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->as('api.')
             ->namespace($this->namespace . "\Api")
-            ->group(base_path('routes/api-v1.php'));
+            ->group(base_path('routes/api.v1.php'));
+    }
+
+    /**
+     * Define the admin "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebAdminRoutes()
+    {
+        Route::prefix('/dashboard/admin')
+            ->middleware('web')
+            ->as('dashboard.admin.')
+            ->namespace($this->adminNamespace)
+            ->group(base_path('routes/web.admin.php'));
+
+        Route::get('/dashboard/admin/{view}', function ($view) {
+            try {
+                $view = 'dashboard.admin.' . $view;
+
+                return view($view);
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        })->where('view', '.*');
+    }
+
+    /**
+     * Define the open authentication "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAuthenticationRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.authentication.php'));
+    }
+
+    /**
+     * Define the admin impersonation "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapImpersonateRoutes()
+    {
+        Route::middleware('web')
+            ->as('impersonate.')
+            ->namespace($this->adminNamespace)
+            ->group(base_path('routes/web.impersonate.php'));
+    }
+
+    /**
+     * Define the Laravel Cashier "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapCashierRoutes()
+    {
+        Route::middleware('web')
+            ->as('cashier.')
+            ->namespace($this->apiNamespace)
+            ->group(base_path('routes/web.cashier.php'));
+    }
+
+    /**
+     * Define the scout search "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapScoutRoutes()
+    {
+        Route::middleware('web')
+            ->as('scout.')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.scout.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the user "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebUserRoutes()
+    {
+        Route::get('/dashboard', 'HomeController@index')->name('home');
+
+        Route::prefix('/dashboard')
+            ->middleware('web')
+            ->as('dashboard.user.')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.user.php'));
+
+        Route::get('/dashboard/{view}', function ($view) {
+            try {
+                $view = 'dashboard.user.' . $view;
+
+                return view($view);
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        })->where('view', '.*');
+    }
+
+    /**
+     * Define the debug/testing "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapTestingRoutes()
+    {
+        Route::prefix('testing')
+            ->middleware('web')
+            ->as('testing.')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.testing.php'));
     }
 }
