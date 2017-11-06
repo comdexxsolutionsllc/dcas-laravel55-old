@@ -8,7 +8,6 @@
 /storage/*.key
 /storage/debugbar
 /storage/logs
-/storage/tinx
 /vendor
 yarn-error.log
 .env
