@@ -60,6 +60,7 @@
         "materialize": "^1.0.0",
         "materialize-css": "^0.98.2",
         "moment": "^2.19.1",
+        "moxios": "^0.4.0",
         "node-sass": "^4.5.3",
         "normalize.css": "^5.0.0",
         "pusher-js": "^4.2.1",
