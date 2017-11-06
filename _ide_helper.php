@@ -14317,6 +14317,66 @@ namespace Spatie\Glide {
  
 }
 
+namespace Intervention\Image\Facades { 
+
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */ 
+        public static function configure($config = array())
+        {
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+ 
+}
+
 namespace Tymon\JWTAuth\Facades { 
 
     class JWTAuth {
@@ -14708,6 +14768,94 @@ namespace Lavary\Menu {
         public static function all()
         {
             return \Lavary\Menu\Menu::all();
+        }
+         
+    }
+ 
+}
+
+namespace Davibennun\LaravelPushNotification\Facades { 
+
+    class PushNotification {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function app($appName)
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::app($appName);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Message()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::Message();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Device()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::Device();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function DeviceCollection()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::DeviceCollection();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function PushManager()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::PushManager();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function ApnsAdapter()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::ApnsAdapter();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function GcmAdapter()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::GcmAdapter();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Push()
+        {
+            return \Davibennun\LaravelPushNotification\PushNotification::Push();
         }
          
     }
@@ -15267,66 +15415,6 @@ namespace Spatie\Fractal {
         {
             //Method inherited from \Spatie\Fractalistic\Fractal            
             return \Spatie\Fractal\Fractal::jsonSerialize();
-        }
-         
-    }
- 
-}
-
-namespace Intervention\Image\Facades { 
-
-    class Image {
-        
-        /**
-         * Overrides configuration settings
-         *
-         * @param array $config
-         * @static 
-         */ 
-        public static function configure($config = array())
-        {
-            return \Intervention\Image\ImageManager::configure($config);
-        }
-        
-        /**
-         * Initiates an Image instance from different input types
-         *
-         * @param mixed $data
-         * @return \Intervention\Image\Image 
-         * @static 
-         */ 
-        public static function make($data)
-        {
-            return \Intervention\Image\ImageManager::make($data);
-        }
-        
-        /**
-         * Creates an empty image canvas
-         *
-         * @param integer $width
-         * @param integer $height
-         * @param mixed $background
-         * @return \Intervention\Image\Image 
-         * @static 
-         */ 
-        public static function canvas($width, $height, $background = null)
-        {
-            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
-        }
-        
-        /**
-         * Create new cached image and run callback
-         * (requires additional package intervention/imagecache)
-         *
-         * @param \Closure $callback
-         * @param integer $lifetime
-         * @param boolean $returnObj
-         * @return \Image 
-         * @static 
-         */ 
-        public static function cache($callback, $lifetime = null, $returnObj = false)
-        {
-            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
         }
          
     }
@@ -17718,11 +17806,15 @@ namespace  {
 
     class Html extends \Collective\Html\HtmlFacade {}
 
+    class Image extends \Intervention\Image\Facades\Image {}
+
     class JWTAuth extends \Tymon\JWTAuth\Facades\JWTAuth {}
 
     class JWTFactory extends \Tymon\JWTAuth\Facades\JWTFactory {}
 
     class Menu extends \Lavary\Menu\Facade {}
+
+    class PushNotification extends \Davibennun\LaravelPushNotification\Facades\PushNotification {}
 
     class Setting extends \anlutro\LaravelSettings\Facade {}
 
@@ -17733,8 +17825,6 @@ namespace  {
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
 
     class Fractal extends \Spatie\Fractal\FractalFacade {}
-
-    class Image extends \Intervention\Image\Facades\Image {}
 
     class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
 
