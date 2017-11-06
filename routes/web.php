@@ -55,3 +55,8 @@ Route::get('sms', function () {
         return response()->json(['error' => ['Unable To Send 2FA Login Token']], 422);
     }
 });
+
+
+if (in_array(app()->environment(), $env = ["development", "local"])) {
+    Route::get('decompose', '\Lubusin\Decomposer\Controllers\DecomposerController@index');
+}

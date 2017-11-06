@@ -6,9 +6,12 @@ use App\Model;
 use App\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
 {
+    use SoftDeletes;
+
     /**
      * @var array
      */
@@ -58,5 +61,13 @@ class Ticket extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return '[ticket_id]';
     }
 }

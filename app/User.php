@@ -2,9 +2,7 @@
 
 namespace App;
 
-use App\Profile;
 use Cviebrock\EloquentSluggable\Sluggable;
-//use DCAS\Traits\Excludable;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -19,10 +17,12 @@ use Modules\SupportDesk\Models\Ticket;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
-use Venturecraft\Revisionable\RevisionableTrait;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
+use Venturecraft\Revisionable\RevisionableTrait;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
+//use DCAS\Traits\Excludable;
 
 //use Laravel\Scout\Searchable;
 
@@ -166,13 +166,27 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     protected $table = 'accounts';
 
     /**
+     * Roles that are administrators.
+     *
+     * @var array
+     */
+    protected $admins = [
+        'super_admin'
+    ];
+
+    /**
      * Is the user an administrator?
      *
      * @return bool
      */
     public function isAdmin(): bool
     {
-        return $this->username === 'srenner';
+        $roles = $this->roles->pluck('name')->toArray();
+
+        if (count($roles) === 0)
+            return false;
+
+        return !!array_intersect($this->admins, $roles);
     }
 
     /**
@@ -248,5 +262,70 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+
+    /**
+     * @param $roles
+     * @param $permissions
+     * @param array $options
+     * @return array|bool
+     */
+    public function ability($roles, $permissions, $options = [])
+    {
+        // Convert string to array if that's what is passed in.
+        if (!is_array($roles)) {
+            $roles = explode(',', $roles);
+        }
+        if (!is_array($permissions)) {
+            $permissions = explode(',', $permissions);
+        }
+
+        // Set up default values and validate options.
+        if (!isset($options['validate_all'])) {
+            $options['validate_all'] = false;
+        } else {
+            if ($options['validate_all'] !== true && $options['validate_all'] !== false) {
+                throw new InvalidArgumentException();
+            }
+        }
+        if (!isset($options['return_type'])) {
+            $options['return_type'] = 'boolean';
+        } else {
+            if ($options['return_type'] != 'boolean' &&
+                $options['return_type'] != 'array' &&
+                $options['return_type'] != 'both') {
+                throw new InvalidArgumentException();
+            }
+        }
+
+        // Loop through roles and permissions and check each.
+        $checkedRoles = [];
+        $checkedPermissions = [];
+        foreach ($roles as $role) {
+            $checkedRoles[$role] = $this->hasRole($role);
+        }
+        foreach ($permissions as $permission) {
+            $checkedPermissions[$permission] = $this->may($permission);
+        }
+
+        // If validate all and there is a false in either
+        // Check that if validate all, then there should not be any false.
+        // Check that if not validate all, there must be at least one true.
+        if (($options['validate_all'] && !(in_array(false, $checkedRoles) || in_array(false, $checkedPermissions))) ||
+            (!$options['validate_all'] && (in_array(true, $checkedRoles) || in_array(true, $checkedPermissions)))) {
+            $validateAll = true;
+        } else {
+            $validateAll = false;
+        }
+
+        // Return based on option
+        if ($options['return_type'] == 'boolean') {
+            return $validateAll;
+        } elseif ($options['return_type'] == 'array') {
+            return ['roles' => $checkedRoles, 'permissions' => $checkedPermissions];
+        } else {
+            return [$validateAll, ['roles' => $checkedRoles, 'permissions' => $checkedPermissions]];
+        }
+
     }
 }

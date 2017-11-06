@@ -2,10 +2,21 @@
 
 namespace App\Providers;
 
+use App\Permission;
+use App\Policies\CategoryPolicy;
+use App\Policies\CommentPolicy;
+use App\Policies\PermissionPolicy;
+use App\Policies\RolePolicy;
+use App\Policies\TicketPolicy;
+use App\Role;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
+use Modules\SupportDesk\Models\Category;
+use Modules\SupportDesk\Models\Comment;
+use Modules\SupportDesk\Models\Ticket;
+
+//use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -15,7 +26,11 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        Category::class => CategoryPolicy::class,
+        Comment::class => CommentPolicy::class,
+        Permission::class => PermissionPolicy::class,
+        Role::class => RolePolicy::class,
+        Ticket::class => TicketPolicy::class,
     ];
 
     /**

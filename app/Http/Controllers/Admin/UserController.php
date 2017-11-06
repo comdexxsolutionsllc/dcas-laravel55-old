@@ -8,6 +8,11 @@ use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     /**
      * @param $new_user
      * @return \Illuminate\Http\RedirectResponse
@@ -16,7 +21,7 @@ class UserController extends Controller
     {
         $new_user = User::find($new_user);
 
-        session()->put('orig_user', Auth::id());
+        session()->put('orig_user', auth()->id());
 
         auth()->login($new_user);
 

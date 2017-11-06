@@ -205,6 +205,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
+        Lubusin\Decomposer\DecomposerServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Spatie\Glide\GlideServiceProvider::class,

@@ -12,5 +12,8 @@ Route::group(['module' => 'SupportDesk', 'prefix' => 'SupportDesk', 'middleware'
         Route::get('closed_tickets', 'TicketsController@showClosed')->name('supportdesk.admin.closed_tickets');
         Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
         Route::post('open_ticket/{ticket_id}', 'TicketsController@open');
+
+        Route::resource('permissions', 'PermissionsController');
+        Route::resource('roles', 'RolesController');
     });
 });
