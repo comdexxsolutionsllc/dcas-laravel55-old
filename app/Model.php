@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Rogercbe\TableSorter\Sortable;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Watson\Rememberable\Rememberable;
 
@@ -13,7 +14,7 @@ use Watson\Rememberable\Rememberable;
  */
 abstract class Model extends Eloquent
 {
-    use Rememberable, RevisionableTrait;
+    use Rememberable, RevisionableTrait, Sortable;
 
 
     protected $revisionEnabled = true;

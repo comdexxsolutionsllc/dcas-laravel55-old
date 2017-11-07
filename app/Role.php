@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Rogercbe\TableSorter\Sortable;
 use Zizaco\Entrust\EntrustRole;
 
 /**
@@ -22,6 +23,8 @@ use Zizaco\Entrust\EntrustRole;
  */
 class Role extends EntrustRole
 {
+    use Sortable;
+
     /**
      * name — Unique name for the Role, used for looking up role information in the application layer. For example: "admin", "owner", "employee".
      * display_name — Human readable name for the Role. Not necessarily unique and optional. For example: "User Administrator", "Project Owner", "Widget Co. Employee".

@@ -204,6 +204,7 @@ return [
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         ListRoutes\ServiceProvider::class,
@@ -211,6 +212,7 @@ return [
         Lubusin\Decomposer\DecomposerServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Rogercbe\TableSorter\TableSorterServiceProvider::class,
         Spatie\Glide\GlideServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
         Srmklive\Authy\Providers\AuthyServiceProvider::class,
@@ -267,6 +269,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Authy' => Srmklive\Authy\Facades\Authy::class,
+        'Date' => Jenssegers\Date\Date::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
