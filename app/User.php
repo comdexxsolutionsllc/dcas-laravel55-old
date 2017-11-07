@@ -3,6 +3,7 @@
 namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
+use DCAS\ModelFilters\UserFilter;
 use DCAS\Traits\HasGravatar;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -97,6 +98,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      */
     protected $casts = [
         'is_disabled' => 'boolean',
+        'is_logged_in' => 'boolean'
     ];
 
     /**
@@ -386,5 +388,13 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
             return true;
         }
         return false;
+    }
+
+    /**
+     * @return \EloquentFilter\ModelFilter
+     */
+    public function modelFilter()
+    {
+        return $this->provideFilter(UserFilter::class);
     }
 }

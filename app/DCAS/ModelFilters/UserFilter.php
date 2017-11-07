@@ -12,6 +12,18 @@ class UserFilter extends ModelFilter
      */
     public $relations = [];
 
+    public function setup()
+    {
+        $this->onlyShowDeletedForAdmins();
+    }
+
+    public function onlyShowDeletedForAdmins()
+    {
+        if(!auth()->user()) return null;
+
+        if(auth()->user()->isAdmin()) $this->withTrashed();
+    }
+
     /**
      * @param $name
      * @return $this
@@ -21,5 +33,15 @@ class UserFilter extends ModelFilter
         return $this->where(function ($q) use ($name) {
             return $q->where('name', 'LIKE', "%$name%");
         });
+    }
+
+    public function isDisabled()
+    {
+        $this->where('is_disabled', true);
+    }
+
+    public function isLoggedIn()
+    {
+        $this->where('is_logged_in', true);
     }
 }

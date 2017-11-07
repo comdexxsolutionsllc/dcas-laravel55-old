@@ -20,3 +20,7 @@ Route::get('/sms/{user_id}', function ($user_id) {
 Route::get('sort', function() {
     return $users = App\User::sortable()->limit(5)->paginate();
 });
+
+Route::get('filter', function() {
+    return User::filter(request()->all())->get();
+});
