@@ -12356,6 +12356,14 @@ namespace Srmklive\Authy\Facades {
  
 }
 
+namespace Jenssegers\Date { 
+
+    class Date {
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -17791,6 +17799,8 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
 
     class Authy extends \Srmklive\Authy\Facades\Authy {}
+
+    class Date extends \Jenssegers\Date\Date {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 

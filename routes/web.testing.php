@@ -16,3 +16,7 @@ Route::get('/sms/{user_id}', function ($user_id) {
         return response()->json(['error' => ['Unable To Send 2FA Login Token']], 422);
     }
 })->name('sms.{user_id}');
+
+Route::get('sort', function() {
+    return $users = App\User::sortable()->limit(5)->paginate();
+});

@@ -3,6 +3,7 @@
 namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
+use DCAS\Traits\HasGravatar;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use InvalidArgumentException;
 use Laravel\Cashier\Billable;
 use Laravel\Passport\HasApiTokens;
 use Modules\SupportDesk\Models\Comment;
@@ -17,6 +19,7 @@ use Modules\SupportDesk\Models\Ticket;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Prettus\Repository\Contracts\Presentable;
 use Prettus\Repository\Traits\PresentableTrait;
+use Rogercbe\TableSorter\Sortable;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
 use Venturecraft\Revisionable\RevisionableTrait;
@@ -74,7 +77,7 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  */
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable, TwoFactorAuthenticatable;
+    use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
@@ -164,6 +167,19 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      * @var string
      */
     protected $table = 'accounts';
+
+    /**
+     * @var array
+     */
+    protected $tableHeaders = [
+        'name' => ['title' => 'Full Name'],
+        'email' => ['title' => 'E-Mail'],
+        'username' => ['sortable' => 'false'],
+        'domain' => ['title' => 'Domain Name'],
+        'is_logged_in' => ['title' => 'Logged In'],
+        'is_disabled' => ['title' => 'Account Status'],
+        'created_at' => ['title' => 'Account Creation Date']
+    ];
 
     /**
      * Roles that are administrators.
@@ -326,6 +342,49 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
         } else {
             return [$validateAll, ['roles' => $checkedRoles, 'permissions' => $checkedPermissions]];
         }
+    }
 
+    /**
+     * @param $roles
+     * @return bool
+     */
+    public function authorizeRoles($roles)
+    {
+        if ($this->hasAnyRole($roles)) {
+            return true;
+        }
+        abort(401, 'This action is unauthorized.');
+    }
+
+    /**
+     * @param $roles
+     * @return bool
+     */
+    public function hasAnyRole($roles)
+    {
+        if (is_array($roles)) {
+            foreach ($roles as $role) {
+                if ($this->hasRole($role)) {
+                    return true;
+                }
+            }
+        } else {
+            if ($this->hasRole($roles)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @param $role
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        if ($this->roles()->where('name', $role)->first()) {
+            return true;
+        }
+        return false;
     }
 }
