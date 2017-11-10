@@ -88,7 +88,6 @@
     "tasioleiva/laravel-usercommands": "^0.1.0",
     "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
     "tightenco/ziggy": "^0.4.1",
-    "tucker-eric/eloquentfilter": "^1.2",
     "tymon/jwt-auth": "0.5.*",
     "venturecraft/revisionable": "^1.28",
     "watson/rememberable": "^2.0",

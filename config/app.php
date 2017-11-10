@@ -199,7 +199,6 @@ return [
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider::class,
-        EloquentFilter\ServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,

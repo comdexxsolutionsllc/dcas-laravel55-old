@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use DCAS\Filters\UserFilter;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 if (in_array(app()->environment(), $env = ["development", "local"])) {
@@ -21,6 +22,6 @@ Route::get('sort', function() {
     return $users = App\User::sortable()->limit(5)->paginate();
 });
 
-Route::get('filter', function() {
-    return User::filter(request()->all())->get();
+Route::get('filter', function(UserFilter $filters) {
+    return User::filter($filters)->get();
 });
