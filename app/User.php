@@ -3,9 +3,8 @@
 namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
-use DCAS\ModelFilters\UserFilter;
+use DCAS\Traits\Filterable;
 use DCAS\Traits\HasGravatar;
-use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -53,7 +52,6 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Role[] $roles
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Cashier\Subscription[] $subscriptions
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
- * @method static \Illuminate\Database\Eloquent\Builder|\App\User filter($input = array(), $filter = null)
  * @method static \Illuminate\Database\Query\Builder|\App\User onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User paginateFilter($perPage = null, $columns = array(), $pageName = 'page', $page = null)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User simplePaginateFilter($perPage = null, $columns = array(), $pageName = 'page')
@@ -388,13 +386,5 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
             return true;
         }
         return false;
-    }
-
-    /**
-     * @return \EloquentFilter\ModelFilter
-     */
-    public function modelFilter()
-    {
-        return $this->provideFilter(UserFilter::class);
     }
 }

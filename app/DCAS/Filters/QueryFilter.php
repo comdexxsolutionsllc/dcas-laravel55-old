@@ -32,24 +32,29 @@ abstract class QueryFilter
     }
 
     /**
-     * @param Builder $builder
+     * Apply the filters to the builder.
+     *
+     * @param  Builder $builder
      * @return Builder
      */
     public function apply(Builder $builder)
     {
         $this->builder = $builder;
-
         foreach ($this->filters() as $name => $value) {
-            if (method_exists($this, $name)) {
-                call_user_func_array([$this, $name], array_filter([$value]));
+            if (!method_exists($this, $name)) {
+                continue;
+            }
+            if (strlen($value)) {
+                $this->$name($value);
+            } else {
+                $this->$name();
             }
         }
-
-        return $builder;
+        return $this->builder;
     }
 
     /**
-     * Return all filters.
+     * Get all request filters data.
      *
      * @return array
      */

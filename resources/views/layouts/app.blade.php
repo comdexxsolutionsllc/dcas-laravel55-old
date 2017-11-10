@@ -32,6 +32,7 @@
 
 <body class="skin-blue sidebar-mini">
 <div id="app">
+    {{--<search-box></search-box>--}}
     @if (!Auth::guest())
         <div class="wrapper">
             <!-- Main Header -->
