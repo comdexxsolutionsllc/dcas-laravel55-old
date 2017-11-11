@@ -72,6 +72,7 @@
     "spatie/laravel-activitylog": "^2.1",
     "spatie/laravel-collection-macros": "^3.1",
     "spatie/laravel-failed-job-monitor": "^3.0",
+    "spatie/laravel-feed": "^2.0",
     "spatie/laravel-fractal": "^5.0",
     "spatie/laravel-glide": "^3.2",
     "spatie/laravel-medialibrary": "^6.0.0",
