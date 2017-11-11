@@ -16,6 +16,7 @@
     "ajthinking/tinx": "^0.8.2",
     "anlutro/l4-settings": "^0.5.0",
     "artem-schander/l5-modular": "^1.4",
+    "artisaninweb/laravel-enum": "^1.0",
     "barryvdh/laravel-cors": "^0.9.3",
     "barryvdh/laravel-ide-helper": "^2.4",
     "bekusc/laravel-auto-validation": "^1.0",

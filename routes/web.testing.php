@@ -25,3 +25,12 @@ Route::get('sort', function() {
 Route::get('filter', function(UserFilter $filters) {
     return User::filter($filters)->get();
 });
+
+Route::get('roles', function() {
+    $roles = App\Role::pluck('name');
+
+    foreach($roles as $role)
+    {
+        print_r(explode('_', $role));
+    }
+});

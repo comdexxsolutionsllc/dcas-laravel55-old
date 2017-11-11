@@ -195,6 +195,7 @@ return [
          */
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
+        Artisaninweb\Enum\EnumServiceProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
@@ -273,6 +274,7 @@ return [
         'Clockwork' => Clockwork\Support\Laravel\Facade::class,
         'Date' => Jenssegers\Date\Date::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'EnumMap' => Artisaninweb\Enum\Facades\EnumFacade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
