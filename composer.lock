@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "18c5f171a5d8dd74babc77d1514321b2",
+    "content-hash": "e5f04cb323957eef07db1d16616c8ab5",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -9009,6 +9009,70 @@
                 "spatie"
             ],
             "time": "2017-11-07T07:58:40+00:00"
+        },
+        {
+            "name": "spatie/laravel-model-cleanup",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-model-cleanup.git",
+                "reference": "fa35c884565e382ec51778f95a1a22b4a9f297c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/fa35c884565e382ec51778f95a1a22b4a9f297c7",
+                "reference": "fa35c884565e382ec51778f95a1a22b4a9f297c7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.5.0",
+                "nesbot/carbon": "^1.0",
+                "nikic/php-parser": "^3.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "orchestra/testbench": "~3.5.0",
+                "phpunit/phpunit": "^6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\ModelCleanup\\ModelCleanupServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ModelCleanup\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jolita Grazyte",
+                    "email": "jolita@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package deletes unneeded records in a database.",
+            "homepage": "https://github.com/spatie/laravel-model-cleanup",
+            "keywords": [
+                "laravel-model-cleanup",
+                "spatie"
+            ],
+            "time": "2017-09-01T11:45:20+00:00"
         },
         {
             "name": "spatie/laravel-or-abort",
