@@ -196,6 +196,7 @@ return [
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider::class,
@@ -268,8 +269,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Authy' => Srmklive\Authy\Facades\Authy::class,
-        'Date' => Jenssegers\Date\Date::class,
+        'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
         'Clockwork' => Clockwork\Support\Laravel\Facade::class,
+        'Date' => Jenssegers\Date\Date::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,

@@ -20,6 +20,7 @@
     "barryvdh/laravel-ide-helper": "^2.4",
     "bekusc/laravel-auto-validation": "^1.0",
     "bonobomagno/laravel-preset-bootstrap4": "v0.9.5.1",
+    "bugsnag/bugsnag-laravel": "^2.0",
     "cviebrock/eloquent-sluggable": "^4.3",
     "davibennun/laravel-push-notification": "dev-laravel5",
     "doctrine/dbal": "^2.6",
