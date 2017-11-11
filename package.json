@@ -39,6 +39,8 @@
         "raw-loader": "^0.5.1",
         "responsive-loader": "^0.7.0",
         "sprite-loader": "^0.2.4",
+        "ts-loader": "^3.1.1",
+        "typescript": "^2.6.1",
         "vue-template-compiler": "^2.5.3",
         "vue-test-utils": "^1.0.0-beta.4",
         "webpack": "^3.8.1"
