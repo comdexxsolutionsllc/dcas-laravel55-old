@@ -269,6 +269,7 @@ return [
 
         'Authy' => Srmklive\Authy\Facades\Authy::class,
         'Date' => Jenssegers\Date\Date::class,
+        'Clockwork' => Clockwork\Support\Laravel\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
         'Flash' => Laracasts\Flash\Flash::class,
