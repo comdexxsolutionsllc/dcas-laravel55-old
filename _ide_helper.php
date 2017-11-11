@@ -5628,34 +5628,6 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Log a message to the logs.
-         *
-         * @param string $level
-         * @param string $message
-         * @param array $context
-         * @return void 
-         * @static 
-         */ 
-        public static function log($level, $message, $context = array())
-        {
-            \Illuminate\Log\Writer::log($level, $message, $context);
-        }
-        
-        /**
-         * Dynamically pass log calls into the writer.
-         *
-         * @param string $level
-         * @param string $message
-         * @param array $context
-         * @return void 
-         * @static 
-         */ 
-        public static function write($level, $message, $context = array())
-        {
-            \Illuminate\Log\Writer::write($level, $message, $context);
-        }
-        
-        /**
          * Register a file log handler.
          *
          * @param string $path
@@ -5665,7 +5637,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function useFiles($path, $level = 'debug')
         {
-            \Illuminate\Log\Writer::useFiles($path, $level);
+            \Bugsnag\BugsnagLaravel\LaravelLogger::useFiles($path, $level);
         }
         
         /**
@@ -5679,47 +5651,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function useDailyFiles($path, $days = 0, $level = 'debug')
         {
-            \Illuminate\Log\Writer::useDailyFiles($path, $days, $level);
-        }
-        
-        /**
-         * Register a Syslog handler.
-         *
-         * @param string $name
-         * @param string $level
-         * @param mixed $facility
-         * @return \Psr\Log\LoggerInterface 
-         * @static 
-         */ 
-        public static function useSyslog($name = 'laravel', $level = 'debug', $facility = 8)
-        {
-            return \Illuminate\Log\Writer::useSyslog($name, $level, $facility);
-        }
-        
-        /**
-         * Register an error_log handler.
-         *
-         * @param string $level
-         * @param int $messageType
-         * @return void 
-         * @static 
-         */ 
-        public static function useErrorLog($level = 'debug', $messageType = 0)
-        {
-            \Illuminate\Log\Writer::useErrorLog($level, $messageType);
-        }
-        
-        /**
-         * Register a new callback handler for when a log event is triggered.
-         *
-         * @param \Closure $callback
-         * @return void 
-         * @throws \RuntimeException
-         * @static 
-         */ 
-        public static function listen($callback)
-        {
-            \Illuminate\Log\Writer::listen($callback);
+            \Bugsnag\BugsnagLaravel\LaravelLogger::useDailyFiles($path, $days, $level);
         }
         
         /**
@@ -5730,7 +5662,21 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getMonolog()
         {
-            return \Illuminate\Log\Writer::getMonolog();
+            return \Bugsnag\BugsnagLaravel\LaravelLogger::getMonolog();
+        }
+        
+        /**
+         * Log a message to the logs.
+         *
+         * @param string $level
+         * @param mixed $message
+         * @param array $context
+         * @return void 
+         * @static 
+         */ 
+        public static function log($level, $message, $context = array())
+        {
+            \Bugsnag\BugsnagLaravel\LaravelLogger::log($level, $message, $context);
         }
         
         /**
@@ -5741,7 +5687,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getEventDispatcher()
         {
-            return \Illuminate\Log\Writer::getEventDispatcher();
+            return \Bugsnag\BugsnagLaravel\LaravelLogger::getEventDispatcher();
         }
         
         /**
@@ -5753,7 +5699,20 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function setEventDispatcher($dispatcher)
         {
-            \Illuminate\Log\Writer::setEventDispatcher($dispatcher);
+            \Bugsnag\BugsnagLaravel\LaravelLogger::setEventDispatcher($dispatcher);
+        }
+        
+        /**
+         * Register a new callback handler for when a log event is triggered.
+         *
+         * @param \Closure $callback
+         * @throws \RuntimeException
+         * @return void 
+         * @static 
+         */ 
+        public static function listen($callback)
+        {
+            \Bugsnag\BugsnagLaravel\LaravelLogger::listen($callback);
         }
          
     }
@@ -12368,9 +12327,164 @@ namespace Srmklive\Authy\Facades {
  
 }
 
-namespace Jenssegers\Date { 
+namespace Bugsnag\BugsnagLaravel\Facades { 
 
-    class Date {
+    class Bugsnag {
+        
+        /**
+         * Make a new client instance.
+         * 
+         * If you don't pass in a key, we'll try to read it from the env variables.
+         *
+         * @param string|null $apiKey your bugsnag api key
+         * @param string|null $endpoint your bugsnag endpoint
+         * @param bool $default if we should register our default callbacks
+         * @return static 
+         * @static 
+         */ 
+        public static function make($apiKey = null, $endpoint = null, $defaults = true)
+        {
+            return \Bugsnag\Client::make($apiKey, $endpoint, $defaults);
+        }
+        
+        /**
+         * Make a new guzzle client instance.
+         *
+         * @param string|null $base
+         * @param array $options
+         * @return \GuzzleHttp\ClientInterface 
+         * @static 
+         */ 
+        public static function makeGuzzle($base = null, $options = array())
+        {
+            return \Bugsnag\Client::makeGuzzle($base, $options);
+        }
+        
+        /**
+         * Get the config instance.
+         *
+         * @return \Bugsnag\Configuration 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+            return \Bugsnag\Client::getConfig();
+        }
+        
+        /**
+         * Regsier a new notification callback.
+         *
+         * @param callable $callback
+         * @return $this 
+         * @static 
+         */ 
+        public static function registerCallback($callback)
+        {
+            return \Bugsnag\Client::registerCallback($callback);
+        }
+        
+        /**
+         * Regsier all our default callbacks.
+         *
+         * @return $this 
+         * @static 
+         */ 
+        public static function registerDefaultCallbacks()
+        {
+            return \Bugsnag\Client::registerDefaultCallbacks();
+        }
+        
+        /**
+         * Record the given breadcrumb.
+         *
+         * @param string $name the name of the breadcrumb
+         * @param string|null $type the type of breadcrumb
+         * @param array $metaData additional information about the breadcrumb
+         * @return void 
+         * @static 
+         */ 
+        public static function leaveBreadcrumb($name, $type = null, $metaData = array())
+        {
+            \Bugsnag\Client::leaveBreadcrumb($name, $type, $metaData);
+        }
+        
+        /**
+         * Clear all recorded breadcrumbs.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function clearBreadcrumbs()
+        {
+            \Bugsnag\Client::clearBreadcrumbs();
+        }
+        
+        /**
+         * Notify Bugsnag of a non-fatal/handled throwable.
+         *
+         * @param \Throwable $throwable the throwable to notify Bugsnag about
+         * @param callable|null $callback the customization callback
+         * @return void 
+         * @static 
+         */ 
+        public static function notifyException($throwable, $callback = null)
+        {
+            \Bugsnag\Client::notifyException($throwable, $callback);
+        }
+        
+        /**
+         * Notify Bugsnag of a non-fatal/handled error.
+         *
+         * @param string $name the name of the error, a short (1 word) string
+         * @param string $message the error message
+         * @param callable|null $callback the customization callback
+         * @return void 
+         * @static 
+         */ 
+        public static function notifyError($name, $message, $callback = null)
+        {
+            \Bugsnag\Client::notifyError($name, $message, $callback);
+        }
+        
+        /**
+         * Notify Bugsnag of the given error report.
+         * 
+         * This may simply involve queuing it for later if we're batching.
+         *
+         * @param \Bugsnag\Report $report the error report to send
+         * @param callable|null $callback the customization callback
+         * @return void 
+         * @static 
+         */ 
+        public static function notify($report, $callback = null)
+        {
+            \Bugsnag\Client::notify($report, $callback);
+        }
+        
+        /**
+         * Notify Bugsnag of a deployment.
+         *
+         * @param string|null $repository the repository from which you are deploying the code
+         * @param string|null $branch the source control branch from which you are deploying
+         * @param string|null $revision the source control revision you are currently deploying
+         * @return void 
+         * @static 
+         */ 
+        public static function deploy($repository = null, $branch = null, $revision = null)
+        {
+            \Bugsnag\Client::deploy($repository, $branch, $revision);
+        }
+        
+        /**
+         * Flush any buffered reports.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flush()
+        {
+            \Bugsnag\Client::flush();
+        }
          
     }
  
@@ -12609,6 +12723,14 @@ namespace Clockwork\Support\Laravel {
         {
             return \Clockwork\Clockwork::endEvent($name);
         }
+         
+    }
+ 
+}
+
+namespace Jenssegers\Date { 
+
+    class Date {
          
     }
  
@@ -18050,9 +18172,11 @@ namespace  {
 
     class Authy extends \Srmklive\Authy\Facades\Authy {}
 
-    class Date extends \Jenssegers\Date\Date {}
+    class Bugsnag extends \Bugsnag\BugsnagLaravel\Facades\Bugsnag {}
 
     class Clockwork extends \Clockwork\Support\Laravel\Facade {}
+
+    class Date extends \Jenssegers\Date\Date {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
