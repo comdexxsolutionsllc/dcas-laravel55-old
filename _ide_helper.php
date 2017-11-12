@@ -13294,6 +13294,244 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace Artisaninweb\Enum\Facades { 
+
+    class EnumFacade {
+        
+        /**
+         * 
+         *
+         * @param string $fqcn FQCN of the enum class
+         * @return \EnumMap 
+         * @throws InvalidArgumentException
+         * @static 
+         */ 
+        public static function create($fqcn)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::create($fqcn);
+        }
+        
+        /**
+         * 
+         *
+         * @return string fqcn of the Enum
+         * @static 
+         */ 
+        public static function getEnumFQCN()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::getEnumFQCN();
+        }
+        
+        /**
+         * 
+         *
+         * @param \GerritDrost\Lib\Enum\Enum $enum An offset to check for.
+         * @return boolean true on success or false on failure.
+         * @throws InvalidArgumentException
+         * @static 
+         */ 
+        public static function has($enum)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::has($enum);
+        }
+        
+        /**
+         * 
+         *
+         * @param \GerritDrost\Lib\Enum\Enum $enum The offset to retrieve.
+         * @param mixed $notPresentValue The value to return when the enum is not mapped
+         * @return mixed Can return all value types.
+         * @throws InvalidArgumentException
+         * @static 
+         */ 
+        public static function get($enum, $notPresentValue = null)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::get($enum, $notPresentValue);
+        }
+        
+        /**
+         * 
+         *
+         * @param \GerritDrost\Lib\Enum\Enum $enum The offset to assign the value to.
+         * @param mixed $value The value to set.
+         * @return $this 
+         * @throws InvalidArgumentException
+         * @static 
+         */ 
+        public static function map($enum, $value)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::map($enum, $value);
+        }
+        
+        /**
+         * 
+         *
+         * @param \GerritDrost\Lib\Enum\Enum $enum The offset to unset.
+         * @return mixed|null the removed value on success, null otherwise
+         * @throws InvalidArgumentException
+         * @static 
+         */ 
+        public static function remove($enum)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::remove($enum);
+        }
+        
+        /**
+         * 
+         *
+         * @return int 
+         * @static 
+         */ 
+        public static function size()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::size();
+        }
+        
+        /**
+         * Clears the entire EnumMap
+         *
+         * @static 
+         */ 
+        public static function clear()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::clear();
+        }
+        
+        /**
+         * Return the current element
+         *
+         * @link http://php.net/manual/en/iterator.current.php
+         * @return mixed 
+         * @static 
+         */ 
+        public static function current()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::current();
+        }
+        
+        /**
+         * Move forward to next element
+         *
+         * @link http://php.net/manual/en/iterator.next.php
+         * @return void Any returned value is ignored.
+         * @static 
+         */ 
+        public static function next()
+        {
+            \GerritDrost\Lib\Enum\EnumMap::next();
+        }
+        
+        /**
+         * Return the key of the current element
+         *
+         * @link http://php.net/manual/en/iterator.key.php
+         * @return \GerritDrost\Lib\Enum\Enum 
+         * @static 
+         */ 
+        public static function key()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::key();
+        }
+        
+        /**
+         * Checks if current position is valid
+         *
+         * @link http://php.net/manual/en/iterator.valid.php
+         * @return boolean The return value will be casted to boolean and then evaluated.
+         *       Returns true on success or false on failure.
+         * @static 
+         */ 
+        public static function valid()
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::valid();
+        }
+        
+        /**
+         * Rewind the Iterator to the first element
+         *
+         * @link http://php.net/manual/en/iterator.rewind.php
+         * @return void Any returned value is ignored.
+         * @static 
+         */ 
+        public static function rewind()
+        {
+            \GerritDrost\Lib\Enum\EnumMap::rewind();
+        }
+        
+        /**
+         * (PHP 5 &gt;= 5.0.0)<br/>
+         * Whether a offset exists
+         *
+         * @link http://php.net/manual/en/arrayaccess.offsetexists.php
+         * @param mixed $offset <p>
+         *                      An offset to check for.
+         *                      </p>
+         * @return boolean true on success or false on failure.
+         * </p>
+         * <p>
+         * The return value will be casted to boolean if non-boolean was returned.
+         * @static 
+         */ 
+        public static function offsetExists($offset)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::offsetExists($offset);
+        }
+        
+        /**
+         * (PHP 5 &gt;= 5.0.0)<br/>
+         * Offset to retrieve
+         *
+         * @link http://php.net/manual/en/arrayaccess.offsetget.php
+         * @param mixed $offset <p>
+         *                      The offset to retrieve.
+         *                      </p>
+         * @return mixed Can return all value types.
+         * @static 
+         */ 
+        public static function offsetGet($offset)
+        {
+            return \GerritDrost\Lib\Enum\EnumMap::offsetGet($offset);
+        }
+        
+        /**
+         * (PHP 5 &gt;= 5.0.0)<br/>
+         * Offset to set
+         *
+         * @link http://php.net/manual/en/arrayaccess.offsetset.php
+         * @param mixed $offset <p>
+         *                      The offset to assign the value to.
+         *                      </p>
+         * @param mixed $value <p>
+         *                      The value to set.
+         *                      </p>
+         * @return void 
+         * @static 
+         */ 
+        public static function offsetSet($offset, $value)
+        {
+            \GerritDrost\Lib\Enum\EnumMap::offsetSet($offset, $value);
+        }
+        
+        /**
+         * (PHP 5 &gt;= 5.0.0)<br/>
+         * Offset to unset
+         *
+         * @link http://php.net/manual/en/arrayaccess.offsetunset.php
+         * @param mixed $offset <p>
+         *                      The offset to unset.
+         *                      </p>
+         * @return void 
+         * @static 
+         */ 
+        public static function offsetUnset($offset)
+        {
+            \GerritDrost\Lib\Enum\EnumMap::offsetUnset($offset);
+        }
+         
+    }
+ 
+}
+
 namespace Zizaco\Entrust { 
 
     class EntrustFacade {
@@ -18189,6 +18427,8 @@ namespace  {
     class Date extends \Jenssegers\Date\Date {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class EnumMap extends \Artisaninweb\Enum\Facades\EnumFacade {}
 
     class Entrust extends \Zizaco\Entrust\EntrustFacade {}
 

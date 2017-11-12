@@ -3,6 +3,8 @@
 use App\User;
 use Faker\Generator as Faker;
 
+/* @var Illuminate\Database\Eloquent\Factory $factory */
+
 $factory->define(App\Profile::class, function (Faker $faker) {
     $user_id = $faker->randomElement(User::pluck('id')->toArray());
     $username = User::where('id', $user_id)->pluck('username')[0];

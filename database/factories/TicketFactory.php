@@ -6,6 +6,8 @@ use DCAS\Classes\TicketId;
 use Faker\Generator as Faker;
 use Modules\SupportDesk\Models\Category;
 
+/* @var Illuminate\Database\Eloquent\Factory $factory */
+
 $factory->define(Modules\SupportDesk\Models\Ticket::class, function (Faker $faker) {
     $user_ids = User::pluck('id')->toArray();
     $category_ids = Category::pluck('id')->toArray();

@@ -39,15 +39,6 @@ $factory->state(App\User::class, 'testing', function () {
     ];
 });
 
-//$factory->state(App\User::class, 'setupTesting', function (Role $role, Permission $permission) {
-//    $super_admin = Role::where('name', '=', 'super_admin')->first();
-//    $manageSystem = Permission::where('name', '=', 'manage-system')->first();
-//    $super_admin->attachPermission($manageSystem);
-//
-//    $user = User::where('username', '=', 'srenner')->first();
-//    $user->attachRole($super_admin);
-//});
-
 $factory->state(App\User::class, 'hasRememberToken', function () {
     return [
         'remember_token' => str_random(25)
