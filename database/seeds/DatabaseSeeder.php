@@ -8,11 +8,14 @@ class DatabaseSeeder extends Seeder
      * @var array
      */
     private $tables = [
+        'accounts',
         'categories',
+        'comments',
+        'consumers',
         'permissions',
         'profiles',
         'roles',
-        'users',
+        'tickets',
     ];
 
     /**
@@ -26,11 +29,13 @@ class DatabaseSeeder extends Seeder
 
         Eloquent::unguard();
 
-        $this->call(CategoryTableSeeder::class);
         $this->call(UserTableSeeder::class);
-        $this->call(PermissionRoleSeeder::class);
         $this->call(ProfileTableSeeder::class);
-
+        $this->call(PermissionRoleSeeder::class);
+        $this->call(ConsumerTableSeeder::class);
+        $this->call(CategoryTableSeeder::class);
+        $this->call(TicketTableSeeder::class);
+        $this->call(CommentTableSeeder::class);
     }
 
     private function cleanDatabase()

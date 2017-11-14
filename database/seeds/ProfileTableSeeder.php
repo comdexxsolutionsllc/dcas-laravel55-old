@@ -15,6 +15,7 @@ class ProfileTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
+
         foreach (range(1, 100) as $index) {
             DB::table('profiles')->insert([
                 'user_id' => $index,

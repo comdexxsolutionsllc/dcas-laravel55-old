@@ -37,8 +37,8 @@ class PermissionRoleSeeder extends Seeder
         // Super Administrator
         $super_admin = new Role();
         $super_admin->name = 'super_admin';
-        $super_admin->display_name = 'Super Administrator'; 
-        $super_admin->description = 'User is the master owner of the system'; 
+        $super_admin->display_name = 'Super Administrator';
+        $super_admin->description = 'User is the master owner of the system';
         $super_admin->save();
 
         $manageSystem = new Permission();
@@ -177,10 +177,10 @@ class PermissionRoleSeeder extends Seeder
         // Datacenter Manager
         $datacenter_manager = new Role();
         $datacenter_manager->name = 'datacenter_manager';
-        $datacenter_manager->display_name = 'Datacenter Manager'; 
+        $datacenter_manager->display_name = 'Datacenter Manager';
         $datacenter_manager->description = 'User organizes & maintains the company\'s digital information management operations';
         $datacenter_manager->save();
-        
+
         // Senior Systems Administrator
         $srsysadmin_support = new Role();
         $srsysadmin_support->name = 'srsysadmin_support';
@@ -205,14 +205,18 @@ class PermissionRoleSeeder extends Seeder
         // Employee
         $employee = new Role();
         $employee->name = 'employee';
-        $employee->display_name = 'Employee'; 
-        $employee->description = 'Default employee role'; 
+        $employee->display_name = 'Employee';
+        $employee->description = 'Default employee role';
         $employee->save();
 
 
+        /** Add Role/Permission to Admin user */
         $user = App\User::first();
+        $super_admin = Role::where('name', 'super_admin')->first();
+        $manageSystem = Permission::where('name', 'manage-system')->first();
+        // User->Role
         $user->attachRole($super_admin);
-        // Permission->Roles
-        $user->attachPermission($manageSystem);
+        // Permission->Role
+        $super_admin->attachPermission($manageSystem);
     }
 }
