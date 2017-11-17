@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-11-14.
+    * Generated on 2017-11-17.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -113,6 +113,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -357,6 +360,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -601,6 +607,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -845,6 +854,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -1089,6 +1101,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -1333,6 +1348,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
@@ -1577,6 +1595,9 @@ namespace PHPSTORM_META {
         'Jtant\LaravelEnvSync\Writer\WriterInterface' => \Jtant\LaravelEnvSync\Writer\File\EnvFileWriter::class,
         'command.clean:models' => \Spatie\ModelCleanup\CleanUpModelsCommand::class,
         'command.activitylog:clean' => \Spatie\Activitylog\CleanActivitylogCommand::class,
+        'command.laracasts.seed' => \Laracasts\Generators\Commands\SeedMakeCommand::class,
+        'command.laracasts.migrate' => \Laracasts\Generators\Commands\MigrationMakeCommand::class,
+        'command.laracasts.migrate.pivot' => \Laracasts\Generators\Commands\PivotMigrationMakeCommand::class,
         'modules.make' => \ArtemSchander\L5Modular\Console\ModuleMakeCommand::class,
         'command.make.enum' => \Artisaninweb\Enum\Commands\MakeEnumCommand::class,
         'EnumMap' => \GerritDrost\Lib\Enum\EnumMap::class,
