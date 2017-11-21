@@ -2386,12 +2386,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/laravel-generator.git",
-                "reference": "b0cd27100bc89fd155623a9a1994450259992878"
+                "reference": "9ba56c7f5b6efb6212fcc1a08e152b464933f01d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/b0cd27100bc89fd155623a9a1994450259992878",
-                "reference": "b0cd27100bc89fd155623a9a1994450259992878",
+                "url": "https://api.github.com/repos/InfyOmLabs/laravel-generator/zipball/9ba56c7f5b6efb6212fcc1a08e152b464933f01d",
+                "reference": "9ba56c7f5b6efb6212fcc1a08e152b464933f01d",
                 "shasum": ""
             },
             "require": {
@@ -2444,7 +2444,7 @@
                 "test",
                 "view"
             ],
-            "time": "2017-09-16T05:10:47+00:00"
+            "time": "2017-11-21T09:30:11+00:00"
         },
         {
             "name": "infyomlabs/swagger-generator",
@@ -2452,12 +2452,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/swagger-generator.git",
-                "reference": "a0d85f22acd100f73515d98901d6f23efc1d2443"
+                "reference": "06eaf5934215c0fec386595c2896b2114ae15eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/swagger-generator/zipball/a0d85f22acd100f73515d98901d6f23efc1d2443",
-                "reference": "a0d85f22acd100f73515d98901d6f23efc1d2443",
+                "url": "https://api.github.com/repos/InfyOmLabs/swagger-generator/zipball/06eaf5934215c0fec386595c2896b2114ae15eb4",
+                "reference": "06eaf5934215c0fec386595c2896b2114ae15eb4",
                 "shasum": ""
             },
             "require": {
@@ -2481,7 +2481,7 @@
                 "swagger",
                 "templates"
             ],
-            "time": "2016-02-14T10:41:03+00:00"
+            "time": "2017-11-21T09:25:50+00:00"
         },
         {
             "name": "intervention/image",
