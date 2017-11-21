@@ -18,7 +18,6 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 
     /**

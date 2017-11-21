@@ -14,7 +14,6 @@ class CommentTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

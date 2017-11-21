@@ -4,6 +4,7 @@ namespace App\Http\Requests\API;
 
 use InfyOm\Generator\Request\APIRequest;
 use Response;
+
 //use InfyOm\Generator\Utils\ResponseUtil;
 //use Illuminate\Contracts\Validation\Validator;
 
@@ -23,7 +24,7 @@ class MyAPIRequest extends APIRequest
 
     /**
      * @param string $errors
-     * @param array $data
+     * @param array  $data
      *
      * @return array
      */

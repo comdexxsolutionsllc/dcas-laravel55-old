@@ -14,7 +14,6 @@ class TicketTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 Route::get('/', function () {
     $user = (auth()->check()) ? auth()->user() : new \App\NullUser();
 

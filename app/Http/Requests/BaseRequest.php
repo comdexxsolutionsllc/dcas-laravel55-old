@@ -11,13 +11,14 @@ abstract class BaseRequest extends FormRequest
     /**
      * Handle a failed validation attempt.
      *
-     * @param  \Illuminate\Contracts\Validation\Validator $validator
+     * @param \Illuminate\Contracts\Validation\Validator $validator
+     *
      * @return mixed
      */
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException($this->response([
-            'errors' => $this->formatErrors($validator)
+            'errors' => $this->formatErrors($validator),
         ]));
     }
 }

@@ -30,23 +30,16 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $adminNamespace = 'App\Http\Controllers\Admin';
 
-
     /**
      * Define your route model bindings, pattern filters, etc.
-     *
-     * @return void
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
     /**
      * Define the routes for the application.
-     *
-     * @return void
      */
     public function map()
     {
@@ -73,13 +66,11 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "api" routes for the application.
      *
      * These routes are typically stateless.
-     *
-     * @return void
      */
     protected function mapApiRoutes()
     {
         // TODO:  Work on this
-        /**
+        /*
          * foreach (glob("routes/api-*.php") as $filename) {
          * Route::prefix('api')
          * ->middleware('api')
@@ -100,8 +91,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the admin "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapWebAdminRoutes()
     {
@@ -126,8 +115,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the open authentication "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapAuthenticationRoutes()
     {
@@ -140,8 +127,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the admin impersonation "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapImpersonateRoutes()
     {
@@ -155,8 +140,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the Laravel Cashier "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapCashierRoutes()
     {
@@ -170,8 +153,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the scout search "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapScoutRoutes()
     {
@@ -185,8 +166,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapWebRoutes()
     {
@@ -199,8 +178,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the user "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapWebUserRoutes()
     {
@@ -227,8 +204,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the debug/testing "web" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
      */
     protected function mapTestingRoutes()
     {

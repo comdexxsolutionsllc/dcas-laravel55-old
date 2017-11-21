@@ -14,7 +14,6 @@ class ConsumerTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

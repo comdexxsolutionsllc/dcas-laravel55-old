@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'feeds' => [
         'main' => [
             /*
@@ -22,5 +21,4 @@ return [
             'title' => 'Datacenter Automation Suite',
         ],
     ],
-
 ];

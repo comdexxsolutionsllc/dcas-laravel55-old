@@ -1,5 +1,5 @@
 <?php
 
-/**
- *	SystemMonitoring Helper  
+/*
+ *	SystemMonitoring Helper
  */

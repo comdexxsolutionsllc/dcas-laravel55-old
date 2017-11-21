@@ -10,6 +10,7 @@ trait OwnsModels
      * Determine whether this model owns the given model.
      *
      * @param Model $model
+     *
      * @return bool
      */
     public function owns(Model $model)

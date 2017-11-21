@@ -14,7 +14,6 @@ class ProfileTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

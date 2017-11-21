@@ -6,16 +6,12 @@ use App\UUIDModel;
 use DCAS\Helpers\ModelHelper;
 
 /**
- * Class UUIDModelObserver
- *
- * @package App\Observers
+ * Class UUIDModelObserver.
  */
 final class UUIDModelObserver
 {
     /**
      * @param UUIDModel $model
-     *
-     * @return null
      */
     public function creating(UUIDModel $model)
     {

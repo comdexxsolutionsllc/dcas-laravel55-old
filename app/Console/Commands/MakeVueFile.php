@@ -21,14 +21,14 @@ class MakeVueFile extends Command
     protected $description = 'Make Vue file';
 
     /**
-     * Location of Stubs
+     * Location of Stubs.
      *
      * @var string
      */
     protected $locationOfStub = 'app/Console/Stubs/MakeVue.stub';
 
     /**
-     * Filename
+     * Filename.
      *
      * @var string
      */
@@ -36,8 +36,6 @@ class MakeVueFile extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {

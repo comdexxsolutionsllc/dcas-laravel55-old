@@ -7,17 +7,16 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use App\User;
 
 /**
- * Class UserRepositoryEloquent
- * @package namespace App\Repositories;
+ * Class UserRepositoryEloquent.
  */
 class UserRepositoryEloquent extends BaseRepository
 {
     protected $fieldSearchable = [
-        'username'
+        'username',
     ];
 
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
@@ -26,9 +25,8 @@ class UserRepositoryEloquent extends BaseRepository
         return User::class;
     }
 
-
     /**
-     * Boot up the repository, pushing criteria
+     * Boot up the repository, pushing criteria.
      */
     public function boot()
     {
@@ -36,21 +34,20 @@ class UserRepositoryEloquent extends BaseRepository
     }
 
     /**
-     *
      * @return string
      */
     public function presenter(): string
     {
-        return "App\\Presenters\\UserPresenter";
+        return 'App\\Presenters\\UserPresenter';
     }
 
     /**
-     * Specify Validator class name
+     * Specify Validator class name.
      *
      * @return mixed
      */
     public function validator()
     {
-        return "App\\Validators\\UserValidator";
+        return 'App\\Validators\\UserValidator';
     }
 }

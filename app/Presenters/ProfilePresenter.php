@@ -6,14 +6,12 @@ use App\Transformers\ProfileTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class ProfilePresenter
- *
- * @package namespace App\Presenters;
+ * Class ProfilePresenter.
  */
 class ProfilePresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

@@ -9,12 +9,10 @@ class BladeServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
-        Blade::if ('admin', function ($user = null) {
+        Blade::if('admin', function ($user = null) {
             if (!$user && auth()->check()) {
                 $user = auth()->user();
             }
@@ -62,11 +60,11 @@ class BladeServiceProvider extends ServiceProvider
             return "<?php dd(with{$expression}); ?>";
         });
 
-        Blade::if ('disabled', function () {
+        Blade::if('disabled', function () {
             return auth()->check() && auth()->user()->isDisabled();
         });
 
-        Blade::if ('env', function ($environment) {
+        Blade::if('env', function ($environment) {
             return app()->environment($environment);
         });
 
@@ -91,7 +89,7 @@ class BladeServiceProvider extends ServiceProvider
             return '<?php endif; ?>';
         });
 
-        /**
+        /*
          * php implode() function.
          *
          * Usage: @implode($delimiter, $array)
@@ -107,7 +105,7 @@ class BladeServiceProvider extends ServiceProvider
         });
 
         Blade::directive('endIsNull', function () {
-            return "<?php } ?>";
+            return '<?php } ?>';
         });
 
         Blade::directive('IsNotNull', function ($expression) {
@@ -115,12 +113,13 @@ class BladeServiceProvider extends ServiceProvider
         });
 
         Blade::directive('endIsNotNull', function () {
-            return "<?php } ?>";
+            return '<?php } ?>';
         });
 
         // Export data to window object
         Blade::directive('js', function ($arguments) {
             list($var, $data) = explode(',', str_replace(['(', ')', ' ', "'"], '', $arguments));
+
             return "<?php echo \"<script>window['{$var}']= {$data};</script>\" ?>";
         });
 
@@ -131,13 +130,14 @@ class BladeServiceProvider extends ServiceProvider
 
         // Add @endoptional for Complex Yielding
         Blade::directive('endoptional', function () {
-            return "<?php endif; ?>";
+            return '<?php endif; ?>';
         });
 
         // add pluralize for nouns
         Blade::directive('plural', function ($expression) {
             $expression = trim($expression, '()');
             list($count, $str, $spacer) = array_pad(preg_split('/,\s*/', $expression), 3, "' '");
+
             return "<?php echo $count . $spacer . str_plural($str, $count) ?>";
         });
 
@@ -160,6 +160,7 @@ class BladeServiceProvider extends ServiceProvider
 
         Blade::directive('truncate', function ($expression) {
             list($string, $length) = explode(',', str_replace(['(', ')', ' '], '', $expression));
+
             return "<?php echo e(strlen({$string}) > {$length} ? substr({$string},0,{$length}).'...' : {$string}); ?>";
         });
 
@@ -175,12 +176,9 @@ class BladeServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register(): void
     {
-        //
     }
 
     /**

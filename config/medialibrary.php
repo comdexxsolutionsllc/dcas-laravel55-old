@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * The filesystems on which to store added files and derived images by default. Choose
      * one or more of the filesystems you configured in app/config/filesystems.php

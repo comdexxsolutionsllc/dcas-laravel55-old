@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * $httpHost HTTP hostname clients intend to connect to.
      * MUST match JS `new WebSocket('ws://$httpHost')`.

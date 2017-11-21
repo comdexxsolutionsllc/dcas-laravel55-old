@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 /**
- * Class QueryFilter
- * @package DCAS\Filters
- * @link https://github.com/laracasts/Dedicated-Query-String-Filtering
+ * Class QueryFilter.
+ *
+ * @see https://github.com/laracasts/Dedicated-Query-String-Filtering
  */
 abstract class QueryFilter
 {
@@ -24,6 +24,7 @@ abstract class QueryFilter
 
     /**
      * QueryFilter constructor.
+     *
      * @param Request $request
      */
     public function __construct(Request $request)
@@ -34,7 +35,8 @@ abstract class QueryFilter
     /**
      * Apply the filters to the builder.
      *
-     * @param  Builder $builder
+     * @param Builder $builder
+     *
      * @return Builder
      */
     public function apply(Builder $builder)
@@ -50,6 +52,7 @@ abstract class QueryFilter
                 $this->$name();
             }
         }
+
         return $this->builder;
     }
 

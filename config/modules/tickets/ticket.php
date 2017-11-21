@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'pagination' => 50
+    'pagination' => 50,
 ];

@@ -10,8 +10,9 @@ class LogLastUserActivity
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -20,6 +21,7 @@ class LogLastUserActivity
             $expiresAt = Carbon::now()->addMinutes(5);
             cache()->put('user-is-online-' . auth()->user()->id, true, $expiresAt);
         }
+
         return $next($request);
     }
 }

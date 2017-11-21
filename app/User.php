@@ -28,7 +28,6 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 //use DCAS\Traits\Excludable;
 //use Laravel\Scout\Searchable;
 
-
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
     use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
@@ -51,7 +50,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      */
     protected $casts = [
         'is_disabled' => 'boolean',
-        'is_logged_in' => 'boolean'
+        'is_logged_in' => 'boolean',
     ];
 
     /**
@@ -133,7 +132,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
         'domain' => ['title' => 'Domain Name'],
         'is_logged_in' => ['title' => 'Logged In'],
         'is_disabled' => ['title' => 'Account Status'],
-        'created_at' => ['title' => 'Account Creation Date']
+        'created_at' => ['title' => 'Account Creation Date'],
     ];
 
     /**
@@ -142,7 +141,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      * @var array
      */
     protected $admins = [
-        'super_admin'
+        'super_admin',
     ];
 
     /**
@@ -154,16 +153,17 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     {
         $roles = $this->roles->pluck('name')->toArray();
 
-        if (count($roles) === 0)
+        if (count($roles) === 0) {
             return false;
+        }
 
-        return !!array_intersect($this->admins, $roles);
+        return (bool) array_intersect($this->admins, $roles);
     }
 
     /**
      * Is the user disabled?
      *
-     * @return boolean
+     * @return bool
      */
     public function isDisabled(): bool
     {
@@ -207,7 +207,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     public function sluggable(): array
     {
         return [
-            'slug' => ['source' => 'name']
+            'slug' => ['source' => 'name'],
         ];
     }
 
@@ -239,6 +239,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      * @param $roles
      * @param $permissions
      * @param array $options
+     *
      * @return array|bool
      */
     public function ability($roles, $permissions, $options = [])
@@ -301,6 +302,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
 
     /**
      * @param $roles
+     *
      * @return bool
      */
     public function authorizeRoles($roles)
@@ -313,6 +315,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
 
     /**
      * @param $roles
+     *
      * @return bool
      */
     public function hasAnyRole($roles)
@@ -328,11 +331,13 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
                 return true;
             }
         }
+
         return false;
     }
 
     /**
      * @param $role
+     *
      * @return bool
      */
     public function hasRole($role)
@@ -340,6 +345,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
         if ($this->roles()->where('name', $role)->first()) {
             return true;
         }
+
         return false;
     }
 }

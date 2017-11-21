@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | View to Bind JavaScript Vars To
@@ -25,6 +24,5 @@ return [
     | That way, you can access vars, like "SomeNamespace.someVariable."
     |
     */
-    'js_namespace' => env('JSVARS_JSNAMESPACE', 'window')
-
+    'js_namespace' => env('JSVARS_JSNAMESPACE', 'window'),
 ];

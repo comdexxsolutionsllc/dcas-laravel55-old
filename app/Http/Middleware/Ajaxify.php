@@ -10,9 +10,10 @@ class Ajaxify
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
-     * @param null $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param null                     $guard
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
@@ -47,6 +48,7 @@ class Ajaxify
     /**
      * @param $request
      * @param $response
+     *
      * @return bool
      */
     protected function shouldAjaxify($request, $response): bool
@@ -73,6 +75,7 @@ class Ajaxify
 
     /**
      * @param $request
+     *
      * @return static
      */
     protected function getFlashData($request)
@@ -85,6 +88,7 @@ class Ajaxify
 
         // Delete flash data, as we've already used them
         $request->session()->forget($flashedKeys);
+
         return $flashData;
     }
 }

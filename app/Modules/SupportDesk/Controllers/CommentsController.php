@@ -16,14 +16,15 @@ class CommentsController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Request   $request
      * @param AppMailer $mailer
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postComment(Request $request, AppMailer $mailer): RedirectResponse
     {
         $this->validate($request, [
-            'comment' => 'required'
+            'comment' => 'required',
         ]);
 
         $comment = Comment::create([
@@ -37,6 +38,6 @@ class CommentsController extends Controller
             $mailer->sendTicketComments($comment->ticket->user, auth()->user(), $comment->ticket, $comment);
         }
 
-        return redirect()->back()->with("status", "Your comment has be submitted.");
+        return redirect()->back()->with('status', 'Your comment has be submitted.');
     }
 }

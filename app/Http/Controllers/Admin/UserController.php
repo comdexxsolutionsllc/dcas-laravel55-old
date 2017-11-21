@@ -15,6 +15,7 @@ class UserController extends Controller
 
     /**
      * @param $new_user
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function user_switch_start($new_user): RedirectResponse

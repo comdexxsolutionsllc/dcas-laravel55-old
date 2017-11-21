@@ -14,7 +14,8 @@ class SearchController extends Controller
     public function find()
     {
         return User::search(
-            request()->get('q'))
+            request()->get('q')
+        )
             ->with('profile')
             ->get();
     }

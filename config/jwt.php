@@ -10,7 +10,6 @@
  */
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | JWT Authentication Secret
@@ -21,8 +20,10 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET',
-        'c5d4c5ed30563dd469013f603bcda64fac65f4e33e25f33cd88963db6a8567c19f0c'),
+    'secret' => env(
+        'JWT_SECRET',
+        'c5d4c5ed30563dd469013f603bcda64fac65f4e33e25f33cd88963db6a8567c19f0c'
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +124,6 @@ return [
     */
 
     'providers' => [
-
         /*
         |--------------------------------------------------------------------------
         | User Provider
@@ -168,7 +168,5 @@ return [
         */
 
         'storage' => 'Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter',
-
     ],
-
 ];

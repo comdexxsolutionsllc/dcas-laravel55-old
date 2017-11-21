@@ -6,14 +6,12 @@ use App\Transformers\ConsumerTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class ConsumerPresenter
- *
- * @package namespace App\Presenters;
+ * Class ConsumerPresenter.
  */
 class ConsumerPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

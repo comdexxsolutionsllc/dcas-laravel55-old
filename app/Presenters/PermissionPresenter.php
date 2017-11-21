@@ -6,14 +6,12 @@ use App\Transformers\PermissionTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class PermissionPresenter
- *
- * @package namespace App\Presenters;
+ * Class PermissionPresenter.
  */
 class PermissionPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

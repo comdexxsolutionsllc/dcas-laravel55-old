@@ -13,12 +13,9 @@ class UponUserLoginLockout extends Mailable
 
     /**
      * Create a new message instance.
-     *
-     * @return void
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -30,7 +27,7 @@ class UponUserLoginLockout extends Mailable
     {
         return $this->markdown('emails.UponUserLoginLockout')->with([
             'timestamp' => Carbon::now(),
-            'user' => request()->email
+            'user' => request()->email,
         ]);
     }
 }

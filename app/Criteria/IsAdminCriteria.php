@@ -6,13 +6,12 @@ use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Class IsAdminCriteriaCriteria
- * @package namespace App\Criteria;
+ * Class IsAdminCriteriaCriteria.
  */
 class IsAdminCriteria implements CriteriaInterface
 {
     /**
-     * Apply criteria in query repository
+     * Apply criteria in query repository.
      *
      * @param                     $model
      * @param RepositoryInterface $repository

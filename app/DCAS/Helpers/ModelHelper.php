@@ -8,7 +8,7 @@ use Ramsey\Uuid\Uuid;
 class ModelHelper
 {
     /**
-     * Generates UUID4
+     * Generates UUID4.
      *
      * @return string
      */

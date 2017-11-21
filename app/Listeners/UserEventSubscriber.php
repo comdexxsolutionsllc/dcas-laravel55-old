@@ -43,7 +43,6 @@ class UserEventSubscriber
         }
     }
 
-
     /**
      * Handle user logout events.
      *

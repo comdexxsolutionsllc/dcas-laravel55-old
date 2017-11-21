@@ -33,8 +33,6 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -44,22 +42,22 @@ class LoginController extends Controller
     /**
      * Validate the user login request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return void
+     * @param \Illuminate\Http\Request $request
      */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string',
-            'domain' => 'nullable|string'
+            'domain' => 'nullable|string',
         ]);
     }
 
     /**
      * Get the needed authorization credentials from the request.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     protected function credentials(Request $request)
@@ -70,7 +68,8 @@ class LoginController extends Controller
     /**
      * Log the user out of the application.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
@@ -96,8 +95,9 @@ class LoginController extends Controller
     /**
      * Send the post-authentication response.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Illuminate\Contracts\Auth\Authenticatable $user
+     * @param \Illuminate\Http\Request                   $request
+     * @param \Illuminate\Contracts\Auth\Authenticatable $user
+     *
      * @return \Illuminate\Http\Response
      */
     protected function authenticated(Request $request, Authenticatable $user)
@@ -112,8 +112,9 @@ class LoginController extends Controller
     /**
      * Generate a redirect response to the two-factor token screen.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Illuminate\Contracts\Auth\Authenticatable $user
+     * @param \Illuminate\Http\Request                   $request
+     * @param \Illuminate\Contracts\Auth\Authenticatable $user
+     *
      * @return \Illuminate\Http\Response
      */
     protected function logoutAndRedirectToTokenScreen(Request $request, Authenticatable $user)
@@ -126,7 +127,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Show two-factor authentication page
+     * Show two-factor authentication page.
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
@@ -138,7 +139,8 @@ class LoginController extends Controller
     /**
      * Verify the two-factor authentication token.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function postToken(Request $request)
@@ -152,7 +154,7 @@ class LoginController extends Controller
         $provider = config('auth.guards.' . $guard . '.provider');
         $model = config('auth.providers.' . $provider . '.model');
 
-        $user = (new $model)->findOrFail(
+        $user = (new $model())->findOrFail(
             $request->session()->pull('authy:auth:id')
         );
 

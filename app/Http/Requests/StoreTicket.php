@@ -22,7 +22,6 @@ class StoreTicket extends BaseRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }

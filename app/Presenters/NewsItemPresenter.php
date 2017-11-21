@@ -6,14 +6,12 @@ use App\Transformers\NewsItemTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class NewsItemPresenter
- *
- * @package namespace App\Presenters;
+ * Class NewsItemPresenter.
  */
 class NewsItemPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

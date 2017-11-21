@@ -22,7 +22,6 @@ class StoreComment extends BaseRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }

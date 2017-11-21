@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -137,7 +136,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -180,7 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /**
+        /*
          * DCAS Service Providers...
          */
         App\Providers\BladeServiceProvider::class,
@@ -190,7 +188,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
         App\Providers\OnlineUsersProvider::class,
 
-        /**
+        /*
          * 3rd Party Service Providers...
          */
         anlutro\LaravelSettings\ServiceProvider::class,
@@ -234,7 +232,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -289,5 +286,4 @@ return [
         'Setting' => anlutro\LaravelSettings\Facade::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
     ],
-
 ];

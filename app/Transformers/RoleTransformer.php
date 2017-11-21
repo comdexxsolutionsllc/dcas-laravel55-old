@@ -14,7 +14,6 @@ class RoleTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

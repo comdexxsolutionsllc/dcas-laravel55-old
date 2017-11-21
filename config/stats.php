@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * List of folders to be analyzed.
      */
@@ -18,5 +17,4 @@ return [
         // base_path('app/helpers.php'),
         // base_path('app/Services'),
     ],
-
 ];

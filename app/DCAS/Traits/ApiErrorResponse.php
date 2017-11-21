@@ -22,6 +22,7 @@ trait ApiErrorResponse
 
     /**
      * @param mixed $StatusCode
+     *
      * @return $this
      */
     public function setStatusCode($StatusCode)
@@ -33,6 +34,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondNotFound($message = 'Not found.'): JsonResponse
@@ -42,6 +44,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondAccountAlreadyExists($message = 'Account already exists.'): JsonResponse
@@ -51,6 +54,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondAccountIsDisabled($message = 'Account is disabled.'): JsonResponse
@@ -60,6 +64,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondAuthenticationFailed($message = 'Authentication failed.'): JsonResponse
@@ -69,6 +74,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondInsufficientAccountPermissions($message = 'Insufficient account permissions.'): JsonResponse
@@ -78,6 +84,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondUnprocessableEntity($message = 'Unprocessable entity.'): JsonResponse
@@ -87,6 +94,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondUnsupportedQueryParameter($message = 'Unsupported query parameter.'): JsonResponse
@@ -96,6 +104,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondUnsupportedMediaType($message = 'Unsupported media type.'): JsonResponse
@@ -105,6 +114,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondNotImplemented($message = 'Not implemented.'): JsonResponse
@@ -114,6 +124,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondMovedPermanently($message = 'Moved permanently.'): JsonResponse
@@ -123,6 +134,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondMovedTemporarily($message = 'Moved temporarily.'): JsonResponse
@@ -132,6 +144,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondResourceCreated($message = 'Resource created.'): JsonResponse
@@ -141,6 +154,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondTooManyRequests($message = 'Too many requests.'): JsonResponse
@@ -150,6 +164,7 @@ trait ApiErrorResponse
 
     /**
      * @param string $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondNoDataReturned($message = 'No data returned.'): JsonResponse
@@ -160,6 +175,7 @@ trait ApiErrorResponse
     /**
      * @param $data
      * @param array $headers
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respond($data, $headers = []): JsonResponse
@@ -169,6 +185,7 @@ trait ApiErrorResponse
 
     /**
      * @param $message
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function respondWithError($message): JsonResponse
@@ -176,8 +193,8 @@ trait ApiErrorResponse
         return $this->respond([
             'error' => [
                 'message' => $message,
-                'status_code' => $this->getStatusCode()
-            ]
+                'status_code' => $this->getStatusCode(),
+            ],
         ]);
     }
 }

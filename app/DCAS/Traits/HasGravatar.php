@@ -12,13 +12,14 @@ trait HasGravatar
     public $gravatarEmail = 'email';
 
     /**
-     * Get the model's gravatar
+     * Get the model's gravatar.
      *
      * @return string
      */
     public function getGravatarAttribute()
     {
         $hash = md5(strtolower(trim($this->attributes[$this->gravatarEmail])));
+
         return "https://www.gravatar.com/avatar/$hash";
     }
 }

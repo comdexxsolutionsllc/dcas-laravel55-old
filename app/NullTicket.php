@@ -55,9 +55,6 @@ class NullTicket extends Model
         return $this->category_id;
     }
 
-    /**
-     * @return null
-     */
     public function getTicketId()
     {
         return $this->ticket_id;

@@ -6,5 +6,4 @@ use App\Model;
 
 class VendorPanel extends Model
 {
-    //
 }

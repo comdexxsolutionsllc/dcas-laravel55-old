@@ -14,7 +14,6 @@ class CategoryTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

@@ -6,14 +6,14 @@ use App\User;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class UserRepository
- * @package App\Repositories
+ * Class UserRepository.
+ *
  * @version September 20, 2017, 2:15 am CDT
  *
  * @method User findWithoutFail($id, $columns = ['*'])
  * @method User find($id, $columns = ['*'])
  * @method User first($columns = ['*'])
-*/
+ */
 class UserRepository extends BaseRepository
 {
     /**
@@ -30,11 +30,11 @@ class UserRepository extends BaseRepository
         'card_brand',
         'card_last_four',
         'trial_ends_at',
-        'remember_token'
+        'remember_token',
     ];
 
     /**
-     * Configure the Model
+     * Configure the Model.
      **/
     public function model()
     {

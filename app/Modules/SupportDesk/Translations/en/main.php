@@ -1,5 +1,6 @@
-<?php 
+<?php
+
 
 return [
-    'welcome' => 'Welcome, to the SupportDesk module.'
+    'welcome' => 'Welcome, to the SupportDesk module.',
 ];

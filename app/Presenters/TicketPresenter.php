@@ -6,14 +6,12 @@ use App\Transformers\TicketTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class TicketPresenter
- *
- * @package namespace App\Presenters;
+ * Class TicketPresenter.
  */
 class TicketPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

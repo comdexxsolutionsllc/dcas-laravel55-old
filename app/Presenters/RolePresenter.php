@@ -6,14 +6,12 @@ use App\Transformers\RoleTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class RolePresenter
- *
- * @package namespace App\Presenters;
+ * Class RolePresenter.
  */
 class RolePresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

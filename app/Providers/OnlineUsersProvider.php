@@ -10,8 +10,6 @@ class OnlineUsersProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -20,12 +18,9 @@ class OnlineUsersProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -40,12 +35,11 @@ class OnlineUsersProvider extends ServiceProvider
 
             foreach ($users as $user) {
                 if (Cache::has('user-is-online-' . $user->id)) {
-                    $onlineUsersCount++;
+                    ++$onlineUsersCount;
                 }
             }
 
             $view->with(compact(['onlineUsersCount']));
         });
-
     }
 }

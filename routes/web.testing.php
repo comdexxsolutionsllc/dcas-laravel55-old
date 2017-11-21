@@ -4,7 +4,7 @@ use App\User;
 use DCAS\Filters\UserFilter;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-if (in_array(app()->environment(), $env = ["development", "local"])) {
+if (in_array(app()->environment(), $env = ['development', 'local'])) {
     Route::get('decompose', '\Lubusin\Decomposer\Controllers\DecomposerController@index')->name('decompose');
 
     Route::get('filter', function (UserFilter $filters) {

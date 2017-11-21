@@ -9,7 +9,7 @@ class Consumer extends UUIDModel
     /**
      * The API token field.
      *
-     * @var string $apiTokenKey
+     * @var string
      */
     private $apiTokenKey = 'api_token';
 
@@ -34,7 +34,7 @@ class Consumer extends UUIDModel
     }
 
     /**
-     * Return the API token field
+     * Return the API token field.
      *
      * @return string
      */

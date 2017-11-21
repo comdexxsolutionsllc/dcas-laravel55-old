@@ -8,14 +8,15 @@ use Illuminate\Support\Str;
 trait Enums
 {
     /**
-     * Enum property getter
+     * Enum property getter.
      *
      * @param string $field
+     *
      * @return mixed|false
      */
     public static function getEnum(string $field)
     {
-        $instance = new static;
+        $instance = new static();
 
         if ($instance->hasEnumProperty($field)) {
             $property = $instance->getEnumProperty($field);
@@ -28,18 +29,20 @@ trait Enums
 
     /**
      * Check for the presence of a property that starts
-     *     with enum for the provided attribute
+     *     with enum for the provided attribute.
      *
      * @param string $field
-     * @param mixed $value
+     * @param mixed  $value
+     *
      * @return $this
+     *
      * @throws InvalidEnumException
      */
     public function setAttribute($field, $value)
     {
         if ($this->hasEnumProperty($field)) {
             if (!$this->isValidEnum($field, $value)) {
-                throw new InvalidEnumException("Invalid value for " . static::class . "::$field ($value)");
+                throw new InvalidEnumException('Invalid value for ' . static::class . "::$field ($value)");
             }
 
             if ($this->isKeyedEnum($field, $value)) {
@@ -51,9 +54,10 @@ trait Enums
     }
 
     /**
-     * Gets the expected enum property
+     * Gets the expected enum property.
      *
      * @param string $field
+     *
      * @return string
      */
     protected function getEnumProperty(string $field)
@@ -62,10 +66,11 @@ trait Enums
     }
 
     /**
-     * Gets the enum value by key
+     * Gets the enum value by key.
      *
      * @param string $field
-     * @param mixed $key
+     * @param mixed  $key
+     *
      * @return mixed
      */
     protected function getKeyedEnum(string $field, $key)
@@ -74,10 +79,11 @@ trait Enums
     }
 
     /**
-     * Is an enum property defined for the provided field
+     * Is an enum property defined for the provided field.
      *
      * @param string $field
-     * @return boolean
+     *
+     * @return bool
      */
     protected function hasEnumProperty(string $field)
     {
@@ -87,10 +93,11 @@ trait Enums
     }
 
     /**
-     * Is the provided value a key in the enum
+     * Is the provided value a key in the enum.
      *
      * @param string $field
-     * @param mixed $key
+     * @param mixed  $key
+     *
      * @return bool
      */
     protected function isKeyedEnum(string $field, $key)
@@ -99,10 +106,11 @@ trait Enums
     }
 
     /**
-     * Is the value a valid enum in any way
+     * Is the value a valid enum in any way.
      *
      * @param string $field
-     * @param mixed $value
+     * @param mixed  $value
+     *
      * @return bool
      */
     protected function isValidEnum(string $field, $value)
@@ -112,10 +120,11 @@ trait Enums
     }
 
     /**
-     * Is the provided value in the enum
+     * Is the provided value in the enum.
      *
      * @param string $field
-     * @param mixed $value
+     * @param mixed  $value
+     *
      * @return bool
      */
     protected function isValueEnum(string $field, $value)

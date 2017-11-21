@@ -9,6 +9,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function info($message, $url = null)
@@ -19,6 +20,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function success($message, $url = null)
@@ -29,6 +31,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function error($message, $url = null)
@@ -39,6 +42,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function warning($message, $url = null)
@@ -49,6 +53,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function primary($message, $url = null)
@@ -59,6 +64,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function primaryDark($message, $url = null)
@@ -69,6 +75,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function muted($message, $url = null)
@@ -79,6 +86,7 @@ class FlashMessage
     /**
      * @param $message
      * @param null $url
+     *
      * @return $this
      */
     public static function mutedDark($message, $url = null)

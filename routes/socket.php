@@ -7,4 +7,4 @@
  * $socket->route('/myclass', new MyClass, ['*']);
  */
 
-$socket->route('/myclass', new \App\Http\Sockets\MyNameClass, ['*']);
+$socket->route('/myclass', new \App\Http\Sockets\MyNameClass(), ['*']);

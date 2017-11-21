@@ -6,5 +6,4 @@ use App\Model;
 
 class SystemMonitoring extends Model
 {
-    //
 }

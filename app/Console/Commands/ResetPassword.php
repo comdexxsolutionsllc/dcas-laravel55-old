@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\User;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Auth\UserProvider;
 
 class ResetPassword extends Command
 {
@@ -25,6 +24,7 @@ class ResetPassword extends Command
 
         if (empty($user)) {
             $this->error("User '$email' not found");
+
             return;
         }
 

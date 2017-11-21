@@ -13,8 +13,9 @@ trait CustomCasts
     /**
      * Cast an attribute to a native PHP type.
      *
-     * @param  string $key
-     * @param  mixed $value
+     * @param string $key
+     * @param mixed  $value
+     *
      * @return mixed
      */
     protected function castAttribute($key, $value)
@@ -26,16 +27,16 @@ trait CustomCasts
         switch ($this->getCastType($key)) {
             case 'int':
             case 'integer':
-                return (int)$value;
+                return (int) $value;
             case 'real':
             case 'float':
             case 'double':
-                return (float)$value;
+                return (float) $value;
             case 'string':
-                return (string)$value;
+                return (string) $value;
             case 'bool':
             case 'boolean':
-                return (bool)$value;
+                return (bool) $value;
             case 'object':
                 return $this->fromJson($value, true);
             case 'array':
@@ -57,6 +58,7 @@ trait CustomCasts
 
     /**
      * @param $value
+     *
      * @return Carbon|static
      */
     protected function asTime($value)
@@ -73,7 +75,8 @@ trait CustomCasts
         // when checking the field. We will just return the DateTime right away.
         if ($value instanceof DateTimeInterface) {
             return new Carbon(
-                $value->format('Y-m-d H:i:s.u'), $value->getTimeZone()
+                $value->format('Y-m-d H:i:s.u'),
+                $value->getTimeZone()
             );
         }
 
@@ -113,8 +116,9 @@ trait CustomCasts
     /**
      * Set a given attribute on the model.
      *
-     * @param  string $key
-     * @param  mixed $value
+     * @param string $key
+     * @param mixed  $value
+     *
      * @return $this
      */
     public function setAttribute($key, $value)
@@ -149,7 +153,8 @@ trait CustomCasts
     /**
      * Convert a Carbon Time to a storable string.
      *
-     * @param  \Carbon\Carbon|int $value
+     * @param \Carbon\Carbon|int $value
+     *
      * @return string
      */
     public function fromTime($value): string
@@ -164,7 +169,8 @@ trait CustomCasts
     /**
      * Determine whether a value is Date / DateTime castable for inbound manipulation.
      *
-     * @param  string $key
+     * @param string $key
+     *
      * @return bool
      */
     protected function isTimeCastable($key): bool

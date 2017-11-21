@@ -2,6 +2,6 @@
 
 return [
     'enable' => [
-        'SupportDesk'
+        'SupportDesk',
     ],
 ];

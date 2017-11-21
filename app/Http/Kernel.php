@@ -83,7 +83,7 @@ class Kernel extends HttpKernel
 //        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
 //        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
 
-        'timeout'               => \App\Http\Middleware\SessionTimeout::class,
-        'restrict.ip.main'      => \App\Http\Middleware\RestrictByIP::class,
+        'timeout' => \App\Http\Middleware\SessionTimeout::class,
+        'restrict.ip.main' => \App\Http\Middleware\RestrictByIP::class,
     ];
 }

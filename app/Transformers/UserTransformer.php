@@ -6,14 +6,13 @@ use League\Fractal\TransformerAbstract;
 use App\User;
 
 /**
- * Class UserTransformer
- * @package namespace App\Transformers;
+ * Class UserTransformer.
  */
 class UserTransformer extends TransformerAbstract
 {
-
     /**
-     * Transform the \User entity
+     * Transform the \User entity.
+     *
      * @param \User $model
      *
      * @return array
@@ -21,7 +20,7 @@ class UserTransformer extends TransformerAbstract
     public function transform(User $model): array
     {
         return [
-            'id' => (int)$model->id,
+            'id' => (int) $model->id,
             'name' => $model->name,
             'username' => $model->username,
             'email' => $model->email,
@@ -29,7 +28,7 @@ class UserTransformer extends TransformerAbstract
             'isDisabled' => ($model->is_disabled == 0) ? 'false' : 'true',
             'isDeleted' => (is_null($model->deleted_at)) ? 'false' : 'true',
             'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'updated_at' => $model->updated_at,
         ];
     }
 }

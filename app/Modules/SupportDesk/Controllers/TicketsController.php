@@ -47,6 +47,7 @@ class TicketsController extends Controller
 
     /**
      * @param $ticket_id
+     *
      * @return \Illuminate\Contracts\View\Factory|View
      */
     public function show($ticket_id): View
@@ -76,9 +77,11 @@ class TicketsController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param Request   $request
      * @param AppMailer $mailer
+     *
      * @return RedirectResponse
+     *
      * @throws \Exception
      */
     public function store(Request $request, AppMailer $mailer): RedirectResponse
@@ -87,13 +90,13 @@ class TicketsController extends Controller
             'title' => 'required',
             'category' => 'required',
             'priority' => 'required',
-            'message' => 'required'
+            'message' => 'required',
         ]);
 
         $response = Zttp::asFormParams()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => config('services.recaptcha.secret'),
             'response' => request()->input('g-recaptcha-response'),
-            'remoteip' => $_SERVER['REMOTE_ADDR']
+            'remoteip' => $_SERVER['REMOTE_ADDR'],
         ]);
 
         if (!$response->json()['success']) {
@@ -107,7 +110,7 @@ class TicketsController extends Controller
             'category_id' => request()->input('category'),
             'priority' => request()->input('priority'),
             'message' => request()->input('message'),
-            'status' => "Open",
+            'status' => 'Open',
         ]);
 
         $ticket->save();
@@ -116,12 +119,13 @@ class TicketsController extends Controller
 
         return redirect()
             ->route('supportdesk.my_tickets')
-            ->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+            ->with('status', "A ticket with ID: #$ticket->ticket_id has been opened.");
     }
 
     /**
      * @param $ticket_id
      * @param AppMailer $mailer
+     *
      * @return RedirectResponse
      */
     public function close($ticket_id, AppMailer $mailer): RedirectResponse
@@ -136,12 +140,13 @@ class TicketsController extends Controller
 
         $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
 
-        return redirect()->back()->with("status", "The ticket has been closed.");
+        return redirect()->back()->with('status', 'The ticket has been closed.');
     }
 
     /**
      * @param $ticket_id
      * @param AppMailer $mailer
+     *
      * @return RedirectResponse
      */
     public function open($ticket_id, AppMailer $mailer): RedirectResponse
@@ -156,7 +161,7 @@ class TicketsController extends Controller
 
         $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
 
-        return redirect()->back()->with("status", "The ticket has been re-opened.");
+        return redirect()->back()->with('status', 'The ticket has been re-opened.');
     }
 
     /**

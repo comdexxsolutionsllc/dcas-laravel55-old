@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\ServiceProvider;
 
-
 class MacroServiceProvider extends ServiceProvider
 {
     /**
@@ -21,8 +20,6 @@ class MacroServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -34,16 +31,12 @@ class MacroServiceProvider extends ServiceProvider
                 $this->localKey
             );
         });
-
     }
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register(): void
     {
-        //
     }
 }

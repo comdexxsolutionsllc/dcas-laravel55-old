@@ -2,7 +2,6 @@
 
 
 return [
-
     /*
      * If set to false, no activities will be saved to the database.
      */

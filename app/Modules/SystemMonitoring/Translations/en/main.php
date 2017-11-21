@@ -1,5 +1,6 @@
-<?php 
+<?php
+
 
 return [
-    'welcome' => 'Welcome, this is SystemMonitoring module.'
+    'welcome' => 'Welcome, this is SystemMonitoring module.',
 ];

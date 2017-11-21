@@ -94,9 +94,6 @@ class NullProfile extends Model
         return $this->address_1;
     }
 
-    /**
-     * @return null
-     */
     public function getAddress2()
     {
         return $this->address_2;

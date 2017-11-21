@@ -6,14 +6,12 @@ use App\Transformers\CommentTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class CommentPresenter
- *
- * @package namespace App\Presenters;
+ * Class CommentPresenter.
  */
 class CommentPresenter extends FractalPresenter
 {
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

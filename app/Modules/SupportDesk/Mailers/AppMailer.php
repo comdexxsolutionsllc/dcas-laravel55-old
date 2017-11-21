@@ -41,6 +41,7 @@ class AppMailer
 
     /**
      * AppMailer constructor.
+     *
      * @param Mailer $mailer
      */
     public function __construct(Mailer $mailer)

@@ -22,6 +22,7 @@ class AppBaseController extends Controller
     /**
      * @param $result
      * @param $message
+     *
      * @return JsonResponse
      */
     public function sendResponse($result, $message): JsonResponse
@@ -32,6 +33,7 @@ class AppBaseController extends Controller
     /**
      * @param $error
      * @param int $code
+     *
      * @return JsonResponse
      */
     public function sendError($error, $code = 404): JsonResponse

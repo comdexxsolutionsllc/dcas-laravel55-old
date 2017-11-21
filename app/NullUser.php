@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-
 class NullUser extends Authenticatable
 {
     /**
@@ -27,7 +26,7 @@ class NullUser extends Authenticatable
     /**
      * Is the user disabled?
      *
-     * @return boolean
+     * @return bool
      */
     public function isDisabled(): bool
     {
@@ -100,9 +99,6 @@ class NullUser extends Authenticatable
         return $this->username;
     }
 
-    /**
-     * @return null
-     */
     public function getDomain()
     {
         return $this->domain;

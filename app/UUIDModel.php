@@ -3,27 +3,25 @@
 namespace App;
 
 use DCAS\Observers\UUIDModelObserver;
-use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class UUIDModel
+ * Class UUIDModel.
  *
  * @property string $id
- * @package App\Models
  */
 abstract class UUIDModel extends Model
 {
     /**
      * Disable auto-incrementing the primary key field for this model.
      *
-     * @var bool $incrementing
+     * @var bool
      */
     public $incrementing = false;
 
     /**
      * Override the primary key type.
      *
-     * @var string $keyType
+     * @var string
      */
     protected $keyType = 'string';
 

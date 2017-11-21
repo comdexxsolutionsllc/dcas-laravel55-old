@@ -9,8 +9,6 @@ class CollectionMacroServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -19,17 +17,15 @@ class CollectionMacroServiceProvider extends ServiceProvider
             if ($element != null) {
                 $collection = $collection->push($element);
             }
+
             return $collection;
         });
     }
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register(): void
     {
-        //
     }
 }

@@ -14,7 +14,6 @@ class NewsItemTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

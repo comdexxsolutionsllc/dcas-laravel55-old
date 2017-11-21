@@ -14,7 +14,6 @@ class PermissionTransformer extends TransformerAbstract
     public function transform()
     {
         return [
-            //
         ];
     }
 }

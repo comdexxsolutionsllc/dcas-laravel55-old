@@ -1,5 +1,5 @@
 <?php
 
-/**
- *	VendorPanel Helper  
+/*
+ *	VendorPanel Helper
  */

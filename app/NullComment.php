@@ -19,9 +19,6 @@ class NullComment extends Model
      */
     protected $comment = null;
 
-    /**
-     * @return null
-     */
     public function getTicketId()
     {
         return $this->ticket_id;
@@ -35,9 +32,6 @@ class NullComment extends Model
         return $this->user_id;
     }
 
-    /**
-     * @return null
-     */
     public function getComment()
     {
         return $this->comment;

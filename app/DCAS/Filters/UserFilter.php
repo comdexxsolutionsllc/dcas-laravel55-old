@@ -9,7 +9,8 @@ class UserFilter extends QueryFilter
     /**
      * Filter by user type.
      *
-     * @param  bool $status
+     * @param bool $status
+     *
      * @return Builder
      */
     public function isLoggedIn($status = 'true')
@@ -21,10 +22,11 @@ class UserFilter extends QueryFilter
      * Filter by name.
      *
      * @param $name
+     *
      * @return $this
      */
     public function name($name)
     {
-        return $this->builder->where('name', 'LIKE', '%'.$name.'%');
+        return $this->builder->where('name', 'LIKE', '%' . $name . '%');
     }
 }

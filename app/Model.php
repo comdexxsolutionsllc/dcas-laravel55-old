@@ -7,15 +7,12 @@ use Rogercbe\TableSorter\Sortable;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Watson\Rememberable\Rememberable;
 
-
 /**
- * Generic Model Class
- * @package App
+ * Generic Model Class.
  */
 abstract class Model extends Eloquent
 {
     use Rememberable, RevisionableTrait, Sortable;
-
 
     protected $revisionEnabled = true;
     protected $revisionCleanup = true; //Remove old revisions (works only when used with $historyLimit)
