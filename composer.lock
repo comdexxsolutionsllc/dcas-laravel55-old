@@ -2764,68 +2764,6 @@
             "time": "2017-06-30T11:51:03+00:00"
         },
         {
-            "name": "jeremykendall/php-domain-parser",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeremykendall/php-domain-parser.git",
-                "reference": "896e7e70f02bd4fd77190052799bc61e4d779672"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeremykendall/php-domain-parser/zipball/896e7e70f02bd4fd77190052799bc61e4d779672",
-                "reference": "896e7e70f02bd4fd77190052799bc61e4d779672",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-intl": "*",
-                "ext-mbstring": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "jeremykendall/debug-die": "0.0.1.*",
-                "mikey179/vfsstream": "~1.4",
-                "phpunit/phpunit": "~4.4"
-            },
-            "bin": [
-                "bin/parse",
-                "bin/update-psl"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Pdp\\": "src/"
-                },
-                "files": [
-                    "src/pdp-parse-url.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Kendall",
-                    "homepage": "http://about.me/jeremykendall",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/jeremykendall/php-domain-parser/graphs/contributors"
-                }
-            ],
-            "description": "Public Suffix List based URL parsing implemented in PHP.",
-            "homepage": "https://github.com/jeremykendall/php-domain-parser",
-            "keywords": [
-                "Public Suffix List",
-                "domain parsing",
-                "url parsing"
-            ],
-            "time": "2015-03-30T12:49:45+00:00"
-        },
-        {
             "name": "jlapp/swaggervel",
             "version": "dev-master",
             "source": {
@@ -4390,23 +4328,24 @@
         },
         {
             "name": "league/uri-components",
-            "version": "1.0.4",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri-components.git",
-                "reference": "268c971e9ddeb079adc083d74556f14ddb54e4ca"
+                "reference": "87127f72bb73c5d30c4b2a9773d2ee81b71dd524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-components/zipball/268c971e9ddeb079adc083d74556f14ddb54e4ca",
-                "reference": "268c971e9ddeb079adc083d74556f14ddb54e4ca",
+                "url": "https://api.github.com/repos/thephpleague/uri-components/zipball/87127f72bb73c5d30c4b2a9773d2ee81b71dd524",
+                "reference": "87127f72bb73c5d30c4b2a9773d2ee81b71dd524",
                 "shasum": ""
             },
             "require": {
+                "ext-curl": "*",
                 "ext-fileinfo": "*",
                 "ext-intl": "*",
                 "ext-mbstring": "*",
-                "jeremykendall/php-domain-parser": "^3.0",
+                "league/uri-hostname-parser": "^1.0.0",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -4421,8 +4360,11 @@
             },
             "autoload": {
                 "psr-4": {
-                    "League\\Uri\\Components\\": "src"
-                }
+                    "League\\Uri\\": "src"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4451,7 +4393,76 @@
                 "url",
                 "userinfo"
             ],
-            "time": "2017-08-10T13:35:19+00:00"
+            "time": "2017-11-22T12:02:25+00:00"
+        },
+        {
+            "name": "league/uri-hostname-parser",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/uri-hostname-parser.git",
+                "reference": "e8d579d0349f5898f26eff379da202d1db2b00f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/uri-hostname-parser/zipball/e8d579d0349f5898f26eff379da202d1db2b00f5",
+                "reference": "e8d579d0349f5898f26eff379da202d1db2b00f5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "php": ">=7.0",
+                "psr/simple-cache": "^1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.7",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^6.3"
+            },
+            "suggest": {
+                "ext-curl": "To use the bundle cURL HTTP client",
+                "psr/simple-cache-implementation": "To enable using other cache providers"
+            },
+            "bin": [
+                "bin/update-psl-icann-section"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Uri\\": "src"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Kendall",
+                    "homepage": "http://about.me/jeremykendall",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ignace Nyamagana Butera",
+                    "homepage": "http://nyamsprod.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/phpleague/uri-hostname-parser/graphs/contributors"
+                }
+            ],
+            "description": "ICANN base hostname parsing implemented in PHP.",
+            "homepage": "https://github.com/thephphleague/uri-hostname-parser",
+            "keywords": [
+                "Public Suffix List",
+                "domain parsing",
+                "icann"
+            ],
+            "time": "2017-11-22T11:45:37+00:00"
         },
         {
             "name": "league/uri-interfaces",
@@ -4507,29 +4518,30 @@
         },
         {
             "name": "league/uri-manipulations",
-            "version": "1.0.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri-manipulations.git",
-                "reference": "3db42474cb68546ec9180d76dbf9807a8e1bcf98"
+                "reference": "03cf5bc525611c3cb37b31b3845a91bf01725b31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-manipulations/zipball/3db42474cb68546ec9180d76dbf9807a8e1bcf98",
-                "reference": "3db42474cb68546ec9180d76dbf9807a8e1bcf98",
+                "url": "https://api.github.com/repos/thephpleague/uri-manipulations/zipball/03cf5bc525611c3cb37b31b3845a91bf01725b31",
+                "reference": "03cf5bc525611c3cb37b31b3845a91bf01725b31",
                 "shasum": ""
             },
             "require": {
-                "league/uri-components": "^1.0",
+                "league/uri-components": "^1.4",
                 "league/uri-interfaces": "^1.0",
                 "php": ">=7.0",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.9",
+                "friendsofphp/php-cs-fixer": "^2.0",
                 "guzzlehttp/psr7": "^1.2",
                 "league/uri-schemes": "^1.0",
-                "phpunit/phpunit": "^6.0"
+                "phpunit/phpunit": "^6.0",
+                "zendframework/zend-diactoros": "1.4.0"
             },
             "suggest": {
                 "league/uri-schemes": "Allow manipulating URI objects"
@@ -4542,7 +4554,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "League\\Uri\\Modifiers\\": "src"
+                    "League\\Uri\\": "src"
                 },
                 "files": [
                     "src/functions_include.php"
@@ -4574,7 +4586,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-06T07:57:03+00:00"
+            "time": "2017-11-22T12:09:07+00:00"
         },
         {
             "name": "league/uri-parser",
