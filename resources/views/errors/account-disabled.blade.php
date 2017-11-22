@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Account disabled.</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <style>
-        body, html {
-            height: 100%
-        }
+    <meta charset="utf-8"> 
 
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            color: #B0BEC5;
-            display: table;
-            font-weight: 100;
-            font-family: Lato
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle
-        }
+	<title>Account disabled.</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<style>
+		body,
+		html {
+			height: 100%;
+		}
 
-        .content {
-            text-align: center;
-            display: inline-block
-        }
+		.container {
+            margin-top: 100px;
+			text-align: center;
+			vertical-align: middle;
+		}
 
         .title {
-            font-size: 72px;
-            margin-bottom: 40px
+            font-family: Lato; 
+            font-size: 84px; 
         }
-    </style>
+	</style>
 </head>
+
 <body>
-<div class="container">
-    <div class="content">
-        <div class="title">Account disabled.</div>
-    </div>
-</div>
+	<div class="container">
+		<div class="content">
+			<div class="panel panel-default">
+            <div class="panel-heading">Error</div>
+				<div class="panel-body">
+					<div class="title">Account disabled.</div>
+				</div>
+                <div class="panel-footer">Comdexx Solutions LLC &copy;2017.  All rights reserved.</div>
+			</div>
+		</div>
+	</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+
 </html>
