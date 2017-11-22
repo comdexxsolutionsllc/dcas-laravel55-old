@@ -3,11 +3,13 @@
 namespace App\Console;
 
 use App\Console\Commands\AddUser;
+use App\Console\Commands\DisableUser;
 use App\Console\Commands\MakeVueFile;
 use App\Console\Commands\ResetPassword;
 use Busatlic\ScheduleMonitor\MonitorsSchedule;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -21,6 +23,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         MakeVueFile::class,
         AddUser::class,
+        DisableUser::class,
         ResetPassword::class,
     ];
 
