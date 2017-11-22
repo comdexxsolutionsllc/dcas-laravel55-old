@@ -2,11 +2,7 @@
   "name": "fiberhopllc_dcas",
   "description": "FiberHop LLC - DCAS - Datacenter Automation Suite",
   "dependencies": {
-    "chart.js": "^2.3.0",
-    "datatables": "^1.10.12",
-    "datatables-plugins": "^1.10.12",
-    "modernizr": "^3.3.1",
-    "typeahead.js": "^0.11.1"
+    "datatables-plugins": "^1.10.12"
   },
   "resolutions": {
     "modernizr": "^3.3.1"
