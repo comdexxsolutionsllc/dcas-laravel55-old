@@ -3,7 +3,8 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": [
         "eslint:recommended",
@@ -26,7 +27,6 @@
         "constructor-super": "warn",
         "default-case": "warn",
         "valid-typeof": "warn",
-        "eqeqeq": "warn",
-
+        "eqeqeq": "warn"
     }
 }

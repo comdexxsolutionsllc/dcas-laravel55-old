@@ -1,4 +1,5 @@
 /.idea
+/.tmp
 /.vagrant
 /node_modules
 /public/hot
