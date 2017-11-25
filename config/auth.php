@@ -11,6 +11,7 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
+    'model' => App\User::class,
 
     'defaults' => [
         'guard' => 'web',
