@@ -16,7 +16,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "tdd": "executor './vendor/bin/phpunit --color=always' --watch='**/*.php' --ignore='node_modules/' --ignore='vendor/'",
-        "test": "mocha-webpack --webpack-config webpack.config.js --require tests/setup.js tests/Javascript/\\*.spec.js"
+        "test": "mocha-webpack --webpack-config webpack.config.js --require tests/setup.js tests/Javascript/\\*.spec.js",
+        "cleanup-webpack": "rm -rf .tmp/mocha-webpack/*"
     },
     "devDependencies": {
         "@lassehaslev/executor": "^0.1.2",
