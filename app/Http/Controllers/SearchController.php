@@ -3,20 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Database\Eloquent\Collection;
+use Request;
 
 class SearchController extends Controller
 {
     /**
      * Find a specific query.
      *
-     * @return mixed
+     * @param Request $request
+     *
+     * @return Collection
      */
-    public function find()
+    public function find(Request $request): Collection
     {
         return User::search(
-            request()->get('q')
+            $query = $request->get('q')
         )
             ->with('profile')
             ->get();
+    }
+
+    /**
+     * Alias of find function.
+     *
+     * @param Request $request
+     *
+     * @return Collection
+     */
+    public function search(Request $request): Collection
+    {
+        return $this->find();
     }
 }
