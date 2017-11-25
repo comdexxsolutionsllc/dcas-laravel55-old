@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class StoreComment extends BaseRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateUser extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +24,7 @@ class StoreComment extends BaseRequest
     public function rules()
     {
         return [
+            //
         ];
     }
 }

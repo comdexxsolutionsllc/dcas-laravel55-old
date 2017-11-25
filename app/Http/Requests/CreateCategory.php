@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class StoreTicket extends BaseRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateCategory extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +24,7 @@ class StoreTicket extends BaseRequest
     public function rules()
     {
         return [
+            //
         ];
     }
 }
