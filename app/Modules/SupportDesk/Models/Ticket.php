@@ -8,6 +8,43 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Modules\SupportDesk\Models\Ticket.
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $category_id
+ * @property string $ticket_id
+ * @property string $title
+ * @property string $priority
+ * @property string $message
+ * @property string $status
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property \Modules\SupportDesk\Models\Category $category
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Comment[] $comments
+ * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
+ * @property \App\User $user
+ *
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket wherePriority($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereTicketId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket withoutTrashed()
+ */
 class Ticket extends Model
 {
     use SoftDeletes;

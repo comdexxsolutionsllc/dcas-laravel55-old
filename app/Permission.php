@@ -23,6 +23,8 @@ use Zizaco\Entrust\EntrustPermission;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission sortable($defaultSortColumn = null, $direction = 'asc')
  */
 class Permission extends EntrustPermission
 {

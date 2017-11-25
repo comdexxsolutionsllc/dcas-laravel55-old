@@ -4,6 +4,25 @@ namespace App;
 
 use DCAS\Observers\ConsumerModelObserver;
 
+/**
+ * App\Consumer.
+ *
+ * @property string $id
+ * @property string|null $api_token
+ * @property string $name
+ * @property string $url
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereApiToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereUrl($value)
+ */
 class Consumer extends UUIDModel
 {
     /**

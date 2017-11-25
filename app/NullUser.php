@@ -6,6 +6,54 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * App\NullUser.
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $username
+ * @property string $password
+ * @property string|null $domain
+ * @property string $slug
+ * @property string|null $stripe_id
+ * @property string|null $card_brand
+ * @property string|null $card_last_four
+ * @property string|null $trial_ends_at
+ * @property int $is_logged_in
+ * @property int $is_disabled
+ * @property string|null $remember_token
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property string|null $phone_country_code
+ * @property string|null $phone_number
+ * @property string|null $two_factor_options
+ * @property \Illuminate\Database\Eloquent\Collection|\App\NullComment[] $comments
+ * @property \App\NullProfile $profile
+ * @property \Illuminate\Database\Eloquent\Collection|\App\NullTicket[] $tickets
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCardBrand($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCardLastFour($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereDomain($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereIsDisabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereIsLoggedIn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser wherePhoneCountryCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereStripeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereTrialEndsAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereTwoFactorOptions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereUsername($value)
+ */
 class NullUser extends Authenticatable
 {
     /**

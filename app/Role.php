@@ -21,6 +21,11 @@ use Zizaco\Entrust\EntrustRole;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereUpdatedAt($value)
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Permission[] $perms
+ * @property \Illuminate\Database\Eloquent\Collection|\App\User[] $users
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Role sortable($defaultSortColumn = null, $direction = 'asc')
  */
 class Role extends EntrustRole
 {

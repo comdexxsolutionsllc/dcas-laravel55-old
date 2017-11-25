@@ -2,6 +2,13 @@
 
 namespace App;
 
+/**
+ * App\NullProfile.
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ */
 class NullProfile extends Model
 {
     /**
