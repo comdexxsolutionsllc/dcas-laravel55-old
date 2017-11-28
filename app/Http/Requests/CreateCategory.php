@@ -13,7 +13,8 @@ class CreateCategory extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in CategoryPolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,7 @@ class CreateCategory extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|alpha|min:4',
         ];
     }
 

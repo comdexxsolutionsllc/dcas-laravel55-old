@@ -11,6 +11,19 @@ class CommentPolicy
     use HandlesAuthorization;
 
     /**
+     * Authorize all actions for the given model to Admins.
+     *
+     * @param \App\User $user
+     * @param $ability
+     * 
+     * @return void
+     */
+    public function before($user, $ability)
+    {
+        if ($user->isAdmin()) return true;
+    }
+    
+    /**
      * Determine whether the user can view the comment.
      *
      * @param \App\User            $user
@@ -20,6 +33,7 @@ class CommentPolicy
      */
     public function view(User $user, Comment $comment)
     {
+        return $user->may('view-comments');
     }
 
     /**
@@ -31,6 +45,7 @@ class CommentPolicy
      */
     public function create(User $user)
     {
+        return $user->may('create-comments');
     }
 
     /**
@@ -43,6 +58,7 @@ class CommentPolicy
      */
     public function update(User $user, Comment $comment)
     {
+        return $user->may('update-comments') && ($user->id === $comment->user_id);
     }
 
     /**
@@ -55,5 +71,6 @@ class CommentPolicy
      */
     public function delete(User $user, Comment $comment)
     {
+        return false;
     }
 }

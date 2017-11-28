@@ -11,6 +11,19 @@ class TicketPolicy
     use HandlesAuthorization;
 
     /**
+     * Authorize all actions for the given model to Admins.
+     *
+     * @param \App\User $user
+     * @param $ability
+     * 
+     * @return void
+     */
+    public function before($user, $ability)
+    {
+        if ($user->isAdmin()) return true;
+    }
+
+    /**
      * Determine whether the user can view the ticket.
      *
      * @param \App\User                          $user
@@ -20,6 +33,7 @@ class TicketPolicy
      */
     public function view(User $user, Ticket $ticket)
     {
+        return $user->may('view-ticket') && ($user->id === $ticket->user_id);
     }
 
     /**
@@ -31,6 +45,7 @@ class TicketPolicy
      */
     public function create(User $user)
     {
+        return $user->may('create-ticket');
     }
 
     /**
@@ -43,6 +58,7 @@ class TicketPolicy
      */
     public function update(User $user, Ticket $ticket)
     {
+        return $user->may('update-ticket') && ($user->id === $ticket->user_id);
     }
 
     /**
@@ -55,5 +71,6 @@ class TicketPolicy
      */
     public function delete(User $user, Ticket $ticket)
     {
+        return $user->may('delete-ticket') && ($user->id === $ticket->user_id);
     }
 }

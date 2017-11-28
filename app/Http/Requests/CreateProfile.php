@@ -13,7 +13,8 @@ class CreateProfile extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in ProfilePolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,13 @@ class CreateProfile extends FormRequest
     public function rules()
     {
         return [
-            //
+            'biography' => 'nullable',
+            'address_1' => 'required|alpha_dash',
+            'address_2' => 'nullable',
+            'city' => 'required|alpha_dash|between:2,58',
+            'state' => 'required|alpha|between:2,3',
+            'country' => 'required|alpha|between:4,84',
+            'postal_code' => 'required|alpha_num|max:12',
         ];
     }
 

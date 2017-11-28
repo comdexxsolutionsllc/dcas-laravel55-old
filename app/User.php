@@ -202,15 +202,6 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     ];
 
     /**
-     * Roles that are administrators.
-     *
-     * @var array
-     */
-    protected $admins = [
-        'super_admin',
-    ];
-
-    /**
      * Is the user an administrator?
      *
      * @return bool
@@ -219,11 +210,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     {
         $roles = $this->roles->pluck('name')->toArray();
 
-        if (count($roles) === 0) {
-            return false;
-        }
-
-        return (bool) array_intersect($this->admins, $roles);
+        return (count($roles) === 0) ? false : \DCAS\Helpers\Arr::find('_admin', $roles);
     }
 
     /**

@@ -11,6 +11,19 @@ class CategoryPolicy
     use HandlesAuthorization;
 
     /**
+     * Authorize all actions for the given model to Admins.
+     *
+     * @param \App\User $user
+     * @param $ability
+     * 
+     * @return void
+     */
+    public function before($user, $ability)
+    {
+        if ($user->isAdmin()) return true;
+    }
+    
+    /**
      * Determine whether the user can view the category.
      *
      * @param \App\User                            $user
@@ -20,6 +33,7 @@ class CategoryPolicy
      */
     public function view(User $user, Category $category)
     {
+        return true;
     }
 
     /**
@@ -31,6 +45,7 @@ class CategoryPolicy
      */
     public function create(User $user)
     {
+        return false;
     }
 
     /**
@@ -43,6 +58,7 @@ class CategoryPolicy
      */
     public function update(User $user, Category $category)
     {
+        return false;
     }
 
     /**
@@ -55,5 +71,6 @@ class CategoryPolicy
      */
     public function delete(User $user, Category $category)
     {
+        return false;
     }
 }

@@ -11,6 +11,19 @@ class RolePolicy
     use HandlesAuthorization;
 
     /**
+     * Authorize all actions for the given model to Admins.
+     *
+     * @param \App\User $user
+     * @param $ability
+     * 
+     * @return void
+     */
+    public function before($user, $ability)
+    {
+        // 
+    }
+    
+    /**
      * Determine whether the user can view the role.
      *
      * @param \App\User $user
@@ -20,6 +33,9 @@ class RolePolicy
      */
     public function view(User $user, Role $role)
     {
+        if ($user->isAdmin()) {
+            return true;
+        }
     }
 
     /**
@@ -31,6 +47,9 @@ class RolePolicy
      */
     public function create(User $user)
     {
+        if ($user->isAdmin()) {
+            return true;
+        }
     }
 
     /**
@@ -43,6 +62,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
+        return false;
     }
 
     /**
@@ -55,5 +75,6 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
+        return false;
     }
 }

@@ -13,7 +13,8 @@ class CreateComment extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in CommentPolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,7 @@ class CreateComment extends FormRequest
     public function rules()
     {
         return [
-            //
+            'comment' => 'required|min:3',
         ];
     }
 

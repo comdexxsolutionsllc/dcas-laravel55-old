@@ -13,7 +13,7 @@ class CreateUser extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class CreateUser extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'username' => 'required|alpha_num',
+            'password' => 'required|min:8',
+            'domain' => 'nullable',
+            'phone_country_code' => 'nullable',
+            'phone_number' => 'nullable',
         ];
     }
 

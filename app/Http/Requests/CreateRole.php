@@ -13,7 +13,8 @@ class CreateRole extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in RolePolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,9 @@ class CreateRole extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:3',
+            'display_name' => 'required|min:3',
+            'description' => 'required',
         ];
     }
 

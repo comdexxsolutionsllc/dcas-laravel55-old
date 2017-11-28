@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class PermissionPolicy
 {
     use HandlesAuthorization;
-
+    
     /**
      * Determine whether the user can view the permission.
      *
@@ -20,6 +20,7 @@ class PermissionPolicy
      */
     public function view(User $user, Permission $permission)
     {
+        return $user->may('view-permissions');
     }
 
     /**
@@ -31,6 +32,9 @@ class PermissionPolicy
      */
     public function create(User $user)
     {
+        if ($user->isAdmin()) {
+            return true;
+        }
     }
 
     /**
@@ -43,6 +47,9 @@ class PermissionPolicy
      */
     public function update(User $user, Permission $permission)
     {
+        if ($user->isAdmin()) {
+            return true;
+        }
     }
 
     /**
@@ -55,5 +62,6 @@ class PermissionPolicy
      */
     public function delete(User $user, Permission $permission)
     {
+        return false;
     }
 }

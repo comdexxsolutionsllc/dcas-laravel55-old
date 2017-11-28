@@ -13,7 +13,8 @@ class CreatePermission extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in PermissionPolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,9 @@ class CreatePermission extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:3',
+            'display_name' => 'required|min:3',
+            'description' => 'required',
         ];
     }
 

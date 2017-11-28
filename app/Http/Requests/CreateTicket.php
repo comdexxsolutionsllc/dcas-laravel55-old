@@ -13,7 +13,8 @@ class CreateTicket extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // Authorization logic in TicketPolicy
+        return true;
     }
 
     /**
@@ -24,7 +25,10 @@ class CreateTicket extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|between:4,100',
+            'category_id' => 'required|numeric|between:1,2',
+            'priority' => 'required|numeric|between:1,2',
+            'message' => 'required|string|min:50',
         ];
     }
 
