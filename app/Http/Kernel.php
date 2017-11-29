@@ -47,7 +47,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 //            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
             \App\Http\Middleware\Ajaxify::class,
-            \App\Http\Middleware\LogLastUserActivity::class,
+            // \App\Http\Middleware\LogLastUserActivity::class,
         ],
 
         'api' => [

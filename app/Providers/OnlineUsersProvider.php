@@ -29,16 +29,8 @@ class OnlineUsersProvider extends ServiceProvider
     private function getOnlineUsersCount()
     {
         view()->composer('partials.user-online', function ($view) {
-            $users = User::all()->where('is_active', 1); // To help server load, I only target users that are active. In my case my app changes this field for users that haven't logged in for over a week.
-
-            $onlineUsersCount = 0;
-
-            foreach ($users as $user) {
-                if (Cache::has('user-is-online-' . $user->id)) {
-                    ++$onlineUsersCount;
-                }
-            }
-
+            $onlineUsersCount = User::where('is_logged_in', 1)->count(); 
+            
             $view->with(compact(['onlineUsersCount']));
         });
     }
