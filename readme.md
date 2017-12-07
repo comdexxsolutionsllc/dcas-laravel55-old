@@ -1,5 +1,5 @@
-### Datacenter Automation Suite (v0.0.1) [27 November 2017]
+### Datacenter Automation Suite (v0.0.1) [06 December 2017]
 
-#### [Laravel Framework 5.5.22]
-###### **PHP 7.1.11** (built: Oct 27 2017 11:00:03) ( NTS ) (_`Zend Engine`_ v3.1.0 with _`Xdebug`_ v2.5.5)
+#### [Laravel Framework 5.5.23]
+###### **PHP 7.2.0** (built: Dec 3 2017 21:46:04) ( NTS ) (_`Zend Engine`_ v3.2.0 with _`Xdebug`_ v2.6.0alpha1)
 ###### **sqlite3** version 3.8.10.2 2015-05-20 18:17:19 
