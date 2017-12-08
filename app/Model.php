@@ -5,13 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Rogercbe\TableSorter\Sortable;
 use Watson\Rememberable\Rememberable;
+use ZigaStrgar\Orderable\Orderable;
 
 /**
  * Generic Model Class.
  */
 abstract class Model extends Eloquent
 {
-    use Rememberable, Sortable;
+    use Orderable, Rememberable, Sortable;
 
     /**
      * Search as you type.
@@ -20,6 +21,18 @@ abstract class Model extends Eloquent
      * @var bool
      */
     public $asYouType = true;
+
+    /**
+     * Return orderable array.
+     *
+     * @return array
+     */
+    public function orderable(): array
+    {
+        return [
+            'id' => 'ASC',
+        ];
+    }
 
     /**
      * Get the indexable data array for the model.

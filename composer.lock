@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5cca9aee8aad034bb861a1d33f3a689",
+    "content-hash": "18274f375a9eed1ae1217186f984a448",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -4088,6 +4088,91 @@
             "time": "2017-05-09T17:41:49+00:00"
         },
         {
+            "name": "league/glide-laravel",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/glide-laravel.git",
+                "reference": "b525e33e32940f3b047d6ca357131aba0e973e72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/glide-laravel/zipball/b525e33e32940f3b047d6ca357131aba0e973e72",
+                "reference": "b525e33e32940f3b047d6ca357131aba0e973e72",
+                "shasum": ""
+            },
+            "require": {
+                "league/glide-symfony": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Glide\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Reinink",
+                    "email": "jonathan@reinink.ca",
+                    "homepage": "http://reinink.ca"
+                }
+            ],
+            "description": "Glide adapter for Laravel",
+            "homepage": "http://glide.thephpleague.com",
+            "time": "2015-12-26T15:40:35+00:00"
+        },
+        {
+            "name": "league/glide-symfony",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/glide-symfony.git",
+                "reference": "2dc271c959aa86c060261e2a93c493a54f98efbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/glide-symfony/zipball/2dc271c959aa86c060261e2a93c493a54f98efbb",
+                "reference": "2dc271c959aa86c060261e2a93c493a54f98efbb",
+                "shasum": ""
+            },
+            "require": {
+                "league/glide": "^1.0",
+                "symfony/http-foundation": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Glide\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Reinink",
+                    "email": "jonathan@reinink.ca",
+                    "homepage": "http://reinink.ca"
+                }
+            ],
+            "description": "Glide adapter for Symfony",
+            "homepage": "http://glide.thephpleague.com",
+            "time": "2016-07-01T16:05:08+00:00"
+        },
+        {
             "name": "league/oauth1-client",
             "version": "1.7.0",
             "source": {
@@ -4928,6 +5013,49 @@
             ],
             "description": "Easy flash notifications",
             "time": "2017-10-10T17:58:57+00:00"
+        },
+        {
+            "name": "michelecurletta/laravel-schedule-overview",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelecurletta/laravel-schedule-overview.git",
+                "reference": "5d5036b33144db4efba5272aa61cd72200e315c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelecurletta/laravel-schedule-overview/zipball/5d5036b33144db4efba5272aa61cd72200e315c3",
+                "reference": "5d5036b33144db4efba5272aa61cd72200e315c3",
+                "shasum": ""
+            },
+            "require": {
+                "mtdowling/cron-expression": "^1.1",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MicheleCurletta\\LaravelScheduleOverview\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michele Giovanni Curletta",
+                    "email": "michelecurletta@icloud.com"
+                }
+            ],
+            "description": "This Laravel package allows you to monitor all scheduled jobs with ease.",
+            "homepage": "https://github.com/michelecurletta/laravel-schedule-overview",
+            "keywords": [
+                "laravel",
+                "overview",
+                "scheduled"
+            ],
+            "time": "2017-06-09T16:33:45+00:00"
         },
         {
             "name": "mirzabusatlic/laravel-schedule-monitor",
@@ -11685,6 +11813,49 @@
             "time": "2017-09-09T21:43:22+00:00"
         },
         {
+            "name": "thedevsaddam/laravel-schema",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thedevsaddam/laravel-schema.git",
+                "reference": "ce787b3b5d6f558cd5fb615f373beabb1939e724"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thedevsaddam/laravel-schema/zipball/ce787b3b5d6f558cd5fb615f373beabb1939e724",
+                "reference": "ce787b3b5d6f558cd5fb615f373beabb1939e724",
+                "shasum": ""
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Thedevsaddam\\LaravelSchema\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saddam Hossain",
+                    "email": "thedevsaddam@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Display the connected database information in console.",
+            "homepage": "https://github.com/thedevsaddam/laravel-schema",
+            "keywords": [
+                "database",
+                "laravel",
+                "laravel-database viewer",
+                "laravel-schema",
+                "schema",
+                "thedevsaddam"
+            ],
+            "time": "2016-10-28T06:25:46+00:00"
+        },
+        {
             "name": "theseer/tokenizer",
             "version": "1.1.0",
             "source": {
@@ -12719,6 +12890,109 @@
                 "zf2"
             ],
             "time": "2017-01-17T13:57:50+00:00"
+        },
+        {
+            "name": "zgabievi/promocodes",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zgabievi/laravel-promocodes.git",
+                "reference": "6a1685238e697b1fcec3c16d6de086549fb9211f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zgabievi/laravel-promocodes/zipball/6a1685238e697b1fcec3c16d6de086549fb9211f",
+                "reference": "6a1685238e697b1fcec3c16d6de086549fb9211f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.5.0",
+                "illuminate/database": "~5.5.0",
+                "illuminate/support": "~5.5.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.5.0",
+                "orchestra/testbench": "~3.5.0",
+                "phpunit/phpunit": "~6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gabievi\\Promocodes\\PromocodesServiceProvider"
+                    ],
+                    "aliases": {
+                        "Promocodes": "Gabievi\\Promocodes\\Facades\\Promocodes"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gabievi\\Promocodes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zgabievi",
+                    "email": "zura.gabievi@gmail.com"
+                }
+            ],
+            "description": "Promotional Codes Generator for Laravel 5",
+            "homepage": "https://github.com/zgabievi/promocodes",
+            "keywords": [
+                "coupon code",
+                "discount code",
+                "laravel",
+                "php",
+                "promo code"
+            ],
+            "time": "2017-09-01T13:21:18+00:00"
+        },
+        {
+            "name": "zigastrgar/orderable",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ZigaStrgar/orderable.git",
+                "reference": "d3d2ea147842c66c437ad0dcb112f2bf128ad21d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZigaStrgar/orderable/zipball/d3d2ea147842c66c437ad0dcb112f2bf128ad21d",
+                "reference": "d3d2ea147842c66c437ad0dcb112f2bf128ad21d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "illuminate/database": "^5.3",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "laravel-package",
+            "autoload": {
+                "psr-4": {
+                    "ZigaStrgar\\Orderable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ZigaStrgar",
+                    "email": "ziga_strgar@hotmail.com"
+                }
+            ],
+            "description": "Ordering package for Laravel 5.x",
+            "homepage": "https://github.com/ZigaStrgar/orderable",
+            "time": "2016-10-08T11:15:12+00:00"
         },
         {
             "name": "zircote/swagger-php",

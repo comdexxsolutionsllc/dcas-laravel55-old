@@ -5,6 +5,8 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use DCAS\Traits\Filterable;
 use DCAS\Traits\HasGravatar;
+use Gabievi\Promocodes\Traits\Rewardable;
+
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -95,7 +97,7 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 */
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
+    use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, Rewardable, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
