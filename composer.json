@@ -95,7 +95,6 @@
     "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
     "tightenco/ziggy": "^0.4.1",
     "tymon/jwt-auth": "0.5.*",
-    "venturecraft/revisionable": "^1.28",
     "watson/rememberable": "^2.0",
     "y-zono/laravel-link-header-pagination": "^0.0.1",
     "yab/laravel-scout-mysql-driver": "dev-master",

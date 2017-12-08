@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "de11a5681fef34de9fdc3156c3a2753d",
+    "content-hash": "d5cca9aee8aad034bb861a1d33f3a689",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -3264,16 +3264,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.23",
+            "version": "v5.5.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777"
+                "reference": "06135405bb1f736dac5e9529ed1541fc446c9c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777",
-                "reference": "cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/06135405bb1f736dac5e9529ed1541fc446c9c0f",
+                "reference": "06135405bb1f736dac5e9529ed1541fc446c9c0f",
                 "shasum": ""
             },
             "require": {
@@ -3393,7 +3393,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-12-04T14:19:08+00:00"
+            "time": "2017-12-07T01:28:21+00:00"
         },
         {
             "name": "laravel/passport",
@@ -3466,16 +3466,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v3.0.11",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "8f228a073ef844c5981febe4d185d6ee7b4e5bd2"
+                "reference": "0d97152e9006481e1608ad4286e53acf20a3c110"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/8f228a073ef844c5981febe4d185d6ee7b4e5bd2",
-                "reference": "8f228a073ef844c5981febe4d185d6ee7b4e5bd2",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/0d97152e9006481e1608ad4286e53acf20a3c110",
+                "reference": "0d97152e9006481e1608ad4286e53acf20a3c110",
                 "shasum": ""
             },
             "require": {
@@ -3527,7 +3527,7 @@
                 "laravel",
                 "search"
             ],
-            "time": "2017-11-21T13:48:26+00:00"
+            "time": "2017-12-07T22:15:01+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -9796,24 +9796,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.2.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
+                "reference": "05c22ed80422b34cdb5e6b0926ebfbbf554009f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/05c22ed80422b34cdb5e6b0926ebfbbf554009f5",
+                "reference": "05c22ed80422b34cdb5e6b0926ebfbbf554009f5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "ext-imagick": "*",
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "autoload": {
@@ -9842,7 +9842,7 @@
                 "pdf-to-image",
                 "spatie"
             ],
-            "time": "2016-12-14T15:37:00+00:00"
+            "time": "2017-10-26T21:39:29+00:00"
         },
         {
             "name": "spatie/phpunit-snapshot-assertions",
@@ -11931,54 +11931,6 @@
             "time": "2017-06-07T21:32:02+00:00"
         },
         {
-            "name": "venturecraft/revisionable",
-            "version": "1.28.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/VentureCraft/revisionable.git",
-                "reference": "5a76d29b897d4864cef41c605e7e03258dd5d051"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/VentureCraft/revisionable/zipball/5a76d29b897d4864cef41c605e7e03258dd5d051",
-                "reference": "5a76d29b897d4864cef41c605e7e03258dd5d051",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4.0|~5.0|~5.1",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Venturecraft\\Revisionable": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Duell",
-                    "email": "me@chrisduell.com"
-                }
-            ],
-            "description": "Keep a revision history for your models without thinking, created as a package for use with Laravel",
-            "homepage": "http://github.com/venturecraft/revisionable",
-            "keywords": [
-                "ardent",
-                "history",
-                "laravel",
-                "model",
-                "revision"
-            ],
-            "time": "2016-08-02T02:32:00+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -13733,16 +13685,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v2.0.7",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "29127c21d72ab5bff53ed3b8eb914c0059c77763"
+                "reference": "a7529e19592879d3a6408728080ba657499890bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/29127c21d72ab5bff53ed3b8eb914c0059c77763",
-                "reference": "29127c21d72ab5bff53ed3b8eb914c0059c77763",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/a7529e19592879d3a6408728080ba657499890bc",
+                "reference": "a7529e19592879d3a6408728080ba657499890bc",
                 "shasum": ""
             },
             "require": {
@@ -13755,8 +13707,8 @@
                 "symfony/process": "~3.2"
             },
             "require-dev": {
-                "mockery/mockery": "^0.9.6",
-                "phpunit/phpunit": "^5.7"
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~6.0"
             },
             "type": "library",
             "extra": {
@@ -13790,7 +13742,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2017-10-09T16:10:59+00:00"
+            "time": "2017-12-08T14:18:11+00:00"
         },
         {
             "name": "maddhatter/laravel-view-generator",

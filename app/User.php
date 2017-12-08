@@ -22,7 +22,6 @@ use Prettus\Repository\Traits\PresentableTrait;
 use Rogercbe\TableSorter\Sortable;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
-use Venturecraft\Revisionable\RevisionableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 //use DCAS\Traits\Excludable;
@@ -96,14 +95,13 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 */
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
-    use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, RevisionableTrait, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
+    use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;
 
     use EntrustUserTrait {
         EntrustUserTrait::restore as private restoreA;
         EntrustUserTrait::can as may;
         Authorizable::can insteadof EntrustUserTrait;
         EntrustUserTrait::restore insteadof SoftDeletes;
-        EntrustUserTrait::boot insteadof RevisionableTrait;
     }
     use SoftDeletes {
         SoftDeletes::restore as private restoreB;
@@ -136,34 +134,6 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     protected $hidden = [
         'password', 'remember_token', 'two_factor_options',
     ];
-
-    /**
-     * Enable logging revisions.
-     *
-     * @var bool
-     */
-    protected $revisionEnabled = true;
-
-    /**
-     * Enable revision logging cleanup.
-     *
-     * @var bool
-     */
-    protected $revisionCleanup = true; //Remove old revisions (works only when used with $historyLimit)
-
-    /**
-     * Log model creation events.
-     *
-     * @var bool
-     */
-    protected $revisionCreationsEnabled = true;
-
-    /**
-     * History limit until cleanup is triggered.
-     *
-     * @var int
-     */
-    protected $historyLimit = 500; //Maintain a maximum of 500 changes at any point of time, while cleaning up old revisions.
 
     /**
      * @var array
