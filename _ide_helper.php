@@ -15461,6 +15461,125 @@ namespace Lavary\Menu {
  
 }
 
+namespace Gabievi\Promocodes\Facades { 
+
+    class Promocodes {
+        
+        /**
+         * Generates promocodes as many as you wish.
+         *
+         * @param int $amount
+         * @return array 
+         * @static 
+         */ 
+        public static function output($amount = 1)
+        {
+            return \Gabievi\Promocodes\Promocodes::output($amount);
+        }
+        
+        /**
+         * Save promocodes into database
+         * Successful insert returns generated promocodes
+         * Fail will return empty collection.
+         *
+         * @param int $amount
+         * @param null $reward
+         * @param array $data
+         * @param int|null $expires_in
+         * @param bool $is_disposable
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function create($amount = 1, $reward = null, $data = array(), $expires_in = null, $is_disposable = false)
+        {
+            return \Gabievi\Promocodes\Promocodes::create($amount, $reward, $data, $expires_in, $is_disposable);
+        }
+        
+        /**
+         * Save one-time use promocodes into database
+         * Successful insert returns generated promocodes
+         * Fail will return empty collection.
+         *
+         * @param int $amount
+         * @param null $reward
+         * @param array $data
+         * @param int|null $expires_in
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function createDisposable($amount = 1, $reward = null, $data = array(), $expires_in = null)
+        {
+            return \Gabievi\Promocodes\Promocodes::createDisposable($amount, $reward, $data, $expires_in);
+        }
+        
+        /**
+         * Check promocode in database if it is valid.
+         *
+         * @param string $code
+         * @return bool|\Gabievi\Promocodes\Model\Promocode 
+         * @throws \Gabievi\Promocodes\Exceptions\InvalidPromocodeExceprion
+         * @static 
+         */ 
+        public static function check($code)
+        {
+            return \Gabievi\Promocodes\Promocodes::check($code);
+        }
+        
+        /**
+         * Apply promocode to user that it's used from now.
+         *
+         * @param string $code
+         * @return bool|\Gabievi\Promocodes\Model\Promocode 
+         * @throws \Gabievi\Promocodes\Exceptions\UnauthenticatedExceprion|\Gabievi\Promocodes\Exceptions\AlreadyUsedExceprion
+         * @static 
+         */ 
+        public static function apply($code)
+        {
+            return \Gabievi\Promocodes\Promocodes::apply($code);
+        }
+        
+        /**
+         * Reedem promocode to user that it's used from now.
+         *
+         * @param string $code
+         * @return bool|\Gabievi\Promocodes\Model\Promocode 
+         * @throws \Gabievi\Promocodes\Exceptions\UnauthenticatedExceprion|\Gabievi\Promocodes\Exceptions\AlreadyUsedExceprion
+         * @static 
+         */ 
+        public static function redeem($code)
+        {
+            return \Gabievi\Promocodes\Promocodes::redeem($code);
+        }
+        
+        /**
+         * Expire code as it won't usable anymore.
+         *
+         * @param string $code
+         * @return bool 
+         * @throws \Gabievi\Promocodes\Exceptions\InvalidPromocodeExceprion
+         * @static 
+         */ 
+        public static function disable($code)
+        {
+            return \Gabievi\Promocodes\Promocodes::disable($code);
+        }
+        
+        /**
+         * Clear all expired and used promotion codes
+         * that can not be used anymore.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function clearRedundant()
+        {
+            \Gabievi\Promocodes\Promocodes::clearRedundant();
+        }
+         
+    }
+ 
+}
+
 namespace Davibennun\LaravelPushNotification\Facades { 
 
     class PushNotification {
@@ -18508,6 +18627,8 @@ namespace  {
     class JWTFactory extends \Tymon\JWTAuth\Facades\JWTFactory {}
 
     class Menu extends \Lavary\Menu\Facade {}
+
+    class Promocodes extends \Gabievi\Promocodes\Facades\Promocodes {}
 
     class PushNotification extends \Davibennun\LaravelPushNotification\Facades\PushNotification {}
 

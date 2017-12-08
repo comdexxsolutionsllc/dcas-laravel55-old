@@ -93,6 +93,7 @@
     "stripe/stripe-php": "~3.0",
     "symfony/css-selector": "3.1.*",
     "symfony/dom-crawler": "3.1.*",
+    "symfony/psr-http-message-bridge": "^1.0",
     "tasioleiva/laravel-usercommands": "^0.1.0",
     "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
     "thedevsaddam/laravel-schema": "^2.0",
@@ -102,6 +103,7 @@
     "y-zono/laravel-link-header-pagination": "^0.0.1",
     "yab/laravel-scout-mysql-driver": "dev-master",
     "yajra/laravel-datatables-oracle": "~8.0",
+    "zendframework/zend-diactoros": "^1.6",
     "zgabievi/promocodes": "^1.1",
     "zigastrgar/orderable": "^1.1",
     "zizaco/entrust": "5.2.x-dev"
