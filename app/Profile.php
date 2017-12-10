@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * App\Profile.
+ * App\Profile
  *
  * @property int $id
  * @property int $user_id
@@ -20,8 +20,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
- *
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Query\Builder|\App\Profile onlyTrashed()
  * @method static bool|null restore()

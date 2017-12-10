@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Modules\SupportDesk\Models\Comment.
+ * Modules\SupportDesk\Models\Comment
  *
  * @property int $id
  * @property int $ticket_id
@@ -17,10 +17,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
- * @property \Modules\SupportDesk\Models\Ticket $ticket
- * @property \App\User $user
- *
+ * @property-read \Modules\SupportDesk\Models\Ticket $ticket
+ * @property-read \App\User $user
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Comment onlyTrashed()
  * @method static bool|null restore()

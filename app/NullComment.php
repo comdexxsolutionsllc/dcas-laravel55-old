@@ -3,9 +3,7 @@
 namespace App;
 
 /**
- * App\NullComment.
- *
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
+ * App\NullComment
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
  */
