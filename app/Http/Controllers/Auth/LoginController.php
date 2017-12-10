@@ -92,18 +92,24 @@ class LoginController extends Controller
         return 'username';
     }
 
+
     /**
      * Send the post-authentication response.
+     * 
+     * @param Request $request
+     * @param $user
      *
-     * @param \Illuminate\Http\Request                   $request
-     * @param \Illuminate\Contracts\Auth\Authenticatable $user
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    protected function authenticated(Request $request, Authenticatable $user)
+    protected function authenticated(Request $request, $user)
     {
         if (Authy::getProvider()->isEnabled($user)) {
             return $this->logoutAndRedirectToTokenScreen($request, $user);
+        }
+
+        if (!$user->verified) {
+            auth()->logout();
+            return back()->with('warning', 'You need to confirm your account. We have sent you an activation code, please check your email.');
         }
 
         return redirect()->intended($this->redirectPath());
