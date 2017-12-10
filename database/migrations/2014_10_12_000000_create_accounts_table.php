@@ -27,6 +27,7 @@ class CreateAccountsTable extends Migration
             $table->timestamp('trial_ends_at')->nullable();
             $table->boolean('is_logged_in')->default(0);
             $table->boolean('is_disabled')->default(0);
+            $table->boolean('verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
