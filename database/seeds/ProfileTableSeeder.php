@@ -19,7 +19,6 @@ class ProfileTableSeeder extends Seeder
         foreach (range(1, 100) as $index) {
             DB::table('profiles')->insert([
                 'user_id' => $index,
-                'username' => User::where('id', '=', $index)->first()->username,
                 'biography' => $faker->paragraph(),
                 'address_1' => $faker->streetAddress,
                 'address_2' => null,

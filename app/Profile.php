@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -43,4 +44,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Profile extends Model
 {
     use SoftDeletes;
+
+    protected $fillable = [
+        "avatar",
+        "biography",
+        "address_1",
+        "address_2",
+        "city",
+        "state",
+        "country",
+        "postal_code"
+    ];
+
+    /**
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return '[username]';
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function user(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
 }
