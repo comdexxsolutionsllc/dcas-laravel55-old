@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Database\Eloquent\Collection;
-use Request;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
@@ -18,7 +18,7 @@ class SearchController extends Controller
     public function find(Request $request): Collection
     {
         return User::search(
-            $query = $request->get('q')
+            $query = $request->query('q')
         )
             ->with('profile')
             ->get();
