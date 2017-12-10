@@ -7,3 +7,5 @@ Route::get('/home', 'HomeController@index')->name('user.home');
 
 // Dashboard profile.
 Route::get('/dashboard/profile/{username}', 'ProfileController@get')->name('profile.{username}')->middleware(['auth']);
+
+Route::get('invoice/{invoice}', 'PdfController');
