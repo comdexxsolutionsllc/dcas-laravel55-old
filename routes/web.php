@@ -5,6 +5,8 @@ Route::feeds();
 Route::view('/', 'welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('user.home');
 
+Route::get('invoice/{invoice}', 'PdfController');
+
 // Dashboard profile.
 Route::group(['prefix' => 'dashboard'], function() {
     Route::get('profiles', 'ProfileController@index');
