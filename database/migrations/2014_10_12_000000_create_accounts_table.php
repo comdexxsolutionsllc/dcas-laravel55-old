@@ -15,6 +15,7 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('profile_id')->unsigned()->nullable()->unique();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('username')->unique();
@@ -27,6 +28,7 @@ class CreateAccountsTable extends Migration
             $table->timestamp('trial_ends_at')->nullable();
             $table->boolean('is_logged_in')->default(0);
             $table->boolean('is_disabled')->default(0);
+            $table->boolean('verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

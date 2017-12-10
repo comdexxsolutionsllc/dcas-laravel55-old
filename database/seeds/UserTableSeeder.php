@@ -22,6 +22,7 @@ class UserTableSeeder extends Seeder
             $slug = str_slug($name . '-' . $username);
 
             DB::table('accounts')->insert([
+                'profile_id' => $index, // TODO:  Change this?
                 'name' => $name,
                 'username' => $username,
                 'email' => $faker->unique()->safeEmail,
