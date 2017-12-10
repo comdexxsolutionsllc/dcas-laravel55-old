@@ -36,6 +36,7 @@ $factory->state(App\User::class, 'testing', function () {
         'slug' => 'sarah-renner',
         'is_disabled' => 0,
         'domain' => null,
+        'verified' => 1,
     ];
 });
 
@@ -48,5 +49,11 @@ $factory->state(App\User::class, 'hasRememberToken', function () {
 $factory->state(App\User::class, 'isDisabled', function () {
     return [
         'is_disabled' => 1
+    ];
+});
+
+$factory->state(App\User::class, 'verified', function () {
+    return [
+        'verified' => 1
     ];
 });

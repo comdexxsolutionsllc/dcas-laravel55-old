@@ -371,4 +371,12 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
 
         return false;
     }
+
+    /**
+     * @return HasOne
+     */
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
 }
