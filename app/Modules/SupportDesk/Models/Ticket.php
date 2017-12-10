@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Modules\SupportDesk\Models\Ticket.
+ * Modules\SupportDesk\Models\Ticket
  *
  * @property int $id
  * @property int $user_id
@@ -22,11 +22,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property \Modules\SupportDesk\Models\Category $category
- * @property \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Comment[] $comments
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
- * @property \App\User $user
- *
+ * @property-read \Modules\SupportDesk\Models\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Comment[] $comments
+ * @property-read \App\User $user
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket onlyTrashed()
  * @method static bool|null restore()

@@ -6,7 +6,7 @@ use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 /**
- * App\NewsItem.
+ * App\NewsItem
  *
  * @property int $id
  * @property string $title
@@ -15,8 +15,6 @@ use Spatie\Feed\FeedItem;
  * @property string $author
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereAuthor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereCreatedAt($value)

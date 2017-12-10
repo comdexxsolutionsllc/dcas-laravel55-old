@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * App\NullUser.
+ * App\NullUser
  *
  * @property int $id
  * @property string $name
@@ -29,10 +29,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property string|null $phone_country_code
  * @property string|null $phone_number
  * @property string|null $two_factor_options
- * @property \Illuminate\Database\Eloquent\Collection|\App\NullComment[] $comments
- * @property \App\NullProfile $profile
- * @property \Illuminate\Database\Eloquent\Collection|\App\NullTicket[] $tickets
- *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\NullComment[] $comments
+ * @property-read \App\NullProfile $profile
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\NullTicket[] $tickets
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCardBrand($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCardLastFour($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereCreatedAt($value)

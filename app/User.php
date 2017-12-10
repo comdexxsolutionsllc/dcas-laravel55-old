@@ -30,71 +30,69 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 //use Laravel\Scout\Searchable;
 
 /**
-* App\User.
-*
-* @property int $id
-* @property string $name
-* @property string $email
-* @property string $username
-* @property string $password
-* @property string|null $domain
-* @property string $slug
-* @property string|null $stripe_id
-* @property string|null $card_brand
-* @property string|null $card_last_four
-* @property string|null $trial_ends_at
-* @property bool $is_logged_in
-* @property bool $is_disabled
-* @property string|null $remember_token
-* @property \Carbon\Carbon|null $created_at
-* @property \Carbon\Carbon|null $updated_at
-* @property string|null $deleted_at
-* @property string|null $phone_country_code
-* @property string|null $phone_number
-* @property string|null $two_factor_options
-* @property \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Client[] $clients
-* @property \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Comment[] $comments
-* @property string $gravatar
-* @property bool $using_two_factor_auth
-* @property \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
-* @property \App\Profile $profile
-* @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
-* @property \Illuminate\Database\Eloquent\Collection|\App\Role[] $roles
-* @property \Illuminate\Database\Eloquent\Collection|\Laravel\Cashier\Subscription[] $subscriptions
-* @property \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Ticket[] $tickets
-* @property \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
-*
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User filter(\DCAS\Filters\QueryFilter $filters)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User findSimilarSlugs($attribute, $config, $slug)
-* @method static bool|null forceDelete()
-* @method static \Illuminate\Database\Query\Builder|\App\User onlyTrashed()
-* @method static bool|null restore()
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User search($search, $threshold = null, $entireText = false, $entireTextOnly = false)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User searchRestricted($search, $restriction, $threshold = null, $entireText = false, $entireTextOnly = false)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User sortable($defaultSortColumn = null, $direction = 'asc')
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCardBrand($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCardLastFour($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedAt($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDeletedAt($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDomain($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmail($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereId($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsDisabled($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsLoggedIn($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereName($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePhoneCountryCode($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePhoneNumber($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereSlug($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereStripeId($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTrialEndsAt($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTwoFactorOptions($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
-* @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUsername($value)
-* @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
-* @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
-*/
+ * App\User
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $username
+ * @property string $password
+ * @property string|null $domain
+ * @property string $slug
+ * @property string|null $stripe_id
+ * @property string|null $card_brand
+ * @property string|null $card_last_four
+ * @property string|null $trial_ends_at
+ * @property bool $is_logged_in
+ * @property bool $is_disabled
+ * @property string|null $remember_token
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property string|null $phone_country_code
+ * @property string|null $phone_number
+ * @property string|null $two_factor_options
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Client[] $clients
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Comment[] $comments
+ * @property-read string $gravatar
+ * @property-read bool $using_two_factor_auth
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \App\Profile $profile
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Gabievi\Promocodes\Models\Promocode[] $promocodes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Role[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Cashier\Subscription[] $subscriptions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Ticket[] $tickets
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User filter(\DCAS\Filters\QueryFilter $filters)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User findSimilarSlugs($attribute, $config, $slug)
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\User onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User search($search, $threshold = null, $entireText = false, $entireTextOnly = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User searchRestricted($search, $restriction, $threshold = null, $entireText = false, $entireTextOnly = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User sortable($defaultSortColumn = null, $direction = 'asc')
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCardBrand($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCardLastFour($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDomain($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsDisabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsLoggedIn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePhoneCountryCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereStripeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTrialEndsAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereTwoFactorOptions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUsername($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
+ */
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {
     use Authorizable, Billable, Filterable, HasApiTokens, HasGravatar, Notifiable, PresentableTrait, Rewardable, SearchableTrait, Sluggable, Sortable, TwoFactorAuthenticatable;

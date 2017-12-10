@@ -6,7 +6,7 @@ use Rogercbe\TableSorter\Sortable;
 use Zizaco\Entrust\EntrustRole;
 
 /**
- * App\Role.
+ * App\Role
  *
  * @property int $id
  * @property string $name
@@ -14,18 +14,15 @@ use Zizaco\Entrust\EntrustRole;
  * @property string|null $description
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
- *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Permission[] $perms
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $users
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Role sortable($defaultSortColumn = null, $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereDisplayName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Role whereUpdatedAt($value)
- *
- * @property \Illuminate\Database\Eloquent\Collection|\App\Permission[] $perms
- * @property \Illuminate\Database\Eloquent\Collection|\App\User[] $users
- *
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Role sortable($defaultSortColumn = null, $direction = 'asc')
  */
 class Role extends EntrustRole
 {

@@ -7,16 +7,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Modules\SupportDesk\Models\Category.
+ * Modules\SupportDesk\Models\Category
  *
  * @property int $id
  * @property string $name
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property \Illuminate\Database\Eloquent\Collection|\Venturecraft\Revisionable\Revision[] $revisionHistory
- * @property \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Ticket[] $tickets
- *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Ticket[] $tickets
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Category onlyTrashed()
  * @method static bool|null restore()
