@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\AddUser;
 use App\Console\Commands\DisableUser;
+use App\Console\Commands\EnableUser;
 use App\Console\Commands\MakeVueFile;
 use App\Console\Commands\ResetPassword;
 use Busatlic\ScheduleMonitor\MonitorsSchedule;
@@ -24,6 +25,7 @@ class Kernel extends ConsoleKernel
         MakeVueFile::class,
         AddUser::class,
         DisableUser::class,
+        EnableUser::class,
         ResetPassword::class,
     ];
 
