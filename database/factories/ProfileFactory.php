@@ -11,7 +11,6 @@ $factory->define(App\Profile::class, function (Faker $faker) {
 
     return [
         'user_id' => $faker->randomElement($user_id),
-        'username' => $username,
         'biography' => $faker->paragraph(),
         'address_1' => $faker->address,
         'city' => $faker->city,
