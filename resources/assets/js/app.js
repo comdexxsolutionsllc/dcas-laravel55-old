@@ -17,6 +17,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('online-users', require('./components/Online-Users'));
 Vue.component('search-box', require('./components/SearchBox.vue'));
 Vue.component('wysiwyg', require('./components/Wysiwyg.vue'));
 

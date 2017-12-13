@@ -11,4 +11,6 @@
 
     @include('partials.search')
     @include('partials.user-online')
+
+    <online-users></online-users>
 @stop
