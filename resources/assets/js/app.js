@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+import Form from './Form'
+
 window.Vue = require('vue');
 
 /**
@@ -15,8 +17,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('search-box', require('./components/Search-Box.vue'));
+Vue.component('search-box', require('./components/SearchBox.vue'));
+Vue.component('wysiwyg', require('./components/Wysiwyg.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        form: new Form({
+            body: ''
+        })
+    },
 });
