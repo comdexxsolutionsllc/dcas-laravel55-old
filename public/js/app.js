@@ -44302,7 +44302,7 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, "\n#onlineUsers {\n    margin-left: 25px;\n}\n.users {\n    margin-left: -25px;\n    list-style-type: none;\n}\n", ""]);
+exports.push([module.i, "\n#onlineUsers {\n    margin-left: 25px;\n    color: white;\n}\n.message {\n}\n.panel {\n    background-color: #0d6aad;\n}\n.users {\n    margin-left: -25px;\n    list-style-type: none;\n}\n", ""]);
 
 // exports
 
@@ -44328,22 +44328,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            online: 0,
+            online: '',
             users: []
         };
     },
     mounted: function mounted() {
-        this.onlineUsers();
-
-        setInterval(function () {
-            this.onlineUsers();
-        }.bind(this), 30000);
+        this.checkForUsers(60);
     },
 
     methods: {
@@ -44351,9 +44351,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios.post('/api/v1/online-users').then(function (response) {
-                _this.online = response.data.count;
                 _this.users = response.data.users;
+                _this.online = _this.users.length;
             });
+        },
+        checkForUsers: function checkForUsers(time) {
+            this.onlineUsers();
+
+            setInterval(function () {
+                this.onlineUsers();
+            }.bind(this), time * 1000);
         },
 
         pluralize: __WEBPACK_IMPORTED_MODULE_0_pluralize___default.a
@@ -44370,25 +44377,30 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "onlineUsers" } }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "panel panel-default" }, [
-        _vm._v(
-          "\n            There " +
-            _vm._s(_vm.pluralize("is", _vm.online)) +
-            " currently " +
-            _vm._s(_vm.online) +
-            " " +
-            _vm._s(_vm.pluralize("user", _vm.online)) +
-            " online.\n            "
-        ),
-        _vm.users
-          ? _c(
-              "ul",
-              { staticClass: "users" },
-              _vm._l(_vm.users, function(user) {
-                return _c("li", [_c("strong", [_vm._v(_vm._s(user))])])
-              })
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("span", { staticClass: "message" }, [
+            _vm._v(
+              "\n                    There " +
+                _vm._s(_vm.pluralize("is", _vm.online)) +
+                " currently " +
+                _vm._s(_vm.online) +
+                " " +
+                _vm._s(_vm.pluralize("user", _vm.online)) +
+                " online.\n                "
             )
-          : _vm._e()
+          ]),
+          _vm._v(" "),
+          _vm.users
+            ? _c(
+                "ul",
+                { staticClass: "users" },
+                _vm._l(_vm.users, function(user) {
+                  return _c("li", [_c("strong", [_vm._v(_vm._s(user))])])
+                })
+              )
+            : _vm._e()
+        ])
       ])
     ])
   ])

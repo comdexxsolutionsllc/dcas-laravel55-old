@@ -10,12 +10,8 @@ Route::prefix('v1')->group(function () {
     })->name('root');
 
     Route::post('online-users', function () {
-        $count = User::where('is_logged_in', true)->count();
-        $users = User::where('is_logged_in', true)->pluck('username');
-
         return [
-            'count' => $count,
-            'users' => $users,
+            'users' => $users = User::where('is_logged_in', true)->pluck('username'),
             'timestamp' => Carbon::now()->toDateTimeString()
         ];
     });
