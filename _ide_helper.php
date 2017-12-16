@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.25 on 2017-12-12.
+ * Generated for Laravel 5.5.25 on 2017-12-16.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5675,6 +5675,19 @@ namespace Illuminate\Support\Facades {
         public static function getMonolog()
         {
             return \Bugsnag\BugsnagLaravel\LaravelLogger::getMonolog();
+        }
+        
+        /**
+         * Set the notifyLevel of the logger, as defined in Psr\Log\LogLevel.
+         *
+         * @param string $notifyLevel
+         * @return void 
+         * @static 
+         */ 
+        public static function setNotifyLevel($notifyLevel)
+        {
+            //Method inherited from \Bugsnag\PsrLogger\BugsnagLogger            
+            \Bugsnag\BugsnagLaravel\LaravelLogger::setNotifyLevel($notifyLevel);
         }
         
         /**
@@ -15380,98 +15393,6 @@ namespace Tymon\JWTAuth\Facades {
  
 }
 
-namespace Lavary\Menu { 
-
-    class Facade {
-        
-        /**
-         * Check if a menu exists.
-         *
-         * @param string $name
-         * @return bool 
-         * @static 
-         */ 
-        public static function exists($name)
-        {
-            return \Lavary\Menu\Menu::exists($name);
-        }
-        
-        /**
-         * Create a new menu instance.
-         *
-         * @param string $name
-         * @param callable $callback
-         * @return \Menu 
-         * @static 
-         */ 
-        public static function makeOnce($name, $callback)
-        {
-            return \Lavary\Menu\Menu::makeOnce($name, $callback);
-        }
-        
-        /**
-         * Create a new menu instance.
-         *
-         * @param string $name
-         * @param callable $callback
-         * @return \Menu 
-         * @static 
-         */ 
-        public static function make($name, $callback)
-        {
-            return \Lavary\Menu\Menu::make($name, $callback);
-        }
-        
-        /**
-         * Loads and merges configuration data.
-         *
-         * @param string $name
-         * @return array 
-         * @static 
-         */ 
-        public static function loadConf($name)
-        {
-            return \Lavary\Menu\Menu::loadConf($name);
-        }
-        
-        /**
-         * Return Menu instance from the collection by key.
-         *
-         * @param string $key
-         * @return \Lavary\Menu\Item 
-         * @static 
-         */ 
-        public static function get($key)
-        {
-            return \Lavary\Menu\Menu::get($key);
-        }
-        
-        /**
-         * Return Menu collection.
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function getCollection()
-        {
-            return \Lavary\Menu\Menu::getCollection();
-        }
-        
-        /**
-         * Alias for getCollection.
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function all()
-        {
-            return \Lavary\Menu\Menu::all();
-        }
-         
-    }
- 
-}
-
 namespace Gabievi\Promocodes\Facades { 
 
     class Promocodes {
@@ -18636,8 +18557,6 @@ namespace  {
     class JWTAuth extends \Tymon\JWTAuth\Facades\JWTAuth {}
 
     class JWTFactory extends \Tymon\JWTAuth\Facades\JWTFactory {}
-
-    class Menu extends \Lavary\Menu\Facade {}
 
     class Promocodes extends \Gabievi\Promocodes\Facades\Promocodes {}
 
