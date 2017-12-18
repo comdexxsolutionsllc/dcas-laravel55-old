@@ -1,9 +1,17 @@
 <?php
 
-use Tree\Node\Node;
+namespace DCAS\Helpers;
 
-if (!function_exists('getResult')) {
-    function getOutput(Node $node)
+use Tree\Node\Node;
+use URL;
+
+class BuildMenuHelper
+{
+    /**
+     * @param $node
+     * @return string
+     */
+    public static function getOutput($node)
     {
         if ($node->isLeaf()) {
             $output = '<li><a href="' . URL::to($node->getValue()->slug) . '">' . $node->getValue()->title . '</a></li>';
@@ -22,15 +30,17 @@ if (!function_exists('getResult')) {
 
         return $output;
     }
-}
 
-if (!function_exists('printMenu')) {
-    function printMenu(Node $tree)
+    /**
+     * @param $tree
+     * @return string
+     */
+    public static function printMenu($tree)
     {
         $output = '';
 
         foreach ($tree->getChildren() as $node) {
-            $output .= getOutput($node);
+            $output .= self::getOutput($node);
         }
 
         return $output;

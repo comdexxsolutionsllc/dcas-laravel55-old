@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\MenuBar;
 use Closure;
+use Illuminate\Support\Collection;
 use Tree\Node\Node;
 
 class BuildMenu
@@ -25,10 +26,10 @@ class BuildMenu
     }
 
     /**
-     * @param $tableMenu
+     * @param Collection $tableMenu
      * @return Node
      */
-    private function buildMenuTree($tableMenu)
+    private function buildMenuTree(Collection $tableMenu): Node
     {
         $root = (new Node('root'));
 
@@ -52,7 +53,7 @@ class BuildMenu
      * @param Node $newNode
      * @return Node
      */
-    private function InsertNode(Node $sourceNode, Node $newNode)
+    private function InsertNode(Node $sourceNode, Node $newNode): Node
     {
         if ($sourceNode->getValue()->id == $newNode->getValue()->parent_id) {
             $sourceNode->addChild($newNode);

@@ -15,7 +15,7 @@ class CreateMenuBarsTable extends Migration
     {
         Schema::create('menu_bars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('parent_id')->unsigned();
+            $table->integer('parent_id')->nullable()->default(null)->unsigned();
             $table->integer('ordering')->unsigned();
             $table->string('title');
             $table->string('slug');
