@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.25 on 2017-12-12.
+ * Generated for Laravel 5.5.26 on 2017-12-18.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5675,6 +5675,19 @@ namespace Illuminate\Support\Facades {
         public static function getMonolog()
         {
             return \Bugsnag\BugsnagLaravel\LaravelLogger::getMonolog();
+        }
+        
+        /**
+         * Set the notifyLevel of the logger, as defined in Psr\Log\LogLevel.
+         *
+         * @param string $notifyLevel
+         * @return void 
+         * @static 
+         */ 
+        public static function setNotifyLevel($notifyLevel)
+        {
+            //Method inherited from \Bugsnag\PsrLogger\BugsnagLogger            
+            \Bugsnag\BugsnagLaravel\LaravelLogger::setNotifyLevel($notifyLevel);
         }
         
         /**
