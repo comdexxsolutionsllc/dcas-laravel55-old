@@ -75,6 +75,46 @@ class Ticket extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function status()
+    {
+        return $this->hasOne(Status::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function technicians()
+    {
+        return $this->belongsTo(Technician::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function requestor()
+    {
+        return $this->hasOne(Requestor::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function queue()
+    {
+        return $this->belongsTo(Queue::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category(): BelongsTo
