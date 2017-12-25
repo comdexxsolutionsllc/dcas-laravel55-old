@@ -15,5 +15,10 @@ Route::group(['module' => 'SupportDesk', 'prefix' => 'SupportDesk', 'middleware'
 
         Route::resource('permissions', 'PermissionsController');
         Route::resource('roles', 'RolesController');
+
+        Route::resource('categories', 'CategoryController');
+        Route::resource('queues', 'QueueController');
+        Route::resource('statues', 'StatusController');
+        Route::resource('tags', 'TagController');
     });
 });
