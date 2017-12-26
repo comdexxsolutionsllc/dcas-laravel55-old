@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DCAS\Traits;
+namespace DCAS\Traits;
 
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response as SymphonyResponse;

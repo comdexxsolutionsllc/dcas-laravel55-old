@@ -3,19 +3,27 @@
 namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
+use DCAS\Traits\ApiErrorResponse;
 use Illuminate\Http\Request;
 use Modules\SupportDesk\Models\Category;
 
 class CategoryController extends Controller
 {
+
+    use ApiErrorResponse;
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function index()
     {
-        //
+        if (request()->expectsJson()) {
+            return Category::all();
+        } else {
+            return view('SupportDesk::categories.index');
+        }
     }
 
     /**
