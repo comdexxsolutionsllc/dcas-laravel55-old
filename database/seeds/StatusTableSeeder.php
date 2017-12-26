@@ -22,7 +22,7 @@ class StatusTableSeeder extends Seeder
         foreach (range(0, 5) as $index) {
             DB::table('statuses')->insert([
                 'name' => $statuses[$index],
-                'type' => $faker->word,
+                'hex' => $faker->safeHexColor,
                 'created_at' => Carbon::now()->subDay(1),
                 'updated_at' => Carbon::now()
             ]);
