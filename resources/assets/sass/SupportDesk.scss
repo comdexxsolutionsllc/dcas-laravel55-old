@@ -1,34 +1,11 @@
 //colors
-$color_fern_approx: #5cb85c;
-$color_steel_blue_approx: #337ab7;
-$color_casablanca_approx: #f0ad4e;
-$color_viking_approx: #5bc0de;
-$color_tapa_approx: #777;
-$color_chestnut_rose_approx: #d9534f;
 $white: #fff;
+$color_chestnut_rose_approx: #d9534f;
 $color_valencia_approx: #d43f3a;
+$color_fern_approx: #5cb85c;
 $color_apple_approx: #4cae4c;
+$color_steel_blue_approx: #337ab7;
 $color_astral_approx: #2e6da4;
-
-/** Status Labels */
-.status-open {
-  background-color: $color_fern_approx;
-}
-.status-assigned {
-  background-color: $color_steel_blue_approx;
-}
-.status-onHold {
-  background-color: $color_casablanca_approx;
-}
-.status-pendingCustomerResponse {
-  background-color: $color_viking_approx;
-}
-.status-awaitingManagerReview {
-  background-color: $color_tapa_approx;
-}
-.status-closed {
-  background-color: $color_chestnut_rose_approx;
-}
 
 /** Buttons **/
 .btn-close {
