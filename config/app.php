@@ -275,6 +275,7 @@ return [
         'Authy' => Srmklive\Authy\Facades\Authy::class,
         'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
         'Clockwork' => Clockwork\Support\Laravel\Facade::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Date' => Jenssegers\Date\Date::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'EnumMap' => Artisaninweb\Enum\Facades\EnumFacade::class,
@@ -294,6 +295,5 @@ return [
         'Setting' => anlutro\LaravelSettings\Facade::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
     ],
 ];
