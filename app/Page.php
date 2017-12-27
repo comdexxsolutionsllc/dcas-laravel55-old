@@ -7,7 +7,9 @@ class Page extends Model
     /**
      * @var array
      */
-    public $guarded = [];
+    public $fillable = [
+        'slug'
+    ];
 
     /**
      * @param $slug

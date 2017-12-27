@@ -26,6 +26,13 @@ use Spatie\Feed\FeedItem;
  */
 class NewsItem extends Model implements Feedable
 {
+    public $fillable = [
+        'title',
+        'summary',
+        'link',
+        'author'
+    ];
+
     public function toFeedItem()
     {
         return FeedItem::create()

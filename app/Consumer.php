@@ -34,9 +34,9 @@ class Consumer extends UUIDModel
      * @var array
      */
     public $fillable = [
+        'api_token',
         'name',
         'url',
-        'api_token',
         'ip',
         'active',
     ];

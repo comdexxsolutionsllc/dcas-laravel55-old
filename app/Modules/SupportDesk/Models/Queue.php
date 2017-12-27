@@ -10,6 +10,11 @@ class Queue extends Model
 {
     use SoftDeletes;
 
+    public $fillable = [
+        "name",
+        "description"
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -10,6 +10,12 @@ class Requestor extends Model
 {
     use SoftDeletes;
 
+    public $fillable = [
+        "firstName",
+        "lastName",
+        "email"
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

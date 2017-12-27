@@ -10,6 +10,11 @@ class Status extends Model
 {
     use SoftDeletes;
 
+    public $fillable = [
+        "name",
+        "hex"
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
