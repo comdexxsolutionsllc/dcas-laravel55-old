@@ -10,6 +10,9 @@ use Modules\SupportDesk\Models\Comment;
 
 class CommentsController extends Controller
 {
+    /**
+     * CommentsController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth']);

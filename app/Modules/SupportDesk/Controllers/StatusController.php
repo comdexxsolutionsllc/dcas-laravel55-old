@@ -4,10 +4,14 @@ namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Modules\SupportDesk\Models\Status;
 
 class StatusController extends Controller
 {
+    /**
+     * StatusController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth', 'admin']);
@@ -18,7 +22,7 @@ class StatusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         //
     }
@@ -28,7 +32,7 @@ class StatusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
@@ -39,7 +43,7 @@ class StatusController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -50,7 +54,7 @@ class StatusController extends Controller
      * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function show(Status $status)
+    public function show(Status $status): Response
     {
         //
     }
@@ -61,7 +65,7 @@ class StatusController extends Controller
      * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function edit(Status $status)
+    public function edit(Status $status): Response
     {
         //
     }
@@ -73,7 +77,7 @@ class StatusController extends Controller
      * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Status $status)
+    public function update(Request $request, Status $status): Response
     {
         //
     }
@@ -84,7 +88,7 @@ class StatusController extends Controller
      * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Status $status)
+    public function destroy(Status $status): Response
     {
         //
     }

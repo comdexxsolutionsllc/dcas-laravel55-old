@@ -4,10 +4,14 @@ namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Modules\SupportDesk\Models\Queue;
 
 class QueueController extends Controller
 {
+    /**
+     * QueueController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth', 'admin']);
@@ -18,7 +22,7 @@ class QueueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         //
     }
@@ -28,7 +32,7 @@ class QueueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
@@ -39,7 +43,7 @@ class QueueController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -50,7 +54,7 @@ class QueueController extends Controller
      * @param  \Modules\SupportDesk\Models\Queue $queue
      * @return \Illuminate\Http\Response
      */
-    public function show(Queue $queue)
+    public function show(Queue $queue): Response
     {
         //
     }
@@ -61,7 +65,7 @@ class QueueController extends Controller
      * @param  \Modules\SupportDesk\Models\Queue $queue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Queue $queue)
+    public function edit(Queue $queue): Response
     {
         //
     }
@@ -73,7 +77,7 @@ class QueueController extends Controller
      * @param  \Modules\SupportDesk\Models\Queue $queue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Queue $queue)
+    public function update(Request $request, Queue $queue): Response
     {
         //
     }
@@ -84,7 +88,7 @@ class QueueController extends Controller
      * @param  \Modules\SupportDesk\Models\Queue $queue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Queue $queue)
+    public function destroy(Queue $queue): Response
     {
         //
     }

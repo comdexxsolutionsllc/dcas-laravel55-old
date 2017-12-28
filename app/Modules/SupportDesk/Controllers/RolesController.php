@@ -9,6 +9,9 @@ use Illuminate\View\View;
 
 class RolesController extends Controller
 {
+    /**
+     * RolesController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth', 'admin']);

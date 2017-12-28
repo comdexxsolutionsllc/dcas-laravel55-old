@@ -4,10 +4,14 @@ namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Modules\SupportDesk\Models\Tag;
 
 class TagController extends Controller
 {
+    /**
+     * TagController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth', 'admin']);
@@ -18,7 +22,7 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         //
     }
@@ -28,7 +32,7 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
@@ -39,7 +43,7 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -50,7 +54,7 @@ class TagController extends Controller
      * @param  \Modules\SupportDesk\Models\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Tag $tag): Response
     {
         //
     }
@@ -61,7 +65,7 @@ class TagController extends Controller
      * @param  \Modules\SupportDesk\Models\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit(Tag $tag): Response
     {
         //
     }
@@ -73,7 +77,7 @@ class TagController extends Controller
      * @param  \Modules\SupportDesk\Models\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, Tag $tag): Response
     {
         //
     }
@@ -84,7 +88,7 @@ class TagController extends Controller
      * @param  \Modules\SupportDesk\Models\Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy(Tag $tag): Response
     {
         //
     }

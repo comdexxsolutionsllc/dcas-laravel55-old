@@ -3,27 +3,30 @@
 namespace Modules\SupportDesk\Controllers;
 
 use App\Http\Controllers\Controller;
-use DCAS\Traits\ApiErrorResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
 use Modules\SupportDesk\Models\Category;
 
 class CategoryController extends Controller
 {
+    /**
+     * CategoryController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
 
-    use ApiErrorResponse;
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(): View
     {
-        if (request()->expectsJson()) {
-            return Category::all();
-        } else {
-            return view('SupportDesk::categories.index');
-        }
+        return view('SupportDesk::categories.index');
     }
 
     /**
@@ -31,7 +34,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
@@ -42,7 +45,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
@@ -53,7 +56,7 @@ class CategoryController extends Controller
      * @param  \Modules\SupportDesk\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Category $category): Response
     {
         //
     }
@@ -64,7 +67,7 @@ class CategoryController extends Controller
      * @param  \Modules\SupportDesk\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $category): Response
     {
         //
     }
@@ -76,7 +79,7 @@ class CategoryController extends Controller
      * @param  \Modules\SupportDesk\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category): Response
     {
         //
     }
@@ -87,7 +90,7 @@ class CategoryController extends Controller
      * @param  \Modules\SupportDesk\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category): Response
     {
         //
     }

@@ -8,6 +8,9 @@ use Illuminate\Http\Response;
 
 class PermissionsController extends Controller
 {
+    /**
+     * PermissionsController constructor.
+     */
     public function __construct()
     {
         $this->middleware(['auth', 'admin']);
