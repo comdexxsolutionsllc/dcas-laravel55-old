@@ -19,11 +19,3 @@
     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
     <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
 </ul>
-<li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>Categories</span></a>
-</li>
-
-<li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>Categories</span></a>
-</li>
-
