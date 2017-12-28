@@ -15,7 +15,22 @@
 
                     <div class="ticket-info">
                         <p>{{ $ticket->message }}</p>
-                        <p>Category: {{ $category->name }}</p>
+                        @if(auth()->user()->isAdmin())
+                            <p>
+                                Category:
+                                <select name="category" id="category">
+                                    @foreach($categories as $cat)
+                                        @if($category->name === $cat->name)
+                                            <option value="{{ $cat->name }}" selected>{{ $cat->name }}</option>
+                                        @else
+                                            <option value="{{ $cat->name }}">{{ $cat->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </p>
+                        @else
+                            <p>Category: {{ $category->name }}</p>
+                        @endif
                         <p>
                             Status: @include('SupportDesk::partials.ticket_grid')
                         </p>

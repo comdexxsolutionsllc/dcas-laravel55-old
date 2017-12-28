@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Modules\SupportDesk\Mailers\AppMailer;
 use Modules\SupportDesk\Models\Category;
+use Modules\SupportDesk\Models\Status;
 use Modules\SupportDesk\Models\Ticket;
 use Zttp\Zttp;
 
@@ -58,7 +59,11 @@ class TicketsController extends Controller
 
         $category = $ticket->category;
 
-        return view('SupportDesk::tickets.show', compact('ticket', 'category', 'comments'));
+        $categories = Category::all();
+
+        $statuses = Status::all();
+
+        return view('SupportDesk::tickets.show', compact('ticket', 'category', 'comments', 'categories', 'statuses'));
     }
 
     /**
