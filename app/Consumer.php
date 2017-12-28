@@ -3,6 +3,7 @@
 namespace App;
 
 use DCAS\Observers\ConsumerModelObserver;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Consumer
@@ -23,6 +24,8 @@ use DCAS\Observers\ConsumerModelObserver;
  */
 class Consumer extends UUIDModel
 {
+    use SoftDeletes;
+
     /**
      * The API token field.
      *

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
@@ -26,6 +27,8 @@ use Spatie\Feed\FeedItem;
  */
 class NewsItem extends Model implements Feedable
 {
+    use SoftDeletes;
+
     public $fillable = [
         'title',
         'summary',

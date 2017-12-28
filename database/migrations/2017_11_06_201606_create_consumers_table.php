@@ -21,6 +21,7 @@ class CreateConsumersTable extends Migration
             $table->ipAddress('ip');
             $table->boolean('active');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->primary('id');
         });

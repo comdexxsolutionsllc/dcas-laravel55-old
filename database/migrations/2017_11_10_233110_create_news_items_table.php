@@ -20,6 +20,7 @@ class CreateNewsItemsTable extends Migration
             $table->string('link');
             $table->string('author');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
