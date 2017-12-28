@@ -62,12 +62,49 @@ class NullUser extends Authenticatable
      */
     protected $table = 'accounts';
 
+    /**
+     * @var int
+     */
     protected $id = 0;
+
+    /**
+     * @var int
+     */
+    protected $profile_id = 0;
+
+    /**
+     * @var string
+     */
     protected $name = 'Null User';
+
+    /**
+     * @var string
+     */
     protected $email = 'nulluser@domain.tld';
+
+    /**
+     * @var string
+     */
     protected $username = 'null_user';
+
+    /**
+     * @var null
+     */
     protected $domain = null;
+
+    /**
+     * @var string
+     */
     protected $slug = 'null-user';
+
+    /**
+     * @var int
+     */
+    protected $is_logged_in = 0;
+
+    /**
+     * @var int
+     */
     protected $is_disabled = 0;
 
     /**
@@ -157,5 +194,29 @@ class NullUser extends Authenticatable
     public function getSlug(): string
     {
         return $this->slug;
+    }
+
+    /**
+     * @return int
+     */
+    public function getProfileId(): int
+    {
+        return $this->profile_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getisLoggedIn(): int
+    {
+        return $this->is_logged_in;
+    }
+
+    /**
+     * @return int
+     */
+    public function getisDisabled(): int
+    {
+        return $this->is_disabled;
     }
 }

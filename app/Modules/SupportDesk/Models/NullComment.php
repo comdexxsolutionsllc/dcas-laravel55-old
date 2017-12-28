@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace Modules\SupportDesk\Models;
+
+use App\Model;
 
 /**
  * App\NullComment

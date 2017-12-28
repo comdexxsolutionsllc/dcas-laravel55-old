@@ -83,7 +83,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4" style="padding-bottom: 25px">
-                                <div class="g-recaptcha" data-sitekey="6LcJuDUUAAAAALYPUqKOnX7BG-SRoJV7nqOWSo6S"></div>
+                                @include('SupportDesk::partials.recaptcha')
                             </div>
 
                             <div class="col-md-6 col-md-offset-4">

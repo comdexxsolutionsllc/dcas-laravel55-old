@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace Modules\SupportDesk\Models;
+
+use App\Model;
 
 /**
  * App\NullTicket
@@ -20,6 +22,16 @@ class NullTicket extends Model
     protected $category_id = 0;
 
     /**
+     * @var int
+     */
+    protected $queue_id = 0;
+
+    /**
+     * @var int
+     */
+    protected $technician_id = 0;
+
+    /**
      * @var null
      */
     protected $ticket_id = null;
@@ -37,12 +49,12 @@ class NullTicket extends Model
     /**
      * @var string
      */
-    protected $message = '';
+    protected $status = 'nullable';
 
     /**
      * @var string
      */
-    protected $status = 'nullable';
+    protected $message = '';
 
     /**
      * @return int
@@ -95,5 +107,21 @@ class NullTicket extends Model
     public function getStatus(): string
     {
         return $this->status;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQueueId(): int
+    {
+        return $this->queue_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTechnicianId(): int
+    {
+        return $this->technician_id;
     }
 }

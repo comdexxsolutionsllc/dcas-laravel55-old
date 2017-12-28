@@ -22,6 +22,11 @@ class NullProfile extends Model
     /**
      * @var string
      */
+    protected $avatar = '';
+
+    /**
+     * @var string
+     */
     protected $username = 'null_user';
 
     /**
@@ -134,5 +139,13 @@ class NullProfile extends Model
     public function getPostalCode(): string
     {
         return $this->postal_code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvatar(): string
+    {
+        return $this->avatar;
     }
 }
