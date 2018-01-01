@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Policies;
+
+use App\User;
+use App\App\NewsItem;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class NewsItemPolicy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view the newsItem.
+     *
+     * @param  \App\User  $user
+     * @param  \App\App\NewsItem  $newsItem
+     * @return mixed
+     */
+    public function view(User $user, NewsItem $newsItem)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can create newsItems.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can update the newsItem.
+     *
+     * @param  \App\User  $user
+     * @param  \App\App\NewsItem  $newsItem
+     * @return mixed
+     */
+    public function update(User $user, NewsItem $newsItem)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can delete the newsItem.
+     *
+     * @param  \App\User  $user
+     * @param  \App\App\NewsItem  $newsItem
+     * @return mixed
+     */
+    public function delete(User $user, NewsItem $newsItem)
+    {
+        //
+    }
+}
