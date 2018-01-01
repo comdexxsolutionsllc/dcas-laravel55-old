@@ -28,6 +28,7 @@ Route::group(['module' => 'SupportDesk', 'prefix' => 'SupportDesk'], function ()
         Route::get('tickets', 'TicketsController@index')->name('tickets');
         Route::patch('tickets/{ticket}/restore', 'TicketsController@restore');
 
+        Route::get('closed_tickets', 'TicketsController@showClosed')->name('closed_tickets');
         Route::post('close_ticket/{ticket_id}', 'TicketsController@close')->name('close_ticket.{ticket_id}');
         Route::post('open_ticket/{ticket_id}', 'TicketsController@open')->name('open_ticket.{ticket_id}');
     });

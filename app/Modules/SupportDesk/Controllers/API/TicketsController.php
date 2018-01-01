@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use DCAS\Traits\ApiErrorResponse;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Modules\SupportDesk\Mailers\AppMailer;
 use Modules\SupportDesk\Models\Ticket;
 
 class TicketsController extends Controller
@@ -120,5 +122,82 @@ class TicketsController extends Controller
         $ticket->restore();
 
         return $this->respond("Resource #{$ticket_id} restored.");
+    }
+
+    /**
+     * Show all closed tickets.
+     *
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function showClosed(): LengthAwarePaginator
+    {
+        $tickets = Ticket::where('status', 'Closed')
+            ->with('category')
+            ->paginate(
+                config('modules.tickets.ticket.pagination')
+            );
+
+        return $tickets;
+    }
+
+    /**
+     * Close a ticket.
+     *
+     * @param $ticket_id
+     * @param AppMailer $mailer
+     * @return JsonResponse
+     */
+    public function close($ticket_id, AppMailer $mailer): JsonResponse
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $ticket->status = 'Closed';
+
+        $ticket->save();
+
+        $ticketOwner = $ticket->user;
+
+        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
+
+        return $this->respond("Ticket #{$ticket->id} has been closed.");
+    }
+
+    /**
+     * Open a ticket.
+     *
+     * @param $ticket_id
+     * @param AppMailer $mailer
+     * @return JsonResponse
+     */
+    public function open($ticket_id, AppMailer $mailer): JsonResponse
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $ticket->status = 'Open';
+
+        $ticket->save();
+
+        $ticketOwner = $ticket->user;
+
+        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
+
+        return $this->respond("Ticket #{$ticket->id} has been re-opened.");
+    }
+
+    /**
+     * Show all user tickets.
+     *
+     * @param Request $request
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function userTickets(Request $request): LengthAwarePaginator
+    {
+        $tickets = Ticket::where('user_id', $request->only('user_id'))
+            ->with('category')
+            ->paginate(
+                $pagination = config('modules.tickets.ticket.pagination')
+            );
+
+        return $tickets;
     }
 }
