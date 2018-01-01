@@ -181,6 +181,8 @@ class TicketsController extends Controller
 
         $categories = Category::all();
 
-        return view('SupportDesk::tickets.user_tickets', compact('tickets', 'categories'));
+        $statuses = Status::all();
+
+        return view('SupportDesk::tickets.user_tickets', compact('tickets', 'categories', 'statuses'));
     }
 }

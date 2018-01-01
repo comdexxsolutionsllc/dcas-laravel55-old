@@ -12,7 +12,7 @@
 {{--<span class="label status-closed">{{ $ticket->status }}</span>--}}
 {{--@endif--}}
 
-@if(auth()->user()->isAdmin())
+@if(auth()->user()->isAdmin() && !request()->is('SupportDesk/my_tickets'))
         <select name="status" id="status">
         @foreach($statuses as $stat)
                 @if($ticket->status === $stat->name)
