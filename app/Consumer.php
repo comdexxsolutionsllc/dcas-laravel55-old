@@ -21,6 +21,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereUrl($value)
+ * @property string $ip
+ * @property int $active
+ * @property string|null $deleted_at
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Consumer onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Consumer whereIp($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Consumer withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Consumer withoutTrashed()
+ * @mixin \Eloquent
  */
 class Consumer extends UUIDModel
 {

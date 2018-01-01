@@ -24,6 +24,14 @@ use Spatie\Feed\FeedItem;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereSummary($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereUpdatedAt($value)
+ * @property string|null $deleted_at
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\NewsItem onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsItem whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\NewsItem withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\NewsItem withoutTrashed()
+ * @mixin \Eloquent
  */
 class NewsItem extends Model implements Feedable
 {

@@ -8,6 +8,7 @@ use App\Model;
  * App\NullComment
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ * @mixin \Eloquent
  */
 class NullComment extends Model
 {

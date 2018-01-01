@@ -8,6 +8,7 @@ use App\Model;
  * App\NullTicket
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ * @mixin \Eloquent
  */
 class NullTicket extends Model
 {

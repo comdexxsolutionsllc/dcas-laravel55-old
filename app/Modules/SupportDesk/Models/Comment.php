@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Comment whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Comment withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Comment withoutTrashed()
+ * @mixin \Eloquent
  */
 class Comment extends Model
 {

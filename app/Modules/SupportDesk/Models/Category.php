@@ -26,6 +26,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Category whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Category withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Category withoutTrashed()
+ * @mixin \Eloquent
  */
 class Category extends Model
 {

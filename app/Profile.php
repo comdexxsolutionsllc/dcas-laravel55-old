@@ -40,6 +40,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Profile whereUsername($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Profile withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Profile withoutTrashed()
+ * @property string|null $avatar
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Profile whereAvatar($value)
+ * @mixin \Eloquent
  */
 class Profile extends Model
 {

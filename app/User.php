@@ -92,6 +92,12 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUsername($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
+ * @property int|null $profile_id
+ * @property int $verified
+ * @property-read \App\VerifyUser $verifyUser
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereProfileId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereVerified($value)
+ * @mixin \Eloquent
  */
 class User extends Authenticatable implements Presentable, TwoFactorAuthenticatableContract
 {

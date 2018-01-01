@@ -42,6 +42,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\Modules\SupportDesk\Models\Ticket withoutTrashed()
+ * @property int $queue_id
+ * @property int $technician_id
+ * @property-read \Modules\SupportDesk\Models\Queue $queue
+ * @property-read \Modules\SupportDesk\Models\Requestor $requestor
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\SupportDesk\Models\Tag[] $tags
+ * @property-read \Modules\SupportDesk\Models\Technician $technicians
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereQueueId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\SupportDesk\Models\Ticket whereTechnicianId($value)
+ * @mixin \Eloquent
  */
 class Ticket extends Model
 {

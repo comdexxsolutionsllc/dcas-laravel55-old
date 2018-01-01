@@ -20,6 +20,7 @@ namespace App;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ActionLog whereRoute($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ActionLog whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ActionLog whereUserId($value)
+ * @mixin \Eloquent
  */
 class ActionLog extends Model
 {

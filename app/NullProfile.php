@@ -6,6 +6,7 @@ namespace App;
  * App\NullProfile
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Model sortable($defaultSortColumn = null, $direction = 'asc')
+ * @mixin \Eloquent
  */
 class NullProfile extends Model
 {

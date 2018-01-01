@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Modules\SupportDesk\Models\NullComment;
+use Modules\SupportDesk\Models\NullTicket;
 
 /**
  * App\NullUser
@@ -52,6 +54,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereTwoFactorOptions($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereUsername($value)
+ * @property int|null $profile_id
+ * @property int $verified
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereProfileId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NullUser whereVerified($value)
+ * @mixin \Eloquent
  */
 class NullUser extends Authenticatable
 {
