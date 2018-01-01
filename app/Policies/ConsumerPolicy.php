@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use App\App\Consumer;
+use App\Consumer;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ConsumerPolicy
@@ -14,7 +14,7 @@ class ConsumerPolicy
      * Determine whether the user can view the consumer.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Consumer  $consumer
+     * @param  \App\Consumer  $consumer
      * @return mixed
      */
     public function view(User $user, Consumer $consumer)
@@ -37,7 +37,7 @@ class ConsumerPolicy
      * Determine whether the user can update the consumer.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Consumer  $consumer
+     * @param  \App\Consumer  $consumer
      * @return mixed
      */
     public function update(User $user, Consumer $consumer)
@@ -49,7 +49,7 @@ class ConsumerPolicy
      * Determine whether the user can delete the consumer.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Consumer  $consumer
+     * @param  \App\Consumer  $consumer
      * @return mixed
      */
     public function delete(User $user, Consumer $consumer)

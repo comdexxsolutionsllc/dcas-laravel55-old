@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use App\App\Page;
+use App\Page;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PagePolicy
@@ -14,7 +14,7 @@ class PagePolicy
      * Determine whether the user can view the page.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Page  $page
+     * @param  \App\Page  $page
      * @return mixed
      */
     public function view(User $user, Page $page)
@@ -37,7 +37,7 @@ class PagePolicy
      * Determine whether the user can update the page.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Page  $page
+     * @param  \App\Page  $page
      * @return mixed
      */
     public function update(User $user, Page $page)
@@ -49,7 +49,7 @@ class PagePolicy
      * Determine whether the user can delete the page.
      *
      * @param  \App\User  $user
-     * @param  \App\App\Page  $page
+     * @param  \App\Page  $page
      * @return mixed
      */
     public function delete(User $user, Page $page)

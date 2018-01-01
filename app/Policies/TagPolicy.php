@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use App\Modules\SupportDesk\Models\Tag;
+use Modules\SupportDesk\Models\Tag;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TagPolicy
@@ -14,7 +14,7 @@ class TagPolicy
      * Determine whether the user can view the tag.
      *
      * @param  \App\User  $user
-     * @param  \App\Modules\SupportDesk\Models\Tag  $tag
+     * @param  \Modules\SupportDesk\Models\Tag  $tag
      * @return mixed
      */
     public function view(User $user, Tag $tag)
@@ -37,7 +37,7 @@ class TagPolicy
      * Determine whether the user can update the tag.
      *
      * @param  \App\User  $user
-     * @param  \App\Modules\SupportDesk\Models\Tag  $tag
+     * @param  \Modules\SupportDesk\Models\Tag  $tag
      * @return mixed
      */
     public function update(User $user, Tag $tag)
@@ -49,7 +49,7 @@ class TagPolicy
      * Determine whether the user can delete the tag.
      *
      * @param  \App\User  $user
-     * @param  \App\Modules\SupportDesk\Models\Tag  $tag
+     * @param  \Modules\SupportDesk\Models\Tag  $tag
      * @return mixed
      */
     public function delete(User $user, Tag $tag)
