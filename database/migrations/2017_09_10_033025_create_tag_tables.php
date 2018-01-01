@@ -14,6 +14,7 @@ class CreateTagTables extends Migration
             $table->string('type')->nullable();
             $table->integer('order_column')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('taggables', function (Blueprint $table) {

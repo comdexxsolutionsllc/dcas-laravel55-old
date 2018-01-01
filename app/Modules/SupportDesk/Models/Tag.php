@@ -10,6 +10,13 @@ class Tag extends Model
 {
     use SoftDeletes;
 
+    public $fillable = [
+        'name',
+        'slug',
+        'type',
+        'order_column'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

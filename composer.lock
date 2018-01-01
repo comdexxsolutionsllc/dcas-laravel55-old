@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "84983358bad1abd394e45859e52a0db7",
+    "content-hash": "f018a6be91265c5e1774eea5a9f4981b",
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -2069,6 +2069,49 @@
             "time": "2016-06-28T13:03:04+00:00"
         },
         {
+            "name": "garygreen/pretty-routes",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garygreen/pretty-routes.git",
+                "reference": "e852325c69489feff55019a9b25c2847fef2e228"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/e852325c69489feff55019a9b25c2847fef2e228",
+                "reference": "e852325c69489feff55019a9b25c2847fef2e228",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PrettyRoutes\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PrettyRoutes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gary Green",
+                    "email": "holegary@gmail.com"
+                }
+            ],
+            "description": "Pretty routes for Laravel 5.",
+            "time": "2017-11-09T13:17:36+00:00"
+        },
+        {
             "name": "geoip/geoip",
             "version": "v1.17",
             "source": {
@@ -3525,23 +3568,23 @@
         },
         {
             "name": "laravel/envoy",
-            "version": "v1.3.4",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/envoy.git",
-                "reference": "956f1dc5c9870b91aa1a58656257c4bc019a92f8"
+                "reference": "4f11ff314c8337d3dd495e160cbdb34bffa38090"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/envoy/zipball/956f1dc5c9870b91aa1a58656257c4bc019a92f8",
-                "reference": "956f1dc5c9870b91aa1a58656257c4bc019a92f8",
+                "url": "https://api.github.com/repos/laravel/envoy/zipball/4f11ff314c8337d3dd495e160cbdb34bffa38090",
+                "reference": "4f11ff314c8337d3dd495e160cbdb34bffa38090",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4.1|~5.0",
+                "illuminate/support": "~4.1 || ~5.0",
                 "nategood/httpful": "~0.2",
-                "symfony/console": "~3.0",
-                "symfony/process": "~3.0"
+                "symfony/console": "~3.0 || ~4.0",
+                "symfony/process": "~3.0 || ~4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.8"
@@ -3570,7 +3613,7 @@
                 "laravel",
                 "ssh"
             ],
-            "time": "2017-09-21T14:41:16+00:00"
+            "time": "2017-11-18T15:37:16+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7636,16 +7679,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.16",
+            "version": "v0.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1"
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d4c8eab0683dc056f2ca54ca67f5388527c068b1",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
                 "shasum": ""
             },
             "require": {
@@ -7704,7 +7747,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-12-10T21:49:27+00:00"
+            "time": "2017-12-28T16:14:16+00:00"
         },
         {
             "name": "pusher/pusher-php-server",
@@ -9693,16 +9736,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "6.6.4",
+            "version": "6.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "43f7468e3559bc28adadd8b1d8fb2b0b04de8f31"
+                "reference": "9551b7fa121ca1df39c9dc5fcc1781c1b6d28250"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/43f7468e3559bc28adadd8b1d8fb2b0b04de8f31",
-                "reference": "43f7468e3559bc28adadd8b1d8fb2b0b04de8f31",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9551b7fa121ca1df39c9dc5fcc1781c1b6d28250",
+                "reference": "9551b7fa121ca1df39c9dc5fcc1781c1b6d28250",
                 "shasum": ""
             },
             "require": {
@@ -9769,7 +9812,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-12-24T09:54:39+00:00"
+            "time": "2017-12-30T08:49:48+00:00"
         },
         {
             "name": "spatie/laravel-model-cleanup",

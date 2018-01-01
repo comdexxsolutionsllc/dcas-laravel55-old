@@ -149,7 +149,7 @@ trait ApiErrorResponse
      */
     public function respondResourceCreated($message = 'Resource created.'): JsonResponse
     {
-        return $this->setStatusCode(SymphonyResponse::HTTP_CREATED)->respondWithError($message);
+        return $this->setStatusCode(SymphonyResponse::HTTP_CREATED)->respond($message);
     }
 
     /**

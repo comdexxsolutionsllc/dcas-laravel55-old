@@ -215,6 +215,7 @@ return [
         MercurySeries\Flashy\FlashyServiceProvider::class,
         MicheleCurletta\LaravelScheduleOverview\ScheduleOverviewServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        PrettyRoutes\ServiceProvider::class,
         Rogercbe\TableSorter\TableSorterServiceProvider::class,
         Spatie\Glide\GlideServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
