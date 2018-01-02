@@ -8,6 +8,10 @@ echo "Updating npm components..."
 npm update
 echo "Updated npm components..."
 echo ""
+echo "Checking for outdated npm components..."
+npm outdated
+echo "Done checking for outdated npm components..."
+echo ""
 echo "Updating composer components..."
 composer update
 echo "Updated composer components..."
