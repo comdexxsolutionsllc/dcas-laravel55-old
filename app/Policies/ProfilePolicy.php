@@ -15,12 +15,12 @@ class ProfilePolicy
      *
      * @param \App\User $user
      * @param $ability
-     * 
-     * @return void
+     *
+     * @return bool
      */
-    public function before($user, $ability)
+    public function before($user, $ability): bool
     {
-        if ($user->isAdmin()) return true; 
+        if ($user->isAdmin()) return true;
     }
 
     /**
@@ -29,9 +29,9 @@ class ProfilePolicy
      * @param \App\User $user
      * @param \App\Profile $profile
      *
-     * @return mixed
+     * @return bool
      */
-    public function view(User $user, Profile $profile)
+    public function view(User $user, Profile $profile): bool
     {
         return true;
     }
@@ -41,9 +41,9 @@ class ProfilePolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return $user->may('create-profile');
 
@@ -55,9 +55,9 @@ class ProfilePolicy
      * @param \App\User $user
      * @param \App\Profile $profile
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Profile $profile)
+    public function update(User $user, Profile $profile): bool
     {
         return $user->may('update-profile') && ($user->id === $profile->user_id);
     }
@@ -68,9 +68,9 @@ class ProfilePolicy
      * @param \App\User $user
      * @param \App\Profile $profile
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Profile $profile)
+    public function delete(User $user, Profile $profile): bool
     {
         return false;
     }

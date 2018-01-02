@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use Modules\Supportdesk\Models\Comment;
+use Modules\SupportDesk\Models\Comment;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CommentPolicy
@@ -15,25 +15,25 @@ class CommentPolicy
      *
      * @param \App\User $user
      * @param $ability
-     * 
-     * @return void
+     *
+     * @return bool
      */
-    public function before($user, $ability)
+    public function before($user, $ability): bool
     {
         if ($user->isAdmin()) return true;
     }
-    
+
     /**
      * Determine whether the user can view the comment.
      *
-     * @param \App\User            $user
-     * @param \App\Comment|Comment $comment
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Comment|Comment $comment
      *
-     * @return mixed
+     * @return bool
      */
-    public function view(User $user, Comment $comment)
+    public function view(User $user, Comment $comment): bool
     {
-        return $user->may('view-comments');
+        return true;
     }
 
     /**
@@ -41,9 +41,9 @@ class CommentPolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         return $user->may('create-comments');
     }
@@ -51,12 +51,12 @@ class CommentPolicy
     /**
      * Determine whether the user can update the comment.
      *
-     * @param \App\User                           $user
-     * @param \Modules\Supportdesk\Models\Comment $comment
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Comment $comment
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Comment $comment)
+    public function update(User $user, Comment $comment): bool
     {
         return $user->may('update-comments') && ($user->id === $comment->user_id);
     }
@@ -64,13 +64,13 @@ class CommentPolicy
     /**
      * Determine whether the user can delete the comment.
      *
-     * @param \App\User                           $user
-     * @param \Modules\Supportdesk\Models\Comment $comment
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Comment $comment
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Comment $comment)
+    public function delete(User $user, Comment $comment): bool
     {
-        return false;
+        return $user->may('delete-comments');
     }
 }

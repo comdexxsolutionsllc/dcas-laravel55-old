@@ -15,10 +15,10 @@ class TicketPolicy
      *
      * @param \App\User $user
      * @param $ability
-     * 
-     * @return void
+     *
+     * @return bool
      */
-    public function before($user, $ability)
+    public function before($user, $ability): bool
     {
         if ($user->isAdmin()) return true;
     }
@@ -26,14 +26,14 @@ class TicketPolicy
     /**
      * Determine whether the user can view the ticket.
      *
-     * @param \App\User                          $user
+     * @param \App\User $user
      * @param \Modules\SupportDesk\Models\Ticket $ticket
      *
-     * @return mixed
+     * @return bool
      */
-    public function view(User $user, Ticket $ticket)
+    public function view(User $user, Ticket $ticket): bool
     {
-        return $user->may('view-ticket') && ($user->id === $ticket->user_id);
+        return $user->may('view-tickets') && ($user->id === $ticket->user_id);
     }
 
     /**
@@ -41,36 +41,36 @@ class TicketPolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
-        return $user->may('create-ticket');
+        return $user->may('create-tickets');
     }
 
     /**
      * Determine whether the user can update the ticket.
      *
-     * @param \App\User                          $user
+     * @param \App\User $user
      * @param \Modules\SupportDesk\Models\Ticket $ticket
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Ticket $ticket)
+    public function update(User $user, Ticket $ticket): bool
     {
-        return $user->may('update-ticket') && ($user->id === $ticket->user_id);
+        return $user->may('update-tickets') && ($user->id === $ticket->user_id);
     }
 
     /**
      * Determine whether the user can delete the ticket.
      *
-     * @param \App\User                          $user
+     * @param \App\User $user
      * @param \Modules\SupportDesk\Models\Ticket $ticket
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Ticket $ticket)
+    public function delete(User $user, Ticket $ticket): bool
     {
-        return $user->may('delete-ticket') && ($user->id === $ticket->user_id);
+        return $user->may('delete-tickets') && ($user->id === $ticket->user_id);
     }
 }

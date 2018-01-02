@@ -15,27 +15,29 @@ class RolePolicy
      *
      * @param \App\User $user
      * @param $ability
-     * 
-     * @return void
+     *
+     * @return bool
      */
-    public function before($user, $ability)
+    public function before($user, $ability): bool
     {
-        // 
+        if ($user->isAdmin()) return true;
     }
-    
+
     /**
      * Determine whether the user can view the role.
      *
      * @param \App\User $user
      * @param \App\Role $role
      *
-     * @return mixed
+     * @return bool
      */
-    public function view(User $user, Role $role)
+    public function view(User $user, Role $role): bool
     {
         if ($user->isAdmin()) {
             return true;
         }
+
+        return false;
     }
 
     /**
@@ -43,13 +45,15 @@ class RolePolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         if ($user->isAdmin()) {
             return true;
         }
+
+        return false;
     }
 
     /**
@@ -58,9 +62,9 @@ class RolePolicy
      * @param \App\User $user
      * @param \App\Role $role
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Role $role)
+    public function update(User $user, Role $role): bool
     {
         return false;
     }
@@ -71,9 +75,9 @@ class RolePolicy
      * @param \App\User $user
      * @param \App\Role $role
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Role $role)
+    public function delete(User $user, Role $role): bool
     {
         return false;
     }

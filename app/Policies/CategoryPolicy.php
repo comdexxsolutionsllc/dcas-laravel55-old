@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use Modules\Supportdesk\Models\Category;
+use Modules\SupportDesk\Models\Category;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy
@@ -15,23 +15,23 @@ class CategoryPolicy
      *
      * @param \App\User $user
      * @param $ability
-     * 
-     * @return void
+     *
+     * @return bool
      */
-    public function before($user, $ability)
+    public function before($user, $ability): bool
     {
         if ($user->isAdmin()) return true;
     }
-    
+
     /**
      * Determine whether the user can view the category.
      *
-     * @param \App\User                            $user
-     * @param \Modules\Supportdesk\Models\Category $category
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Category $category
      *
-     * @return mixed
+     * @return bool
      */
-    public function view(User $user, Category $category)
+    public function view(User $user, Category $category): bool
     {
         return true;
     }
@@ -41,36 +41,36 @@ class CategoryPolicy
      *
      * @param \App\User $user
      *
-     * @return mixed
+     * @return bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
-        return false;
+        return $user->may('create-categories');
     }
 
     /**
      * Determine whether the user can update the category.
      *
-     * @param \App\User                            $user
-     * @param \Modules\Supportdesk\Models\Category $category
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Category $category
      *
-     * @return mixed
+     * @return bool
      */
-    public function update(User $user, Category $category)
+    public function update(User $user, Category $category): bool
     {
-        return false;
+        return $user->may('update-categories');
     }
 
     /**
      * Determine whether the user can delete the category.
      *
-     * @param \App\User                            $user
-     * @param \Modules\Supportdesk\Models\Category $category
+     * @param \App\User $user
+     * @param \Modules\SupportDesk\Models\Category $category
      *
-     * @return mixed
+     * @return bool
      */
-    public function delete(User $user, Category $category)
+    public function delete(User $user, Category $category): bool
     {
-        return false;
+        return $user->may('delete-categories');
     }
 }
