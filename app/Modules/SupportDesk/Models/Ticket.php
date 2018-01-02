@@ -100,11 +100,11 @@ class Ticket extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function technicians()
     {
-        return $this->belongsTo(Technician::class);
+        return $this->belongsToMany(Technician::class);
     }
 
     /**

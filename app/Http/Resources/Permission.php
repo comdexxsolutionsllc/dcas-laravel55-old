@@ -14,6 +14,10 @@ class Permission extends Resource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'name' => $this->name,
+            'display_name' => $this->display_name,
+            'description' => $this->description
+        ];
     }
 }

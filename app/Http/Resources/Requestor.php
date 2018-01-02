@@ -9,11 +9,15 @@ class Requestor extends Resource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return array
      */
-    public function toArray($request)
+    public function toArray($request): array
     {
-        return parent::toArray($request);
+        return [
+            'first_name' => $this->firstName,
+            'last_name' => $this->lastName,
+            'email' => $this->email
+        ];
     }
 }

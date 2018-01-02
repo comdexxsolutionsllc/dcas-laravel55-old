@@ -14,6 +14,12 @@ class NewsItem extends Resource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'title' => $this->title,
+            'summary' => $this->summary,
+            'link' => $this->link,
+            'author' => $this->author,
+            'posted' => $this->created_at
+        ];
     }
 }
