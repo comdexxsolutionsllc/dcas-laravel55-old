@@ -95,6 +95,7 @@
     "spatie/laravel-url-signer": "^2.1",
     "spatie/url": "^1.2",
     "srmklive/authy": "^0.5.9",
+    "stevebauman/purify": "2.0.*",
     "stripe/stripe-php": "~3.0",
     "symfony/css-selector": "3.1.*",
     "symfony/dom-crawler": "3.1.*",
