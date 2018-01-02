@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request): Response
     {
-        //
+//        $this->authorize('create', Category::class);
     }
 
     /**
@@ -81,7 +81,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category): Response
     {
-        //
+//        $this->authorize('update', Category::class);
     }
 
     /**
@@ -92,6 +92,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category): Response
     {
-        //
+//        $this->authorize('delete', Category::class);
     }
 }

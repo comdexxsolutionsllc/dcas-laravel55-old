@@ -25,6 +25,7 @@ use Rogercbe\TableSorter\Sortable;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use App\VerifyUser;
 
 //use DCAS\Traits\Excludable;
 //use Laravel\Scout\Searchable;
@@ -206,9 +207,9 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * Is the user online?
      *
-     * @return mixed
+     * @return bool
      */
-    public function isOnline()
+    public function isOnline(): bool
     {
         return Cache::has('user-is-online-' . $this->id);
     }
@@ -338,7 +339,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      *
      * @return bool
      */
-    public function authorizeRoles($roles)
+    public function authorizeRoles($roles): bool
     {
         if ($this->hasAnyRole($roles)) {
             return true;
@@ -351,7 +352,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      *
      * @return bool
      */
-    public function hasAnyRole($roles)
+    public function hasAnyRole($roles): bool
     {
         if (is_array($roles)) {
             foreach ($roles as $role) {
@@ -373,7 +374,7 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      *
      * @return bool
      */
-    public function hasRole($role)
+    public function hasRole($role): bool
     {
         if ($this->roles()->where('name', $role)->first()) {
             return true;
@@ -385,8 +386,18 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * @return HasOne
      */
-    public function verifyUser()
+    public function verifyUser(): HasOne
     {
-        return $this->hasOne('App\VerifyUser');
+        return $this->hasOne(VerifyUser::class);
+    }
+
+    /**
+     * Show last user.
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null|static
+     */
+    public static function last()
+    {
+        return static::latest()->first();
     }
 }

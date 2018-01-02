@@ -47,4 +47,14 @@ abstract class Model extends Eloquent
 
         return $array;
     }
+
+    /**
+     * Show last in model.
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null|static
+     */
+    public static function last()
+    {
+        return static::latest()->first();
+    }
 }
