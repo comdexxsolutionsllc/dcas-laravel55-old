@@ -23,10 +23,10 @@ return [
     /*
      * The channels to which the notification will be sent.
      */
-    'channels' => ['mail', 'slack'],
+    'channels' => ['log', 'mail', 'pusher'],
 
     'mail' => [
-        'to' => 'sarah@sarahrenner.work',
+        'to' => env('SYSTEMS_EMAIL'),
     ],
 
     'slack' => [

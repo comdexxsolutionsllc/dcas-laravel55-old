@@ -13,6 +13,10 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        // When -> Then
+        'App\Events\Modules\SupportDesk\TicketClosed' => [
+            'App\Listeners\Modules\SupportDesk\Survey@send'
+        ],
         'Illuminate\Auth\Events\Lockout' => [
             'App\Listeners\UserEventSubscriber@onUserLockout',
         ],
@@ -21,6 +25,15 @@ class EventServiceProvider extends ServiceProvider
         ],
         'Illuminate\Auth\Events\Logout' => [
             'App\Listeners\UserEventSubscriber@onUserLogout',
+        ],
+        'Illuminate\Queue\Events\JobExceptionOccurred' => [
+            'App\Listeners\Job\Queue\ExceptionOccurred'
+        ],
+        'Illuminate\Queue\Events\JobFailed' => [
+            'App\Listeners\Job\Queue\Failed'
+        ],
+        'Illuminate\Queue\Events\JobProcessed' => [
+            'App\Listeners\Job\Queue\Processed'
         ],
     ];
 
