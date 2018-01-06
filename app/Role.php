@@ -28,6 +28,12 @@ class Role extends EntrustRole
 {
     use Sortable;
 
+    public $fillable = [
+        'name',
+        'display_name',
+        'description'
+    ];
+
     /*
      * name — Unique name for the Role, used for looking up role information in the application layer. For example: "admin", "owner", "employee".
      * display_name — Human readable name for the Role. Not necessarily unique and optional. For example: "User Administrator", "Project Owner", "Widget Co. Employee".

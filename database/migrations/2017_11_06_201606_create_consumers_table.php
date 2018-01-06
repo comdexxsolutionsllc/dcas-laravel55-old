@@ -18,6 +18,8 @@ class CreateConsumersTable extends Migration
             $table->char('api_token', 64)->nullable();
             $table->string('name');
             $table->string('url');
+            $table->ipAddress('ip');
+            $table->boolean('active');
             $table->timestamps();
 
             $table->primary('id');

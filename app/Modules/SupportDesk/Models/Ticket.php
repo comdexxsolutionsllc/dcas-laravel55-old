@@ -51,7 +51,15 @@ class Ticket extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'category_id', 'ticket_id', 'title', 'priority', 'message', 'status',
+        "user_id",
+        "category_id",
+        "queue_id",
+        "technician_id",
+        "ticket_id",
+        "title",
+        "priority",
+        "status",
+        "message"
     ];
 
     /**
@@ -72,6 +80,38 @@ class Ticket extends Model
     public function isClosed(): bool
     {
         return ($this->status === 'Closed') ? true : false;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function technicians()
+    {
+        return $this->belongsTo(Technician::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function requestor()
+    {
+        return $this->hasOne(Requestor::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function queue()
+    {
+        return $this->belongsTo(Queue::class);
     }
 
     /**

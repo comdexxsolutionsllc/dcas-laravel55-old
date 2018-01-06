@@ -41,7 +41,9 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'ticket_id', 'user_id', 'comment',
+        "ticket_id",
+        "user_id",
+        "comment"
     ];
 
     /**

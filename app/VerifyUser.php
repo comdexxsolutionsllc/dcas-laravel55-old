@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class VerifyUser extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        "user_id",
+        "token"
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
