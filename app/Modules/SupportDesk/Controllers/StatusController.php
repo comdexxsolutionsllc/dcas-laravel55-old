@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Modules\SupportDesk\Controllers;
+namespace Modules\SupportDesk\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Modules\SupportDesk\Models\Status;
 
-class RolesController extends Controller
+class StatusController extends Controller
 {
     public function __construct()
     {
@@ -19,6 +20,7 @@ class RolesController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -28,61 +30,62 @@ class RolesController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     *
+     * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Status $status)
     {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     *
+     * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Status $status)
     {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Status $status)
     {
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     *
+     * @param  \Modules\SupportDesk\Models\Status $status
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Status $status)
     {
+        //
     }
 }

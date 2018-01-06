@@ -25,7 +25,11 @@ class UserTest extends TestCase
     {
         $user = create('App\User');
 
-        $ticket = create('Modules\SupportDesk\Models\Ticket', ['user_id' => $user->id, 'category_id' => 1]);
+        $queue = create('Modules\SupportDesk\Models\Queue');
+
+        $technician = create('Modules\SupportDesk\Models\Technician');
+
+        $ticket = create('Modules\SupportDesk\Models\Ticket', ['user_id' => $user->id, 'category_id' => 1, 'queue_id' => $queue->id, 'technician_id' => $technician->id]);
 
         $this->assertEquals($ticket->id, $user->id);
     }
@@ -35,7 +39,11 @@ class UserTest extends TestCase
     {
         $user = create('App\User');
 
-        $ticket = create('Modules\SupportDesk\Models\Ticket', ['user_id' => $user->id, 'category_id' => 1]);
+        $queue = create('Modules\SupportDesk\Models\Queue');
+
+        $technician = create('Modules\SupportDesk\Models\Technician');
+
+        $ticket = create('Modules\SupportDesk\Models\Ticket', ['user_id' => $user->id, 'category_id' => 1, 'queue_id' => $queue->id, 'technician_id' => $technician->id]);
 
         create('Modules\SupportDesk\Models\Comment', ['user_id' => $user->id, 'ticket_id' => $ticket->ticket_id]);
 

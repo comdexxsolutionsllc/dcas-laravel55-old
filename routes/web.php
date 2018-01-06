@@ -14,3 +14,6 @@ Route::group(['prefix' => 'dashboard'], function() {
     Route::post('profile', 'ProfileController@store');
     Route::get('/profile/{username}', 'ProfileController@show')->name('profile.{username}')->middleware(['auth']);
 });
+
+
+Route::resource('categories', 'CategoryController');

@@ -17,11 +17,13 @@ class CreateTicketsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
+            $table->integer('queue_id')->unsigned();
+            $table->integer('technician_id')->unsigned();
             $table->string('ticket_id')->unique();
             $table->string('title');
             $table->string('priority');
+            $table->string('status')->default('Open');
             $table->text('message');
-            $table->string('status');
             $table->timestamps();
             $table->softDeletes();
         });

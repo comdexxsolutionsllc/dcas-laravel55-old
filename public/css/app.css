@@ -8350,32 +8350,6 @@ button.close {
   }
 }
 
-/** Status Labels */
-
-.status-open {
-  background-color: #5cb85c;
-}
-
-.status-assigned {
-  background-color: #337ab7;
-}
-
-.status-onHold {
-  background-color: #f0ad4e;
-}
-
-.status-pendingCustomerResponse {
-  background-color: #5bc0de;
-}
-
-.status-awaitingManagerReview {
-  background-color: #777;
-}
-
-.status-closed {
-  background-color: #d9534f;
-}
-
 /** Buttons **/
 
 .btn-close {

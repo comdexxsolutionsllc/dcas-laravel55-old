@@ -3,9 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Category;
 
-class CreateCategory extends FormRequest
+class CreateCategoryRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +15,6 @@ class CreateCategory extends FormRequest
      */
     public function authorize()
     {
-        // Authorization logic in CategoryPolicy
         return true;
     }
 
@@ -24,18 +25,6 @@ class CreateCategory extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|alpha|min:4',
-        ];
-    }
-
-    /**
-     * Get custom messages for validator errors.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [];
+        return Category::$rules;
     }
 }

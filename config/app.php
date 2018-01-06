@@ -194,6 +194,7 @@ return [
         anlutro\LaravelSettings\ServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
         Artisaninweb\Enum\EnumServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
         Bekusc\Validation\AutoValidationProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Busatlic\ScheduleMonitor\ScheduleMonitorServiceProvider::class,
@@ -201,12 +202,12 @@ return [
         Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         Gabievi\Promocodes\PromocodesServiceProvider::class,
+        GBarak\ViewCrudGenerator\ViewCrudServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Lavary\Menu\ServiceProvider::class,
         ListRoutes\ServiceProvider::class,
         Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
         Lubusin\Decomposer\DecomposerServiceProvider::class,
@@ -220,6 +221,7 @@ return [
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Thedevsaddam\LaravelSchema\LaravelSchemaServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
     ],
 
@@ -272,6 +274,7 @@ return [
         'Authy' => Srmklive\Authy\Facades\Authy::class,
         'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
         'Clockwork' => Clockwork\Support\Laravel\Facade::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Date' => Jenssegers\Date\Date::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'EnumMap' => Artisaninweb\Enum\Facades\EnumFacade::class,
@@ -284,10 +287,15 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+<<<<<<< HEAD
+=======
         'Menu' => Lavary\Menu\Facade::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+>>>>>>> master
         'Promocodes' => Gabievi\Promocodes\Facades\Promocodes::class,
         'PushNotification' => Davibennun\LaravelPushNotification\Facades\PushNotification::class,
         'Setting' => anlutro\LaravelSettings\Facade::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
     ],
 ];

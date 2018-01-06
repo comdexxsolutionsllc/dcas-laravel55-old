@@ -2,6 +2,11 @@
 
 namespace App\Http;
 
+<<<<<<< HEAD
+use App\Http\Middleware\BuildMenu;
+=======
+use App\Http\Middleware\CacheStatuses;
+>>>>>>> master
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -19,6 +24,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\BuildMenu::class,
         \Barryvdh\Cors\HandleCors::class,
         \anlutro\LaravelSettings\SaveMiddleware::class,
         \RenatoMarinho\LaravelPageSpeed\Middleware\InlineCss::class,
@@ -28,6 +34,7 @@ class Kernel extends HttpKernel
         \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
         \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes::class,
         \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+        \App\Http\Middleware\CacheStatuses::class,
     ];
 
     /**

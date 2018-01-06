@@ -123,7 +123,11 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'domain',
+        "name",
+        "email",
+        "username",
+        "password",
+        "domain"
     ];
 
     /**

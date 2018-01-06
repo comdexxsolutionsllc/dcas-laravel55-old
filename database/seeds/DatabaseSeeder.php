@@ -14,7 +14,11 @@ class DatabaseSeeder extends Seeder
         'consumers',
         'permissions',
         'profiles',
+        'queues',
+        'requestors',
         'roles',
+        'statuses',
+        'technicians',
         'tickets',
     ];
 
@@ -34,6 +38,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionRoleSeeder::class);
         $this->call(ConsumerTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
+        $this->call(QueueTableSeeder::class);
+        $this->call(RequestorTableSeeder::class);
+        $this->call(StatusTableSeeder::class);
+        $this->call(TechnicianTableSeeder::class);
         $this->call(TicketTableSeeder::class);
         $this->call(CommentTableSeeder::class);
     }
