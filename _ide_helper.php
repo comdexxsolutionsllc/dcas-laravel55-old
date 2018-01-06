@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.28 on 2017-12-27.
+ * Generated for Laravel 5.5.28 on 2018-01-05.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -16320,104 +16320,6 @@ namespace Laracasts\Utilities\JavaScript {
  
 }
 
-namespace Spatie\ResponseCache\Facades { 
-
-    class ResponseCache {
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function enabled($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::enabled($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function shouldCache($request, $response)
-        {
-            return \Spatie\ResponseCache\ResponseCache::shouldCache($request, $response);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function cacheResponse($request, $response, $lifetimeInMinutes = null)
-        {
-            return \Spatie\ResponseCache\ResponseCache::cacheResponse($request, $response, $lifetimeInMinutes);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function hasBeenCached($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::hasBeenCached($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function getCachedResponseFor($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::getCachedResponseFor($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function flush()
-        {
-            return \Spatie\ResponseCache\ResponseCache::flush();
-        }
-         
-    }
- 
-}
-
-namespace PragmaRX\Countries { 
-
-    class Facade {
-        
-        /**
-         * Get the countries repository.
-         *
-         * @return \PragmaRX\Countries\CountriesRepository 
-         * @static 
-         */ 
-        public static function getRepository()
-        {
-            return \PragmaRX\Countries\Service::getRepository();
-        }
-        
-        /**
-         * Get all currencies.
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function currencies()
-        {
-            return \PragmaRX\Countries\Service::currencies();
-        }
-         
-    }
- 
-}
-
 namespace Laravel\Socialite\Facades { 
 
     class Socialite {
@@ -16508,6 +16410,175 @@ namespace Laravel\Socialite\Facades {
         {
             //Method inherited from \Illuminate\Support\Manager            
             return \Laravel\Socialite\SocialiteManager::getDrivers();
+        }
+         
+    }
+ 
+}
+
+namespace Maatwebsite\Excel\Facades { 
+
+    class Excel {
+        
+        /**
+         * Create a new file
+         *
+         * @param $filename
+         * @param callable|null $callback
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function create($filename, $callback = null)
+        {
+            return \Maatwebsite\Excel\Excel::create($filename, $callback);
+        }
+        
+        /**
+         * Load an existing file
+         *
+         * @param string $file The file we want to load
+         * @param callback|null $callback
+         * @param string|null $encoding
+         * @param bool $noBasePath
+         * @param callback|null $callbackConfigReader
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */ 
+        public static function load($file, $callback = null, $encoding = null, $noBasePath = false, $callbackConfigReader = null)
+        {
+            return \Maatwebsite\Excel\Excel::load($file, $callback, $encoding, $noBasePath, $callbackConfigReader);
+        }
+        
+        /**
+         * Set select sheets
+         *
+         * @param $sheets
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */ 
+        public static function selectSheets($sheets = array())
+        {
+            return \Maatwebsite\Excel\Excel::selectSheets($sheets);
+        }
+        
+        /**
+         * Select sheets by index
+         *
+         * @param array $sheets
+         * @return $this 
+         * @static 
+         */ 
+        public static function selectSheetsByIndex($sheets = array())
+        {
+            return \Maatwebsite\Excel\Excel::selectSheetsByIndex($sheets);
+        }
+        
+        /**
+         * Batch import
+         *
+         * @param $files
+         * @param callback $callback
+         * @return \PHPExcel 
+         * @static 
+         */ 
+        public static function batch($files, $callback)
+        {
+            return \Maatwebsite\Excel\Excel::batch($files, $callback);
+        }
+        
+        /**
+         * Create a new file and share a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function shareView($view, $data = array(), $mergeData = array())
+        {
+            return \Maatwebsite\Excel\Excel::shareView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Create a new file and load a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function loadView($view, $data = array(), $mergeData = array())
+        {
+            return \Maatwebsite\Excel\Excel::loadView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Set filters
+         *
+         * @param array $filters
+         * @return \Excel 
+         * @static 
+         */ 
+        public static function registerFilters($filters = array())
+        {
+            return \Maatwebsite\Excel\Excel::registerFilters($filters);
+        }
+        
+        /**
+         * Enable certain filters
+         *
+         * @param string|array $filter
+         * @param bool|false|string $class
+         * @return \Excel 
+         * @static 
+         */ 
+        public static function filter($filter, $class = false)
+        {
+            return \Maatwebsite\Excel\Excel::filter($filter, $class);
+        }
+        
+        /**
+         * Get register, enabled (or both) filters
+         *
+         * @param string|boolean $key [description]
+         * @return array 
+         * @static 
+         */ 
+        public static function getFilters($key = false)
+        {
+            return \Maatwebsite\Excel\Excel::getFilters($key);
+        }
+         
+    }
+ 
+}
+
+namespace PragmaRX\Countries { 
+
+    class Facade {
+        
+        /**
+         * Get the countries repository.
+         *
+         * @return \PragmaRX\Countries\CountriesRepository 
+         * @static 
+         */ 
+        public static function getRepository()
+        {
+            return \PragmaRX\Countries\Service::getRepository();
+        }
+        
+        /**
+         * Get all currencies.
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function currencies()
+        {
+            return \PragmaRX\Countries\Service::currencies();
         }
          
     }
@@ -16816,139 +16887,68 @@ namespace Spatie\Fractal {
  
 }
 
-namespace Maatwebsite\Excel\Facades { 
+namespace Spatie\ResponseCache\Facades { 
 
-    class Excel {
+    class ResponseCache {
         
         /**
-         * Create a new file
+         * 
          *
-         * @param $filename
-         * @param callable|null $callback
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
          * @static 
          */ 
-        public static function create($filename, $callback = null)
+        public static function enabled($request)
         {
-            return \Maatwebsite\Excel\Excel::create($filename, $callback);
+            return \Spatie\ResponseCache\ResponseCache::enabled($request);
         }
         
         /**
-         * Load an existing file
+         * 
          *
-         * @param string $file The file we want to load
-         * @param callback|null $callback
-         * @param string|null $encoding
-         * @param bool $noBasePath
-         * @param callback|null $callbackConfigReader
-         * @return \Maatwebsite\Excel\LaravelExcelReader 
          * @static 
          */ 
-        public static function load($file, $callback = null, $encoding = null, $noBasePath = false, $callbackConfigReader = null)
+        public static function shouldCache($request, $response)
         {
-            return \Maatwebsite\Excel\Excel::load($file, $callback, $encoding, $noBasePath, $callbackConfigReader);
+            return \Spatie\ResponseCache\ResponseCache::shouldCache($request, $response);
         }
         
         /**
-         * Set select sheets
+         * 
          *
-         * @param $sheets
-         * @return \Maatwebsite\Excel\LaravelExcelReader 
          * @static 
          */ 
-        public static function selectSheets($sheets = array())
+        public static function cacheResponse($request, $response, $lifetimeInMinutes = null)
         {
-            return \Maatwebsite\Excel\Excel::selectSheets($sheets);
+            return \Spatie\ResponseCache\ResponseCache::cacheResponse($request, $response, $lifetimeInMinutes);
         }
         
         /**
-         * Select sheets by index
+         * 
          *
-         * @param array $sheets
-         * @return $this 
          * @static 
          */ 
-        public static function selectSheetsByIndex($sheets = array())
+        public static function hasBeenCached($request)
         {
-            return \Maatwebsite\Excel\Excel::selectSheetsByIndex($sheets);
+            return \Spatie\ResponseCache\ResponseCache::hasBeenCached($request);
         }
         
         /**
-         * Batch import
+         * 
          *
-         * @param $files
-         * @param callback $callback
-         * @return \PHPExcel 
          * @static 
          */ 
-        public static function batch($files, $callback)
+        public static function getCachedResponseFor($request)
         {
-            return \Maatwebsite\Excel\Excel::batch($files, $callback);
+            return \Spatie\ResponseCache\ResponseCache::getCachedResponseFor($request);
         }
         
         /**
-         * Create a new file and share a view
+         * 
          *
-         * @param string $view
-         * @param array $data
-         * @param array $mergeData
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
          * @static 
          */ 
-        public static function shareView($view, $data = array(), $mergeData = array())
+        public static function flush()
         {
-            return \Maatwebsite\Excel\Excel::shareView($view, $data, $mergeData);
-        }
-        
-        /**
-         * Create a new file and load a view
-         *
-         * @param string $view
-         * @param array $data
-         * @param array $mergeData
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
-         * @static 
-         */ 
-        public static function loadView($view, $data = array(), $mergeData = array())
-        {
-            return \Maatwebsite\Excel\Excel::loadView($view, $data, $mergeData);
-        }
-        
-        /**
-         * Set filters
-         *
-         * @param array $filters
-         * @return \Excel 
-         * @static 
-         */ 
-        public static function registerFilters($filters = array())
-        {
-            return \Maatwebsite\Excel\Excel::registerFilters($filters);
-        }
-        
-        /**
-         * Enable certain filters
-         *
-         * @param string|array $filter
-         * @param bool|false|string $class
-         * @return \Excel 
-         * @static 
-         */ 
-        public static function filter($filter, $class = false)
-        {
-            return \Maatwebsite\Excel\Excel::filter($filter, $class);
-        }
-        
-        /**
-         * Get register, enabled (or both) filters
-         *
-         * @param string|boolean $key [description]
-         * @return array 
-         * @static 
-         */ 
-        public static function getFilters($key = false)
-        {
-            return \Maatwebsite\Excel\Excel::getFilters($key);
+            return \Spatie\ResponseCache\ResponseCache::flush();
         }
          
     }
@@ -19118,15 +19118,15 @@ namespace  {
 
     class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
 
-    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
+    class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+
+    class Excel extends \Maatwebsite\Excel\Facades\Excel {}
 
     class Countries extends \PragmaRX\Countries\Facade {}
 
-    class Socialite extends \Laravel\Socialite\Facades\Socialite {}
-
     class Fractal extends \Spatie\Fractal\FractalFacade {}
 
-    class Excel extends \Maatwebsite\Excel\Facades\Excel {}
+    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
  
 }
 
