@@ -208,7 +208,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Lavary\Menu\ServiceProvider::class,
         ListRoutes\ServiceProvider::class,
         Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
         Lubusin\Decomposer\DecomposerServiceProvider::class,
@@ -288,8 +287,11 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+<<<<<<< HEAD
+=======
         'Menu' => Lavary\Menu\Facade::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+>>>>>>> master
         'Promocodes' => Gabievi\Promocodes\Facades\Promocodes::class,
         'PushNotification' => Davibennun\LaravelPushNotification\Facades\PushNotification::class,
         'Setting' => anlutro\LaravelSettings\Facade::class,

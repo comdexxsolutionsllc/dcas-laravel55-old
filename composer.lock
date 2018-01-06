@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "945c666645a339bfad740934ac41f6fc",
+=======
     "content-hash": "84983358bad1abd394e45859e52a0db7",
+>>>>>>> master
     "packages": [
         {
             "name": "ajthinking/tinx",
@@ -4029,58 +4033,6 @@
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
             "time": "2017-08-31T14:46:03+00:00"
-        },
-        {
-            "name": "lavary/laravel-menu",
-            "version": "v1.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lavary/laravel-menu.git",
-                "reference": "772800ab87d4496f16891758b8c303e5f75faf1d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/772800ab87d4496f16891758b8c303e5f75faf1d",
-                "reference": "772800ab87d4496f16891758b8c303e5f75faf1d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": ">=5.0",
-                "illuminate/view": ">=5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lavary\\Menu\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "Menu": "Lavary\\Menu\\Facade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Lavary\\Menu\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Lavary",
-                    "email": "mrl.8081@gmail.com"
-                }
-            ],
-            "description": "A quick way to create menus in Laravel 5",
-            "homepage": "https://github.com/lavary/laravel-menu",
-            "keywords": [
-                "laravel"
-            ],
-            "time": "2017-10-30T16:48:59+00:00"
         },
         {
             "name": "lcobucci/jwt",

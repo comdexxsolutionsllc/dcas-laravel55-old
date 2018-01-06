@@ -1,7 +1,15 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
+<<<<<<< HEAD
+<<<<<<< HEAD
+ * Generated for Laravel 5.5.25 on 2017-12-18.
+=======
+ * Generated for Laravel 5.5.26 on 2017-12-18.
+>>>>>>> master
+=======
  * Generated for Laravel 5.5.28 on 2017-12-27.
+>>>>>>> master
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -15549,6 +15557,9 @@ namespace Tymon\JWTAuth\Facades {
  
 }
 
+<<<<<<< HEAD
+namespace Gabievi\Promocodes\Facades { 
+=======
 namespace Lavary\Menu { 
 
     class Facade {
@@ -15642,6 +15653,7 @@ namespace Lavary\Menu {
 }
 
 namespace Barryvdh\Snappy\Facades { 
+>>>>>>> master
 
     class SnappyPdf {
         
@@ -19102,10 +19114,13 @@ namespace  {
 
     class JWTFactory extends \Tymon\JWTAuth\Facades\JWTFactory {}
 
+<<<<<<< HEAD
+=======
     class Menu extends \Lavary\Menu\Facade {}
 
     class PDF extends \Barryvdh\Snappy\Facades\SnappyPdf {}
 
+>>>>>>> master
     class Promocodes extends \Gabievi\Promocodes\Facades\Promocodes {}
 
     class PushNotification extends \Davibennun\LaravelPushNotification\Facades\PushNotification {}
