@@ -80,6 +80,7 @@ class Kernel extends HttpKernel
         'denyFrames' => \App\Http\Middleware\DenyFrames::class,
         'jsonpResponse' => \App\Http\Middleware\JsonpResponse::class,
         'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        '2fa' => \App\Http\Middleware\Google2FA::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
 
 //        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,

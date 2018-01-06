@@ -249,6 +249,14 @@ class User extends Authenticatable implements Presentable, TwoFactorAuthenticata
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
+    public function passwordSecurity(): HasOne
+    {
+        return $this->hasOne(PasswordSecurity::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);

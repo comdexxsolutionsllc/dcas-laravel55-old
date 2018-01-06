@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.28 on 2017-12-27.
+ * Generated for Laravel 5.5.28 on 2018-01-05.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -16320,104 +16320,6 @@ namespace Laracasts\Utilities\JavaScript {
  
 }
 
-namespace Spatie\ResponseCache\Facades { 
-
-    class ResponseCache {
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function enabled($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::enabled($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function shouldCache($request, $response)
-        {
-            return \Spatie\ResponseCache\ResponseCache::shouldCache($request, $response);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function cacheResponse($request, $response, $lifetimeInMinutes = null)
-        {
-            return \Spatie\ResponseCache\ResponseCache::cacheResponse($request, $response, $lifetimeInMinutes);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function hasBeenCached($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::hasBeenCached($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function getCachedResponseFor($request)
-        {
-            return \Spatie\ResponseCache\ResponseCache::getCachedResponseFor($request);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function flush()
-        {
-            return \Spatie\ResponseCache\ResponseCache::flush();
-        }
-         
-    }
- 
-}
-
-namespace PragmaRX\Countries { 
-
-    class Facade {
-        
-        /**
-         * Get the countries repository.
-         *
-         * @return \PragmaRX\Countries\CountriesRepository 
-         * @static 
-         */ 
-        public static function getRepository()
-        {
-            return \PragmaRX\Countries\Service::getRepository();
-        }
-        
-        /**
-         * Get all currencies.
-         *
-         * @return \Illuminate\Support\Collection 
-         * @static 
-         */ 
-        public static function currencies()
-        {
-            return \PragmaRX\Countries\Service::currencies();
-        }
-         
-    }
- 
-}
-
 namespace Laravel\Socialite\Facades { 
 
     class Socialite {
@@ -16508,6 +16410,512 @@ namespace Laravel\Socialite\Facades {
         {
             //Method inherited from \Illuminate\Support\Manager            
             return \Laravel\Socialite\SocialiteManager::getDrivers();
+        }
+         
+    }
+ 
+}
+
+namespace Maatwebsite\Excel\Facades { 
+
+    class Excel {
+        
+        /**
+         * Create a new file
+         *
+         * @param $filename
+         * @param callable|null $callback
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function create($filename, $callback = null)
+        {
+            return \Maatwebsite\Excel\Excel::create($filename, $callback);
+        }
+        
+        /**
+         * Load an existing file
+         *
+         * @param string $file The file we want to load
+         * @param callback|null $callback
+         * @param string|null $encoding
+         * @param bool $noBasePath
+         * @param callback|null $callbackConfigReader
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */ 
+        public static function load($file, $callback = null, $encoding = null, $noBasePath = false, $callbackConfigReader = null)
+        {
+            return \Maatwebsite\Excel\Excel::load($file, $callback, $encoding, $noBasePath, $callbackConfigReader);
+        }
+        
+        /**
+         * Set select sheets
+         *
+         * @param $sheets
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */ 
+        public static function selectSheets($sheets = array())
+        {
+            return \Maatwebsite\Excel\Excel::selectSheets($sheets);
+        }
+        
+        /**
+         * Select sheets by index
+         *
+         * @param array $sheets
+         * @return $this 
+         * @static 
+         */ 
+        public static function selectSheetsByIndex($sheets = array())
+        {
+            return \Maatwebsite\Excel\Excel::selectSheetsByIndex($sheets);
+        }
+        
+        /**
+         * Batch import
+         *
+         * @param $files
+         * @param callback $callback
+         * @return \PHPExcel 
+         * @static 
+         */ 
+        public static function batch($files, $callback)
+        {
+            return \Maatwebsite\Excel\Excel::batch($files, $callback);
+        }
+        
+        /**
+         * Create a new file and share a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function shareView($view, $data = array(), $mergeData = array())
+        {
+            return \Maatwebsite\Excel\Excel::shareView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Create a new file and load a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */ 
+        public static function loadView($view, $data = array(), $mergeData = array())
+        {
+            return \Maatwebsite\Excel\Excel::loadView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Set filters
+         *
+         * @param array $filters
+         * @return \Excel 
+         * @static 
+         */ 
+        public static function registerFilters($filters = array())
+        {
+            return \Maatwebsite\Excel\Excel::registerFilters($filters);
+        }
+        
+        /**
+         * Enable certain filters
+         *
+         * @param string|array $filter
+         * @param bool|false|string $class
+         * @return \Excel 
+         * @static 
+         */ 
+        public static function filter($filter, $class = false)
+        {
+            return \Maatwebsite\Excel\Excel::filter($filter, $class);
+        }
+        
+        /**
+         * Get register, enabled (or both) filters
+         *
+         * @param string|boolean $key [description]
+         * @return array 
+         * @static 
+         */ 
+        public static function getFilters($key = false)
+        {
+            return \Maatwebsite\Excel\Excel::getFilters($key);
+        }
+         
+    }
+ 
+}
+
+namespace PragmaRX\Countries { 
+
+    class Facade {
+        
+        /**
+         * Get the countries repository.
+         *
+         * @return \PragmaRX\Countries\CountriesRepository 
+         * @static 
+         */ 
+        public static function getRepository()
+        {
+            return \PragmaRX\Countries\Service::getRepository();
+        }
+        
+        /**
+         * Get all currencies.
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function currencies()
+        {
+            return \PragmaRX\Countries\Service::currencies();
+        }
+         
+    }
+ 
+}
+
+namespace PragmaRX\Google2FALaravel { 
+
+    class Facade {
+        
+        /**
+         * Find a valid One Time Password.
+         *
+         * @param $binarySeed
+         * @param $key
+         * @param $window
+         * @param $startingTimestamp
+         * @param $timestamp
+         * @param $oldTimestamp
+         * @return bool 
+         * @static 
+         */ 
+        public static function findValidOTP($secret, $key, $window, $startingTimestamp, $timestamp, $oldTimestamp = '__not_set__')
+        {
+            return \PragmaRX\Google2FA\Google2FA::findValidOTP($secret, $key, $window, $startingTimestamp, $timestamp, $oldTimestamp);
+        }
+        
+        /**
+         * Generate a digit secret key in base32 format.
+         *
+         * @param int $length
+         * @param string $prefix
+         * @return string 
+         * @static 
+         */ 
+        public static function generateSecretKey($length = 16, $prefix = '')
+        {
+            return \PragmaRX\Google2FA\Google2FA::generateSecretKey($length, $prefix);
+        }
+        
+        /**
+         * Get the current one time password for a key.
+         *
+         * @param $secret
+         * @return string 
+         * @static 
+         */ 
+        public static function getCurrentOtp($secret)
+        {
+            return \PragmaRX\Google2FA\Google2FA::getCurrentOtp($secret);
+        }
+        
+        /**
+         * Get key regeneration.
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getKeyRegeneration()
+        {
+            return \PragmaRX\Google2FA\Google2FA::getKeyRegeneration();
+        }
+        
+        /**
+         * Get OTP length.
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getOneTimePasswordLength()
+        {
+            return \PragmaRX\Google2FA\Google2FA::getOneTimePasswordLength();
+        }
+        
+        /**
+         * Get secret.
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getSecret($secret = null)
+        {
+            return \PragmaRX\Google2FA\Google2FA::getSecret($secret);
+        }
+        
+        /**
+         * Returns the current Unix Timestamp divided by the $keyRegeneration
+         * period.
+         *
+         * @return int 
+         * @static 
+         */ 
+        public static function getTimestamp()
+        {
+            return \PragmaRX\Google2FA\Google2FA::getTimestamp();
+        }
+        
+        /**
+         * Get the OTP window.
+         *
+         * @param null|int $window
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getWindow($window = null)
+        {
+            return \PragmaRX\Google2FA\Google2FA::getWindow($window);
+        }
+        
+        /**
+         * Takes the secret key and the timestamp and returns the one time
+         * password.
+         *
+         * @param string $secret - Secret key in binary form.
+         * @param int $counter - Timestamp as returned by getTimestamp.
+         * @throws SecretKeyTooShortException
+         * @return string 
+         * @static 
+         */ 
+        public static function oathHotp($secret, $counter)
+        {
+            return \PragmaRX\Google2FA\Google2FA::oathHotp($secret, $counter);
+        }
+        
+        /**
+         * Extracts the OTP from the SHA1 hash.
+         *
+         * @param string $hash
+         * @return int 
+         * @static 
+         */ 
+        public static function oathTruncate($hash)
+        {
+            return \PragmaRX\Google2FA\Google2FA::oathTruncate($hash);
+        }
+        
+        /**
+         * Remove invalid chars from a base 32 string.
+         *
+         * @param $string
+         * @return mixed 
+         * @static 
+         */ 
+        public static function removeInvalidChars($string)
+        {
+            return \PragmaRX\Google2FA\Google2FA::removeInvalidChars($string);
+        }
+        
+        /**
+         * Setter for the enforce Google Authenticator compatibility property.
+         *
+         * @param mixed $enforceGoogleAuthenticatorCompatibility
+         * @return $this 
+         * @static 
+         */ 
+        public static function setEnforceGoogleAuthenticatorCompatibility($enforceGoogleAuthenticatorCompatibility)
+        {
+            return \PragmaRX\Google2FA\Google2FA::setEnforceGoogleAuthenticatorCompatibility($enforceGoogleAuthenticatorCompatibility);
+        }
+        
+        /**
+         * Set key regeneration.
+         *
+         * @param mixed $keyRegeneration
+         * @static 
+         */ 
+        public static function setKeyRegeneration($keyRegeneration)
+        {
+            return \PragmaRX\Google2FA\Google2FA::setKeyRegeneration($keyRegeneration);
+        }
+        
+        /**
+         * Set OTP length.
+         *
+         * @param mixed $oneTimePasswordLength
+         * @static 
+         */ 
+        public static function setOneTimePasswordLength($oneTimePasswordLength)
+        {
+            return \PragmaRX\Google2FA\Google2FA::setOneTimePasswordLength($oneTimePasswordLength);
+        }
+        
+        /**
+         * Set secret.
+         *
+         * @param mixed $secret
+         * @static 
+         */ 
+        public static function setSecret($secret)
+        {
+            return \PragmaRX\Google2FA\Google2FA::setSecret($secret);
+        }
+        
+        /**
+         * Set the OTP window.
+         *
+         * @param mixed $window
+         * @static 
+         */ 
+        public static function setWindow($window)
+        {
+            return \PragmaRX\Google2FA\Google2FA::setWindow($window);
+        }
+        
+        /**
+         * Verifies a user inputted key against the current timestamp. Checks $window
+         * keys either side of the timestamp.
+         *
+         * @param string $key - User specified key
+         * @param null|string $secret
+         * @param null|int $window
+         * @param null|int $timestamp
+         * @param null|string|int $oldTimestamp
+         * @return bool|int 
+         * @static 
+         */ 
+        public static function verify($key, $secret = null, $window = null, $timestamp = null, $oldTimestamp = '__not_set__')
+        {
+            return \PragmaRX\Google2FA\Google2FA::verify($key, $secret, $window, $timestamp, $oldTimestamp);
+        }
+        
+        /**
+         * Verifies a user inputted key against the current timestamp. Checks $window
+         * keys either side of the timestamp.
+         *
+         * @param string $secret
+         * @param string $key - User specified key
+         * @param null|int $window
+         * @param null|int $timestamp
+         * @param null|string|int $oldTimestamp
+         * @return bool|int 
+         * @static 
+         */ 
+        public static function verifyKey($secret, $key, $window = null, $timestamp = null, $oldTimestamp = '__not_set__')
+        {
+            return \PragmaRX\Google2FA\Google2FA::verifyKey($secret, $key, $window, $timestamp, $oldTimestamp);
+        }
+        
+        /**
+         * Verifies a user inputted key against the current timestamp. Checks $window
+         * keys either side of the timestamp, but ensures that the given key is newer than
+         * the given oldTimestamp. Useful if you need to ensure that a single key cannot
+         * be used twice.
+         *
+         * @param string $secret
+         * @param string $key - User specified key
+         * @param int $oldTimestamp - The timestamp from the last verified key
+         * @param int|null $window
+         * @param int|null $timestamp
+         * @return bool|int - false (not verified) or the timestamp of the verified key
+         * @static 
+         */ 
+        public static function verifyKeyNewer($secret, $key, $oldTimestamp, $window = null, $timestamp = null)
+        {
+            return \PragmaRX\Google2FA\Google2FA::verifyKeyNewer($secret, $key, $oldTimestamp, $window, $timestamp);
+        }
+        
+        /**
+         * Creates a Google QR code url.
+         *
+         * @param string $company
+         * @param string $holder
+         * @param string $secret
+         * @param int $size
+         * @return string 
+         * @static 
+         */ 
+        public static function getQRCodeGoogleUrl($company, $holder, $secret, $size = 200)
+        {
+            return \PragmaRX\Google2FA\Google2FA::getQRCodeGoogleUrl($company, $holder, $secret, $size);
+        }
+        
+        /**
+         * Generates a QR code data url to display inline.
+         *
+         * @param string $company
+         * @param string $holder
+         * @param string $secret
+         * @param int $size
+         * @param string $encoding Default to UTF-8
+         * @return string 
+         * @static 
+         */ 
+        public static function getQRCodeInline($company, $holder, $secret, $size = 200, $encoding = 'utf-8')
+        {
+            return \PragmaRX\Google2FA\Google2FA::getQRCodeInline($company, $holder, $secret, $size, $encoding);
+        }
+        
+        /**
+         * Creates a QR code url.
+         *
+         * @param $company
+         * @param $holder
+         * @param $secret
+         * @return string 
+         * @static 
+         */ 
+        public static function getQRCodeUrl($company, $holder, $secret)
+        {
+            return \PragmaRX\Google2FA\Google2FA::getQRCodeUrl($company, $holder, $secret);
+        }
+        
+        /**
+         * Generate a digit secret key in base32 format.
+         *
+         * @param int $length
+         * @return string 
+         * @static 
+         */ 
+        public static function generateBase32RandomKey($length = 16, $prefix = '')
+        {
+            return \PragmaRX\Google2FA\Google2FA::generateBase32RandomKey($length, $prefix);
+        }
+        
+        /**
+         * Decodes a base32 string into a binary string.
+         *
+         * @param string $b32
+         * @throws InvalidCharactersException
+         * @return int 
+         * @static 
+         */ 
+        public static function base32Decode($b32)
+        {
+            return \PragmaRX\Google2FA\Google2FA::base32Decode($b32);
+        }
+        
+        /**
+         * Encode a string to Base32.
+         *
+         * @param $string
+         * @return mixed 
+         * @static 
+         */ 
+        public static function toBase32($string)
+        {
+            return \PragmaRX\Google2FA\Google2FA::toBase32($string);
         }
          
     }
@@ -16816,139 +17224,68 @@ namespace Spatie\Fractal {
  
 }
 
-namespace Maatwebsite\Excel\Facades { 
+namespace Spatie\ResponseCache\Facades { 
 
-    class Excel {
+    class ResponseCache {
         
         /**
-         * Create a new file
+         * 
          *
-         * @param $filename
-         * @param callable|null $callback
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
          * @static 
          */ 
-        public static function create($filename, $callback = null)
+        public static function enabled($request)
         {
-            return \Maatwebsite\Excel\Excel::create($filename, $callback);
+            return \Spatie\ResponseCache\ResponseCache::enabled($request);
         }
         
         /**
-         * Load an existing file
+         * 
          *
-         * @param string $file The file we want to load
-         * @param callback|null $callback
-         * @param string|null $encoding
-         * @param bool $noBasePath
-         * @param callback|null $callbackConfigReader
-         * @return \Maatwebsite\Excel\LaravelExcelReader 
          * @static 
          */ 
-        public static function load($file, $callback = null, $encoding = null, $noBasePath = false, $callbackConfigReader = null)
+        public static function shouldCache($request, $response)
         {
-            return \Maatwebsite\Excel\Excel::load($file, $callback, $encoding, $noBasePath, $callbackConfigReader);
+            return \Spatie\ResponseCache\ResponseCache::shouldCache($request, $response);
         }
         
         /**
-         * Set select sheets
+         * 
          *
-         * @param $sheets
-         * @return \Maatwebsite\Excel\LaravelExcelReader 
          * @static 
          */ 
-        public static function selectSheets($sheets = array())
+        public static function cacheResponse($request, $response, $lifetimeInMinutes = null)
         {
-            return \Maatwebsite\Excel\Excel::selectSheets($sheets);
+            return \Spatie\ResponseCache\ResponseCache::cacheResponse($request, $response, $lifetimeInMinutes);
         }
         
         /**
-         * Select sheets by index
+         * 
          *
-         * @param array $sheets
-         * @return $this 
          * @static 
          */ 
-        public static function selectSheetsByIndex($sheets = array())
+        public static function hasBeenCached($request)
         {
-            return \Maatwebsite\Excel\Excel::selectSheetsByIndex($sheets);
+            return \Spatie\ResponseCache\ResponseCache::hasBeenCached($request);
         }
         
         /**
-         * Batch import
+         * 
          *
-         * @param $files
-         * @param callback $callback
-         * @return \PHPExcel 
          * @static 
          */ 
-        public static function batch($files, $callback)
+        public static function getCachedResponseFor($request)
         {
-            return \Maatwebsite\Excel\Excel::batch($files, $callback);
+            return \Spatie\ResponseCache\ResponseCache::getCachedResponseFor($request);
         }
         
         /**
-         * Create a new file and share a view
+         * 
          *
-         * @param string $view
-         * @param array $data
-         * @param array $mergeData
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
          * @static 
          */ 
-        public static function shareView($view, $data = array(), $mergeData = array())
+        public static function flush()
         {
-            return \Maatwebsite\Excel\Excel::shareView($view, $data, $mergeData);
-        }
-        
-        /**
-         * Create a new file and load a view
-         *
-         * @param string $view
-         * @param array $data
-         * @param array $mergeData
-         * @return \Maatwebsite\Excel\LaravelExcelWriter 
-         * @static 
-         */ 
-        public static function loadView($view, $data = array(), $mergeData = array())
-        {
-            return \Maatwebsite\Excel\Excel::loadView($view, $data, $mergeData);
-        }
-        
-        /**
-         * Set filters
-         *
-         * @param array $filters
-         * @return \Excel 
-         * @static 
-         */ 
-        public static function registerFilters($filters = array())
-        {
-            return \Maatwebsite\Excel\Excel::registerFilters($filters);
-        }
-        
-        /**
-         * Enable certain filters
-         *
-         * @param string|array $filter
-         * @param bool|false|string $class
-         * @return \Excel 
-         * @static 
-         */ 
-        public static function filter($filter, $class = false)
-        {
-            return \Maatwebsite\Excel\Excel::filter($filter, $class);
-        }
-        
-        /**
-         * Get register, enabled (or both) filters
-         *
-         * @param string|boolean $key [description]
-         * @return array 
-         * @static 
-         */ 
-        public static function getFilters($key = false)
-        {
-            return \Maatwebsite\Excel\Excel::getFilters($key);
+            return \Spatie\ResponseCache\ResponseCache::flush();
         }
          
     }
@@ -19118,15 +19455,17 @@ namespace  {
 
     class JavaScript extends \Laracasts\Utilities\JavaScript\JavaScriptFacade {}
 
-    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
+    class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+
+    class Excel extends \Maatwebsite\Excel\Facades\Excel {}
 
     class Countries extends \PragmaRX\Countries\Facade {}
 
-    class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+    class Google2FA extends \PragmaRX\Google2FALaravel\Facade {}
 
     class Fractal extends \Spatie\Fractal\FractalFacade {}
 
-    class Excel extends \Maatwebsite\Excel\Facades\Excel {}
+    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
  
 }
 
